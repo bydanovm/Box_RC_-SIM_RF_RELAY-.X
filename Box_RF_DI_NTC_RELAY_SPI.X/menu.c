@@ -1,5 +1,5 @@
 #include "menu.h"
-
+//testforversion
 void fMenuStrip(void){  
     if(flMenuStrip == 0x01 && flSwitchButton == FALSE){         //Õ‡Ê‡Ú‡ Ã≈Õﬁ
         if(_MenuNav == 1) _MenuNav = 2;                         //
