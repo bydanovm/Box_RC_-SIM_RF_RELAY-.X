@@ -1,0 +1,909 @@
+[p GLOBOPT AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F76 ]
+[d frameptr 0 ]
+"95 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\Bb_device.c
+[v _fInterruptRecieveDevice fInterruptRecieveDevice `(v  1 e 1 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"32 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"505 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\evalpoly.c
+[v _eval_poly eval_poly `(d  1 e 3 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"254 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+[v _frexp frexp `(d  1 e 3 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"56 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"44 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+"27 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+[v _log log `(d  1 e 3 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+[v i1___lwmod __lwmod `(ui  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\strcat.c
+[v _strcat strcat `(*.5uc  1 e 1 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"5 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\config.c
+[v _init init `(v  1 e 1 0 ]
+"149
+[v _fEraseString fEraseString `(v  1 e 1 0 ]
+"18 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\lcd.c
+[v _LCD_init LCD_init `(v  1 e 1 0 ]
+"45
+[v _sendhalfbyte sendhalfbyte `(v  1 e 1 0 ]
+"69
+[v _sendbyte sendbyte `(v  1 e 1 0 ]
+"89
+[v _LCD_string LCD_string `(v  1 e 1 0 ]
+"107
+[v _LCD_SetPos LCD_SetPos `(v  1 e 1 0 ]
+"118
+[v _LCD_clear LCD_clear `(v  1 e 1 0 ]
+"123
+[v _LCD_StringOnOff LCD_StringOnOff `(*.25uc  1 e 1 0 ]
+"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\menu.c
+[v _fMenuStrip fMenuStrip `(v  1 e 1 0 ]
+"10 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\newmain.c
+[v _linkup linkup `II(v  1 e 1 0 ]
+"62
+[v _fACP fACP `(v  1 e 1 0 ]
+"94
+[v _main main `(v  1 e 1 0 ]
+"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\shift_registr.c
+[v _fShiftData fShiftData `(v  1 e 1 0 ]
+"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\spi_flash.c
+[v _SPI_init SPI_init `(v  1 e 1 0 ]
+"24
+[v _SPI_WriteByte SPI_WriteByte `(v  1 e 1 0 ]
+"28
+[v _SPI_ReadByte SPI_ReadByte `(uc  1 e 1 0 ]
+"32
+[v _SPI_Write SPI_Write `(v  1 e 1 0 ]
+"46
+[v _SPI_Read SPI_Read `(uc  1 e 1 0 ]
+"57
+[v _SPI_ReadStatus SPI_ReadStatus `(uc  1 e 1 0 ]
+"74
+[v _SPI_notRDY SPI_notRDY `(uc  1 e 1 0 ]
+"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\temp_ntc.c
+[v _rThermistor rThermistor `(s  1 e 2 0 ]
+"8
+[v _rTemperature rTemperature `(c  1 e 1 0 ]
+"21 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\Bb_device.h
+[v _flStartBitRecieve flStartBitRecieve `b  1 e 0 0 ]
+"22
+[v _flStopBitRecieve flStopBitRecieve `b  1 e 0 0 ]
+"25
+[v _TMR0_Value TMR0_Value `uc  1 e 1 0 ]
+"26
+[v _cTMR0 cTMR0 `uc  1 e 1 0 ]
+"27
+[v _cQuantity cQuantity `uc  1 e 1 0 ]
+"28
+[v _carrCmd carrCmd `uc  1 e 1 0 ]
+"29
+[v _flModeStep flModeStep `uc  1 e 1 0 ]
+"39
+[v _arrCmd arrCmd `[4]uc  1 e 4 0 ]
+"59 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f76.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"166
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+[s S1223 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+]
+"181
+[u S1230 . 1 `S1223 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1230  1 e 1 @5 ]
+"216
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S935 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"233
+[u S944 . 1 `S935 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES944  1 e 1 @6 ]
+"278
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[s S27 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"383
+[s S36 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S41 . 1 `S27 1 . 1 0 `S36 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES41  1 e 1 @11 ]
+[s S111 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"454
+[u S119 . 1 `S111 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES119  1 e 1 @12 ]
+"521
+[v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
+"528
+[v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
+[s S64 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+]
+"556
+[s S70 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1INSYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[u S76 . 1 `S64 1 . 1 0 `S70 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES76  1 e 1 @16 ]
+"601
+[v _TMR2 TMR2 `VEuc  1 e 1 @17 ]
+[s S489 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 TOUTPS 1 0 :4:3 
+]
+"629
+[s S493 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 TOUTPS0 1 0 :1:3 
+`uc 1 TOUTPS1 1 0 :1:4 
+`uc 1 TOUTPS2 1 0 :1:5 
+`uc 1 TOUTPS3 1 0 :1:6 
+]
+[u S501 . 1 `S489 1 . 1 0 `S493 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES501  1 e 1 @18 ]
+"679
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+[s S607 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"706
+[s S613 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S618 . 1 `S607 1 . 1 0 `S613 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES618  1 e 1 @20 ]
+[s S670 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"865
+[s S679 . 1 `uc 1 RCD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S683 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 nRC8 1 0 :1:6 
+]
+[s S686 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[u S689 . 1 `S670 1 . 1 0 `S679 1 . 1 0 `S683 1 . 1 0 `S686 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES689  1 e 1 @24 ]
+"1018
+[v _ADRES ADRES `VEuc  1 e 1 @30 ]
+[s S130 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 GO_nDONE 1 0 :1:2 
+`uc 1 CHS 1 0 :3:3 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1069
+[s S136 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO 1 0 :1:2 
+`uc 1 CHS0 1 0 :1:3 
+`uc 1 CHS1 1 0 :1:4 
+`uc 1 CHS2 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S144 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nDONE 1 0 :1:2 
+]
+[s S147 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO_DONE 1 0 :1:2 
+]
+[u S150 . 1 `S130 1 . 1 0 `S136 1 . 1 0 `S144 1 . 1 0 `S147 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES150  1 e 1 @31 ]
+[s S411 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+"1154
+[s S418 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+]
+[u S422 . 1 `S411 1 . 1 0 `S418 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES422  1 e 1 @129 ]
+[s S349 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+]
+"1219
+[u S356 . 1 `S349 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES356  1 e 1 @133 ]
+[s S366 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1271
+[u S375 . 1 `S366 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES375  1 e 1 @134 ]
+[s S387 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1333
+[u S396 . 1 `S387 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES396  1 e 1 @135 ]
+[s S92 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1394
+[u S100 . 1 `S92 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES100  1 e 1 @140 ]
+[s S466 . 1 `uc 1 CCP2IE 1 0 :1:0 
+]
+"1444
+[u S468 . 1 `S466 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES468  1 e 1 @141 ]
+[s S518 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"1556
+[s S527 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S532 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DATA 1 0 :1:5 
+]
+[s S538 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S543 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S548 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S553 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[u S558 . 1 `S518 1 . 1 0 `S527 1 . 1 0 `S532 1 . 1 0 `S538 1 . 1 0 `S543 1 . 1 0 `S548 1 . 1 0 `S553 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES558  1 e 1 @148 ]
+[s S633 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"1697
+[s S642 . 1 `uc 1 TXD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 nTX8 1 0 :1:6 
+]
+[s S646 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[u S649 . 1 `S633 1 . 1 0 `S642 1 . 1 0 `S646 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES649  1 e 1 @152 ]
+"1752
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+[s S741 . 1 `uc 1 PCFG 1 0 :3:0 
+]
+"1774
+[s S743 . 1 `uc 1 PCFG0 1 0 :1:0 
+`uc 1 PCFG1 1 0 :1:1 
+`uc 1 PCFG2 1 0 :1:2 
+]
+[u S747 . 1 `S741 1 . 1 0 `S743 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES747  1 e 1 @159 ]
+"1967
+[v _GO_DONE GO_DONE `VEb  1 e 0 @250 ]
+"2051
+[v _RB3 RB3 `VEb  1 e 0 @51 ]
+"2054
+[v _RB4 RB4 `VEb  1 e 0 @52 ]
+"2057
+[v _RB5 RB5 `VEb  1 e 0 @53 ]
+"2060
+[v _RB6 RB6 `VEb  1 e 0 @54 ]
+"358 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\doprnt.c
+[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
+"3 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\errno.c
+[v _errno errno `i  1 e 2 0 ]
+"35 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\config.h
+[v __countTMR2trigger _countTMR2trigger `uc  1 e 1 0 ]
+"36
+[v __countSecond _countSecond `us  1 e 2 0 ]
+"40
+[v __100ms _100ms `b  1 e 0 0 ]
+"43
+[v __second _second `b  1 e 0 0 ]
+"45
+[v __minute _minute `b  1 e 0 0 ]
+"46
+[v __hour _hour `b  1 e 0 0 ]
+"47
+[v _flDO1 flDO1 `b  1 e 0 0 ]
+[s S22 AnalogInput 4 `uc 1 AI0 1 0 `uc 1 AI1 1 1 `uc 1 AI2 1 2 `uc 1 AI3 1 3 ]
+"67
+[v _Analog Analog `S22  1 e 4 0 ]
+"69
+[v __settingsBit _settingsBit `uc  1 e 1 0 ]
+"78
+[v __settingTimeImpDO1 _settingTimeImpDO1 `i  1 e 2 0 ]
+"79
+[v __settingTimerOnDO2 _settingTimerOnDO2 `i  1 e 2 0 ]
+"80
+[v __settingTimerOffDO2 _settingTimerOffDO2 `i  1 e 2 0 ]
+"81
+[v __timerDO1 _timerDO1 `s  1 e 2 0 ]
+"82
+[v __timerDO2 _timerDO2 `s  1 e 2 0 ]
+"83
+[v __tempPinDO _tempPinDO `uc  1 e 1 0 ]
+"9 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\lcd.h
+[v _str str `[16]uc  1 e 16 0 ]
+"10
+[v _str2 str2 `[16]uc  1 e 16 0 ]
+"20
+[v _SHRIFT SHRIFT `DC[64]uc  1 e 64 0 ]
+"15 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\menu.h
+[v _flMenuStrip flMenuStrip `uc  1 e 1 0 ]
+"17
+[v __MenuNav _MenuNav `s  1 e 2 0 ]
+"18
+[v __MenuArr _MenuArr `[10]uc  1 e 10 0 ]
+"19
+[v __SubMenuArr _SubMenuArr `[4][6]uc  1 e 24 0 ]
+"26
+[v __firstCell _firstCell `uc  1 e 1 0 ]
+"27
+[v __secondCell _secondCell `uc  1 e 1 0 ]
+"28
+[v __tempDigit _tempDigit `us  1 e 2 0 ]
+"29
+[v __cellTwoDigit _cellTwoDigit `uc  1 e 1 0 ]
+"30
+[v __tempTwoDigit _tempTwoDigit `uc  1 e 1 0 ]
+"31
+[v _flUpdate flUpdate `b  1 e 0 0 ]
+"66
+[v _flClearLCD flClearLCD `b  1 e 0 0 ]
+"67
+[v _flSwitchButton flSwitchButton `b  1 e 0 0 ]
+"22 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\temp_ntc.h
+[v _temperatureAI1 temperatureAI1 `c  1 e 1 0 ]
+[v _temperatureAI2 temperatureAI2 `c  1 e 1 0 ]
+"94 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\newmain.c
+[v _main main `(v  1 e 1 0 ]
+{
+"104
+[v main@SPI_i SPI_i `uc  1 a 1 34 ]
+"213
+} 0
+"8 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\temp_ntc.c
+[v _rTemperature rTemperature `(c  1 e 1 0 ]
+{
+[v rTemperature@analogAI analogAI `uc  1 a 1 wreg ]
+[v rTemperature@analogAI analogAI `uc  1 a 1 wreg ]
+[v rTemperature@analogAI analogAI `uc  1 a 1 29 ]
+"11
+} 0
+"3
+[v _rThermistor rThermistor `(s  1 e 2 0 ]
+{
+[v rThermistor@analogAI analogAI `uc  1 a 1 wreg ]
+"4
+[v rThermistor@A A `f  1 a 3 6 ]
+"3
+[v rThermistor@analogAI analogAI `uc  1 a 1 wreg ]
+[v rThermistor@analogAI analogAI `uc  1 a 1 9 ]
+"6
+} 0
+"27 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+{
+[v ___lbtoft@c c `uc  1 a 1 wreg ]
+[v ___lbtoft@c c `uc  1 a 1 wreg ]
+"29
+[v ___lbtoft@c c `uc  1 a 1 15 ]
+"30
+} 0
+"44 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 1 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 5 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 0 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 68 ]
+"73
+} 0
+"56 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+{
+"60
+[v ___ftdiv@f3 f3 `f  1 a 3 63 ]
+"59
+[v ___ftdiv@sign sign `uc  1 a 1 67 ]
+[v ___ftdiv@exp exp `uc  1 a 1 66 ]
+[v ___ftdiv@cntr cntr `uc  1 a 1 62 ]
+"56
+[v ___ftdiv@f2 f2 `f  1 p 3 52 ]
+[v ___ftdiv@f1 f1 `f  1 p 3 55 ]
+"86
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+[v _log log `(d  1 e 3 0 ]
+{
+"7
+[v log@exponent exponent `i  1 a 2 18 ]
+"5
+[v log@x x `d  1 p 3 14 ]
+"9
+[v log@coeff coeff `DC[9]d  1 s 27 coeff ]
+"36
+} 0
+"254 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+[v _frexp frexp `(d  1 e 3 0 ]
+{
+[v frexp@value value `d  1 p 3 0 ]
+[v frexp@eptr eptr `*.4i  1 p 1 3 ]
+"274
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\evalpoly.c
+[v _eval_poly eval_poly `(d  1 e 3 0 ]
+{
+"6
+[v eval_poly@res res `d  1 a 3 49 ]
+"4
+[v eval_poly@x x `d  1 p 3 37 ]
+[v eval_poly@d d `*.25DCd  1 p 2 40 ]
+[v eval_poly@n n `i  1 p 2 42 ]
+"12
+} 0
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 19 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 23 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 22 ]
+[v ___ftmul@exp exp `uc  1 a 1 18 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 8 ]
+[v ___ftmul@f2 f2 `f  1 p 3 11 ]
+"157
+} 0
+"86 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+{
+"88
+[v ___ftadd@exp1 exp1 `uc  1 a 1 36 ]
+[v ___ftadd@exp2 exp2 `uc  1 a 1 35 ]
+[v ___ftadd@sign sign `uc  1 a 1 34 ]
+"86
+[v ___ftadd@f1 f1 `f  1 p 3 24 ]
+[v ___ftadd@f2 f2 `f  1 p 3 27 ]
+"148
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+{
+[v ___ftge@ff1 ff1 `f  1 p 3 0 ]
+[v ___ftge@ff2 ff2 `f  1 p 3 3 ]
+"13
+} 0
+"32 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+{
+"34
+[v ___awtoft@sign sign `uc  1 a 1 13 ]
+"32
+[v ___awtoft@c c `i  1 p 2 10 ]
+"42
+} 0
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
+"86
+} 0
+"5 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\config.c
+[v _init init `(v  1 e 1 0 ]
+{
+"132
+} 0
+"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\menu.c
+[v _fMenuStrip fMenuStrip `(v  1 e 1 0 ]
+{
+"312
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\strcat.c
+[v _strcat strcat `(*.5uc  1 e 1 0 ]
+{
+[v strcat@to to `*.5uc  1 a 1 wreg ]
+"15
+[v strcat@cp cp `*.5uc  1 a 1 3 ]
+"8
+[v strcat@to to `*.5uc  1 a 1 wreg ]
+[v strcat@from from `*.25DCuc  1 p 2 0 ]
+"18
+[v strcat@to to `*.5uc  1 a 1 4 ]
+"26
+} 0
+"505 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@sp sp `*.5uc  1 a 1 wreg ]
+"514
+[v sprintf@width width `i  1 a 2 38 ]
+"545
+[v sprintf@val val `ui  1 a 2 36 ]
+"546
+[v sprintf@len len `ui  1 a 2 34 ]
+"547
+[v sprintf@cp cp `*.26DCuc  1 a 2 30 ]
+"512
+[v sprintf@c c `uc  1 a 1 40 ]
+"507
+[v sprintf@ap ap `[1]*.4v  1 a 1 33 ]
+"525
+[v sprintf@flag flag `uc  1 a 1 32 ]
+"521
+[v sprintf@prec prec `c  1 a 1 29 ]
+"505
+[v sprintf@sp sp `*.5uc  1 a 1 wreg ]
+[v sprintf@f f `*.25DCuc  1 p 2 14 ]
+"550
+[v sprintf@sp sp `*.5uc  1 a 1 41 ]
+"1567
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+{
+[v isdigit@c c `uc  1 a 1 wreg ]
+[v isdigit@c c `uc  1 a 1 wreg ]
+"14
+[v isdigit@c c `uc  1 a 1 1 ]
+"15
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
+"25
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"149 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\config.c
+[v _fEraseString fEraseString `(v  1 e 1 0 ]
+{
+[v fEraseString@string string `*.5uc  1 a 1 wreg ]
+[v fEraseString@string string `*.5uc  1 a 1 wreg ]
+[v fEraseString@string string `*.5uc  1 a 1 0 ]
+"151
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 11 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 9 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 12 ]
+"51
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 15 ]
+[v ___awmod@counter counter `uc  1 a 1 14 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 9 ]
+[v ___awmod@dividend dividend `i  1 p 2 11 ]
+"34
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"32 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\spi_flash.c
+[v _SPI_Write SPI_Write `(v  1 e 1 0 ]
+{
+[v SPI_Write@address address `l  1 p 4 6 ]
+[v SPI_Write@data data `uc  1 p 1 10 ]
+"45
+} 0
+"89 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\lcd.c
+[v _LCD_string LCD_string `(v  1 e 1 0 ]
+{
+"91
+[v LCD_string@i i `uc  1 a 1 18 ]
+"90
+[v LCD_string@symbol symbol `uc  1 a 1 17 ]
+"89
+[v LCD_string@st st `*.26uc  1 p 2 14 ]
+"105
+} 0
+"107
+[v _LCD_SetPos LCD_SetPos `(v  1 e 1 0 ]
+{
+[v LCD_SetPos@x x `uc  1 a 1 wreg ]
+[v LCD_SetPos@x x `uc  1 a 1 wreg ]
+[v LCD_SetPos@y y `uc  1 p 1 12 ]
+[v LCD_SetPos@x x `uc  1 a 1 13 ]
+"116
+} 0
+"123
+[v _LCD_StringOnOff LCD_StringOnOff `(*.25uc  1 e 1 0 ]
+{
+[v LCD_StringOnOff@st st `uc  1 a 1 wreg ]
+[v LCD_StringOnOff@st st `uc  1 a 1 wreg ]
+[v LCD_StringOnOff@numb numb `uc  1 p 1 0 ]
+[v LCD_StringOnOff@st st `uc  1 a 1 2 ]
+"126
+} 0
+"62 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\newmain.c
+[v _fACP fACP `(v  1 e 1 0 ]
+{
+"93
+} 0
+"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\spi_flash.c
+[v _SPI_init SPI_init `(v  1 e 1 0 ]
+{
+"23
+} 0
+"46
+[v _SPI_Read SPI_Read `(uc  1 e 1 0 ]
+{
+"53
+[v SPI_Read@data data `uc  1 a 1 13 ]
+"46
+[v SPI_Read@address address `l  1 p 4 6 ]
+"56
+} 0
+"74
+[v _SPI_notRDY SPI_notRDY `(uc  1 e 1 0 ]
+{
+"75
+[v SPI_notRDY@notRDY notRDY `uc  1 a 1 5 ]
+"77
+} 0
+"57
+[v _SPI_ReadStatus SPI_ReadStatus `(uc  1 e 1 0 ]
+{
+"60
+[v SPI_ReadStatus@status status `uc  1 a 1 3 ]
+"63
+} 0
+"28
+[v _SPI_ReadByte SPI_ReadByte `(uc  1 e 1 0 ]
+{
+[v SPI_ReadByte@data data `uc  1 a 1 wreg ]
+[v SPI_ReadByte@data data `uc  1 a 1 wreg ]
+[v SPI_ReadByte@data data `uc  1 a 1 1 ]
+"31
+} 0
+"24
+[v _SPI_WriteByte SPI_WriteByte `(v  1 e 1 0 ]
+{
+[v SPI_WriteByte@data data `uc  1 a 1 wreg ]
+[v SPI_WriteByte@data data `uc  1 a 1 wreg ]
+[v SPI_WriteByte@data data `uc  1 a 1 0 ]
+"27
+} 0
+"18 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\lcd.c
+[v _LCD_init LCD_init `(v  1 e 1 0 ]
+{
+"43
+} 0
+"118
+[v _LCD_clear LCD_clear `(v  1 e 1 0 ]
+{
+"121
+} 0
+"69
+[v _sendbyte sendbyte `(v  1 e 1 0 ]
+{
+[v sendbyte@c c `uc  1 a 1 wreg ]
+"70
+[v sendbyte@hb hb `uc  1 a 1 10 ]
+"69
+[v sendbyte@c c `uc  1 a 1 wreg ]
+[v sendbyte@mode mode `uc  1 p 1 8 ]
+[v sendbyte@c c `uc  1 a 1 11 ]
+"87
+} 0
+"45
+[v _sendhalfbyte sendhalfbyte `(v  1 e 1 0 ]
+{
+[v sendhalfbyte@c c `uc  1 a 1 wreg ]
+[v sendhalfbyte@c c `uc  1 a 1 wreg ]
+"50
+[v sendhalfbyte@c c `uc  1 a 1 7 ]
+"67
+} 0
+"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\shift_registr.c
+[v _fShiftData fShiftData `(v  1 e 1 0 ]
+{
+[v fShiftData@shiftVar shiftVar `uc  1 a 1 wreg ]
+"8
+[v fShiftData@i i `uc  1 a 1 5 ]
+"4
+[v fShiftData@shiftVariable shiftVariable `s  1 a 2 3 ]
+"3
+[v fShiftData@shiftVar shiftVar `uc  1 a 1 wreg ]
+[v fShiftData@shiftVar shiftVar `uc  1 a 1 2 ]
+"26
+} 0
+"10 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\newmain.c
+[v _linkup linkup `II(v  1 e 1 0 ]
+{
+"61
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwmod.c
+[v i1___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v i1___lwmod@counter counter `uc  1 a 1 5 ]
+"5
+[v i1___lwmod@divisor divisor `ui  1 p 2 0 ]
+[v i1___lwmod@dividend dividend `ui  1 p 2 2 ]
+"25
+} 0
+"95 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\Bb_device.c
+[v _fInterruptRecieveDevice fInterruptRecieveDevice `(v  1 e 1 0 ]
+{
+"210
+} 0
