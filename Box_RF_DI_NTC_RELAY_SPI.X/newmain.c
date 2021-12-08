@@ -8,7 +8,6 @@
 
 
 void __interrupt linkup(void){
-#testing
     if(INTCONbits.RBIE && INTCONbits.RBIF){
         fInterruptRecieveDevice();
         INTCONbits.RBIF     = FALSE;

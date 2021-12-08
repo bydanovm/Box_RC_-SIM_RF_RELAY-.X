@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Wed Dec 08 16:16:29 2021
+                                                                                               Tue Dec 07 19:23:04 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9 
      1                           	processor	16F76
@@ -5318,7 +5318,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   5296                           ;psect for function _fMenuStrip
   5297  044E                     _fMenuStrip:
   5298                           
-  5299                           ;menu.c: 5: if(flMenuStrip == 0x01 && flSwitchButton == 0){
+  5299                           ;menu.c: 4: if(flMenuStrip == 0x01 && flSwitchButton == 0){
   5300                           
   5301                           ;incstack = 0
   5302                           ; Regs used in _fMenuStrip: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
@@ -5327,7 +5327,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   5305  0450  187A               	btfsc	_flSwitchButton/(0+8),_flSwitchButton& (0+7)
   5306  0451  2D0F               	goto	l4558
   5307                           
-  5308                           ;menu.c: 6: if(_MenuNav == 1) _MenuNav = 2;
+  5308                           ;menu.c: 5: if(_MenuNav == 1) _MenuNav = 2;
   5309  0452  037B               	decf	__MenuNav,w
   5310  0453  047C               	iorwf	__MenuNav+1,w
   5311  0454  1D03               	btfss	3,2
@@ -5336,7 +5336,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   5314  0457  2D06               	goto	L4
   5315  0458                     l4532:
   5316                           
-  5317                           ;menu.c: 7: else if(_MenuNav >= 20 && _MenuNav < _MenuArr[0] * 10 + 9) _MenuNav /= 10;
+  5317                           ;menu.c: 6: else if(_MenuNav >= 20 && _MenuNav < _MenuArr[0] * 10 + 9) _MenuNav /= 10;
   5318  0458  087C               	movf	__MenuNav+1,w
   5319  0459  3A80               	xorlw	128
   5320  045A  00FF               	movwf	127
@@ -5405,7 +5405,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   5383  049E  2D09               	goto	l4552
   5384  049F                     l4538:
   5385                           
-  5386                           ;menu.c: 8: else if(_MenuNav >= 100 && _MenuNav < _MenuArr[0] * 100 + 99) _MenuNav /= 10
+  5386                           ;menu.c: 7: else if(_MenuNav >= 100 && _MenuNav < _MenuArr[0] * 100 + 99) _MenuNav /= 10
       +                          ;
   5387  049F  087C               	movf	__MenuNav+1,w
   5388  04A0  3A80               	xorlw	128
@@ -5458,7 +5458,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   5435  04D1  2C8B               	goto	l4536
   5436  04D2                     l4544:
   5437                           
-  5438                           ;menu.c: 9: else if(_MenuNav >= 1000 && _MenuNav < _MenuArr[0] * 1000 + 999) _MenuNav /=
+  5438                           ;menu.c: 8: else if(_MenuNav >= 1000 && _MenuNav < _MenuArr[0] * 1000 + 999) _MenuNav /=
       +                           10;
   5439  04D2  087C               	movf	__MenuNav+1,w
   5440  04D3  3A80               	xorlw	128
@@ -5511,7 +5511,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   5487  0504  2C8B               	goto	l4536
   5488  0505                     l4550:
   5489                           
-  5490                           ;menu.c: 10: else _MenuNav = 1;
+  5490                           ;menu.c: 9: else _MenuNav = 1;
   5491  0505  3001               	movlw	1
   5492  0506                     L4:
   5493  0506  00FB               	movwf	__MenuNav
@@ -5519,27 +5519,27 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   5495  0508  00FC               	movwf	__MenuNav+1
   5496  0509                     l4552:
   5497                           
-  5498                           ;menu.c: 11: flSwitchButton = 1;
+  5498                           ;menu.c: 10: flSwitchButton = 1;
   5499  0509  147A               	bsf	_flSwitchButton/(0+8),_flSwitchButton& (0+7)
   5500                           
-  5501                           ;menu.c: 12: flClearLCD = 0;
+  5501                           ;menu.c: 11: flClearLCD = 0;
   5502  050A  10FA               	bcf	_flClearLCD/(0+8),_flClearLCD& (0+7)
   5503                           
-  5504                           ;menu.c: 13: flUpdate = 0;
+  5504                           ;menu.c: 12: flUpdate = 0;
   5505  050B  117A               	bcf	_flUpdate/(0+8),_flUpdate& (0+7)
   5506                           
-  5507                           ;menu.c: 14: }
+  5507                           ;menu.c: 13: }
   5508  050C  120A  158A  29C2   	goto	l4680
   5509  050F                     l4558:
   5510                           
-  5511                           ;menu.c: 15: else if(flMenuStrip == 0x02 && flSwitchButton == 0){
+  5511                           ;menu.c: 14: else if(flMenuStrip == 0x02 && flSwitchButton == 0){
   5512  050F  3002               	movlw	2
   5513  0510  063E               	xorwf	_flMenuStrip^(0+128),w
   5514  0511  1903               	btfsc	3,2
   5515  0512  187A               	btfsc	_flSwitchButton/(0+8),_flSwitchButton& (0+7)
   5516  0513  2D5D               	goto	L31
   5517                           
-  5518                           ;menu.c: 16: if(_MenuNav <= 1) _MenuNav = _MenuArr[0];
+  5518                           ;menu.c: 15: if(_MenuNav <= 1) _MenuNav = _MenuArr[0];
   5519  0514  087C               	movf	__MenuNav+1,w
   5520  0515  3A80               	xorlw	128
   5521  0516  00FF               	movwf	127
@@ -5560,7 +5560,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   5536  0524  120A  158A  28FE   	goto	L24
   5537  0527                     l4566:
   5538                           
-  5539                           ;menu.c: 17: else if(_MenuNav >= 10 && _MenuNav < 100){
+  5539                           ;menu.c: 16: else if(_MenuNav >= 10 && _MenuNav < 100){
   5540  0527  087C               	movf	__MenuNav+1,w
   5541  0528  3A80               	xorlw	128
   5542  0529  00FF               	movwf	127
@@ -5586,7 +5586,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   5562  053B  1803               	skipnc
   5563  053C  2D60               	goto	L33
   5564                           
-  5565                           ;menu.c: 18: if(_MenuNav <= _tempTwoDigit)
+  5565                           ;menu.c: 17: if(_MenuNav <= _tempTwoDigit)
   5566  053D  087C               	movf	__MenuNav+1,w
   5567  053E  3A80               	xorlw	128
   5568  053F  3C80               	sublw	128
@@ -5600,7 +5600,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   5576  0546  120A  158A  1C03   	skipc
   5577  0549  280F               	goto	l4574
   5578                           
-  5579                           ;menu.c: 19: _MenuNav = _tempTwoDigit + _MenuArr[_cellTwoDigit] - 1;
+  5579                           ;menu.c: 18: _MenuNav = _tempTwoDigit + _MenuArr[_cellTwoDigit] - 1;
   5580  054A  1683               	bsf	3,5	;RP0=1, select bank1
   5581  054B  1303               	bcf	3,6	;RP1=0, select bank1
   5582  054C  083B               	movf	__cellTwoDigit^(0+128),w
@@ -9437,7 +9437,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9400                           	psect	text15_split_1
   9401  080F                     l4574:
   9402                           
-  9403                           ;menu.c: 20: else;menu.c: 21: _MenuNav--;
+  9403                           ;menu.c: 19: else;menu.c: 20: _MenuNav--;
   9404  080F  30FF               	movlw	255
   9405  0810  07FB               	addwf	__MenuNav,f
   9406  0811  1803               	skipnc
@@ -9446,7 +9446,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9409  0814  290A               	goto	L7
   9410  0815                     l4576:
   9411                           
-  9412                           ;menu.c: 23: else if(_MenuNav >= 100 && _MenuNav < 1000) {
+  9412                           ;menu.c: 22: else if(_MenuNav >= 100 && _MenuNav < 1000) {
   9413  0815  087C               	movf	__MenuNav+1,w
   9414  0816  3A80               	xorlw	128
   9415  0817  00FF               	movwf	127
@@ -9472,7 +9472,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9435  0829  1803               	skipnc
   9436  082A  2896               	goto	l4604
   9437                           
-  9438                           ;menu.c: 24: if(_MenuNav == 210 && _settingTimeImpDO1 != 0) _settingTimeImpDO1--;
+  9438                           ;menu.c: 23: if(_MenuNav == 210 && _settingTimeImpDO1 != 0) _settingTimeImpDO1--;
   9439  082B  30D2               	movlw	210
   9440  082C  067B               	xorwf	__MenuNav,w
   9441  082D  047C               	iorwf	__MenuNav+1,w
@@ -9492,7 +9492,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9455  083B  292E               	goto	L8
   9456  083C                     l4586:
   9457                           
-  9458                           ;menu.c: 25: else if(_MenuNav == 230 && _settingTimerOnDO2 != 0) _settingTimerOnDO2--;
+  9458                           ;menu.c: 24: else if(_MenuNav == 230 && _settingTimerOnDO2 != 0) _settingTimerOnDO2--;
   9459  083C  30E6               	movlw	230
   9460  083D  067B               	xorwf	__MenuNav,w
   9461  083E  047C               	iorwf	__MenuNav+1,w
@@ -9512,7 +9512,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9475  084C  293C               	goto	L9
   9476  084D                     l4592:
   9477                           
-  9478                           ;menu.c: 26: else if(_MenuNav == 240 && _settingTimerOffDO2 != 0) _settingTimerOffDO2--;
+  9478                           ;menu.c: 25: else if(_MenuNav == 240 && _settingTimerOffDO2 != 0) _settingTimerOffDO2--;
   9479  084D  30F0               	movlw	240
   9480  084E  067B               	xorwf	__MenuNav,w
   9481  084F  047C               	iorwf	__MenuNav+1,w
@@ -9532,7 +9532,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9495  085D  294A               	goto	L10
   9496  085E                     l4598:
   9497                           
-  9498                           ;menu.c: 27: else if(_MenuNav <= (short int)_tempDigit)
+  9498                           ;menu.c: 26: else if(_MenuNav <= (short int)_tempDigit)
   9499  085E  1683               	bsf	3,5	;RP0=1, select bank1
   9500  085F  1303               	bcf	3,6	;RP1=0, select bank1
   9501  0860  082B               	movf	(__tempDigit+1)^(0+128),w
@@ -9551,7 +9551,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9514  086C  1C03               	skipc
   9515  086D  280F               	goto	l4574
   9516                           
-  9517                           ;menu.c: 28: _MenuNav = (short int)((_tempDigit + _SubMenuArr[_firstCell][_secondCell]) 
+  9517                           ;menu.c: 27: _MenuNav = (short int)((_tempDigit + _SubMenuArr[_firstCell][_secondCell]) 
       +                          - 1);
   9518  086E  3006               	movlw	6
   9519  086F  1283               	bcf	3,5	;RP0=0, select bank0
@@ -9592,7 +9592,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9554  0895  2903               	goto	L12
   9555  0896                     l4604:
   9556                           
-  9557                           ;menu.c: 31: else if(_MenuNav >= 1000) _MenuNav = _MenuNav;
+  9557                           ;menu.c: 30: else if(_MenuNav >= 1000) _MenuNav = _MenuNav;
   9558  0896  087C               	movf	__MenuNav+1,w
   9559  0897  3A80               	xorlw	128
   9560  0898  00FF               	movwf	127
@@ -9607,17 +9607,17 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9569  08A0  29C0               	goto	l4610
   9570  08A1  280F               	goto	l4574
   9571  08A2                     l4614:	
-  9572                           ;menu.c: 35: }
+  9572                           ;menu.c: 34: }
   9573                           
   9574                           
-  9575                           ;menu.c: 36: else if(flMenuStrip == 0x04 && flSwitchButton == 0){
+  9575                           ;menu.c: 35: else if(flMenuStrip == 0x04 && flSwitchButton == 0){
   9576  08A2  3004               	movlw	4
   9577  08A3  063E               	xorwf	_flMenuStrip^(0+128),w
   9578  08A4  1903               	btfsc	3,2
   9579  08A5  187A               	btfsc	_flSwitchButton/(0+8),_flSwitchButton& (0+7)
   9580  08A6  2992               	goto	l4666
   9581                           
-  9582                           ;menu.c: 37: if(_MenuNav >= _MenuArr[0] && _MenuNav < 10) _MenuNav = 1;
+  9582                           ;menu.c: 36: if(_MenuNav >= _MenuArr[0] && _MenuNav < 10) _MenuNav = 1;
   9583  08A7  087C               	movf	__MenuNav+1,w
   9584  08A8  3A80               	xorlw	128
   9585  08A9  1283               	bcf	3,5	;RP0=0, select bank0
@@ -9651,7 +9651,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9613  08C3  2903               	goto	L12
   9614  08C4                     l4624:
   9615                           
-  9616                           ;menu.c: 38: else if(_MenuNav >= 10 && _MenuNav < 100){
+  9616                           ;menu.c: 37: else if(_MenuNav >= 10 && _MenuNav < 100){
   9617  08C4  087C               	movf	__MenuNav+1,w
   9618  08C5  3A80               	xorlw	128
   9619  08C6  00FF               	movwf	127
@@ -9677,7 +9677,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9639  08D8  1803               	skipnc
   9640  08D9  290C               	goto	l4634
   9641                           
-  9642                           ;menu.c: 39: if(_MenuNav >= _tempTwoDigit + _MenuArr[_cellTwoDigit] - 1)
+  9642                           ;menu.c: 38: if(_MenuNav >= _tempTwoDigit + _MenuArr[_cellTwoDigit] - 1)
   9643  08DA  1683               	bsf	3,5	;RP0=1, select bank1
   9644  08DB  1303               	bcf	3,6	;RP1=0, select bank1
   9645  08DC  083B               	movf	__cellTwoDigit^(0+128),w
@@ -9712,7 +9712,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9674  08F8  1C03               	skipc
   9675  08F9  2905               	goto	l4632
   9676                           
-  9677                           ;menu.c: 40: _MenuNav = _tempTwoDigit;
+  9677                           ;menu.c: 39: _MenuNav = _tempTwoDigit;
   9678  08FA  1683               	bsf	3,5	;RP0=1, select bank1
   9679  08FB  1303               	bcf	3,6	;RP1=0, select bank1
   9680  08FC  083A               	movf	__tempTwoDigit^(0+128),w
@@ -9728,7 +9728,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9690  0904  29C0               	goto	l4610
   9691  0905                     l4632:
   9692                           
-  9693                           ;menu.c: 41: else;menu.c: 42: _MenuNav++;
+  9693                           ;menu.c: 40: else;menu.c: 41: _MenuNav++;
   9694  0905  3001               	movlw	1
   9695  0906  07FB               	addwf	__MenuNav,f
   9696  0907  1803               	skipnc
@@ -9739,7 +9739,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9701  090B  29C0               	goto	l4610
   9702  090C                     l4634:
   9703                           
-  9704                           ;menu.c: 44: else if(_MenuNav >= 100 && _MenuNav < 1000) {
+  9704                           ;menu.c: 43: else if(_MenuNav >= 100 && _MenuNav < 1000) {
   9705  090C  087C               	movf	__MenuNav+1,w
   9706  090D  3A80               	xorlw	128
   9707  090E  00FF               	movwf	127
@@ -9765,7 +9765,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9727  0920  1803               	skipnc
   9728  0921  2986               	goto	l4656
   9729                           
-  9730                           ;menu.c: 45: if(_MenuNav == 210) _settingTimeImpDO1++;
+  9730                           ;menu.c: 44: if(_MenuNav == 210) _settingTimeImpDO1++;
   9731  0922  30D2               	movlw	210
   9732  0923  067B               	xorwf	__MenuNav,w
   9733  0924  047C               	iorwf	__MenuNav+1,w
@@ -9783,7 +9783,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9745  092F  29C0               	goto	l4610
   9746  0930                     l4642:
   9747                           
-  9748                           ;menu.c: 46: else if(_MenuNav == 230) _settingTimerOnDO2++;
+  9748                           ;menu.c: 45: else if(_MenuNav == 230) _settingTimerOnDO2++;
   9749  0930  30E6               	movlw	230
   9750  0931  067B               	xorwf	__MenuNav,w
   9751  0932  047C               	iorwf	__MenuNav+1,w
@@ -9801,7 +9801,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9763  093D  29C0               	goto	l4610
   9764  093E                     l4646:
   9765                           
-  9766                           ;menu.c: 47: else if(_MenuNav == 240) _settingTimerOffDO2++;
+  9766                           ;menu.c: 46: else if(_MenuNav == 240) _settingTimerOffDO2++;
   9767  093E  30F0               	movlw	240
   9768  093F  067B               	xorwf	__MenuNav,w
   9769  0940  047C               	iorwf	__MenuNav+1,w
@@ -9819,7 +9819,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9781  094B  29C0               	goto	l4610
   9782  094C                     l4650:
   9783                           
-  9784                           ;menu.c: 48: else if(_MenuNav >= (short int)((_tempDigit + _SubMenuArr[_firstCell][_seco
+  9784                           ;menu.c: 47: else if(_MenuNav >= (short int)((_tempDigit + _SubMenuArr[_firstCell][_seco
       +                          ndCell]) - 1))
   9785  094C  3006               	movlw	6
   9786  094D  1283               	bcf	3,5	;RP0=0, select bank0
@@ -9871,7 +9871,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9832  097E  1C03               	skipc
   9833  097F  2905               	goto	l4632
   9834                           
-  9835                           ;menu.c: 49: _MenuNav = _tempDigit;
+  9835                           ;menu.c: 48: _MenuNav = _tempDigit;
   9836  0980  1683               	bsf	3,5	;RP0=1, select bank1
   9837  0981  1303               	bcf	3,6	;RP1=0, select bank1
   9838  0982  082B               	movf	(__tempDigit+1)^(0+128),w
@@ -9880,7 +9880,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9841  0985  29BF               	goto	L13
   9842  0986                     l4656:
   9843                           
-  9844                           ;menu.c: 52: else if(_MenuNav >= 1000) _MenuNav = _MenuNav;
+  9844                           ;menu.c: 51: else if(_MenuNav >= 1000) _MenuNav = _MenuNav;
   9845  0986  087C               	movf	__MenuNav+1,w
   9846  0987  3A80               	xorlw	128
   9847  0988  00FF               	movwf	127
@@ -9896,14 +9896,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9857  0991  2905               	goto	l4632
   9858  0992                     l4666:
   9859                           
-  9860                           ;menu.c: 57: else if(flMenuStrip == 0x08 && flSwitchButton == 0){
+  9860                           ;menu.c: 56: else if(flMenuStrip == 0x08 && flSwitchButton == 0){
   9861  0992  3008               	movlw	8
   9862  0993  063E               	xorwf	_flMenuStrip^(0+128),w
   9863  0994  1903               	btfsc	3,2
   9864  0995  187A               	btfsc	_flSwitchButton/(0+8),_flSwitchButton& (0+7)
   9865  0996  29C2               	goto	l4680
   9866                           
-  9867                           ;menu.c: 58: if(_MenuNav > 1 && _MenuNav <= 1000) {
+  9867                           ;menu.c: 57: if(_MenuNav > 1 && _MenuNav <= 1000) {
   9868  0997  087C               	movf	__MenuNav+1,w
   9869  0998  3A80               	xorlw	128
   9870  0999  00FF               	movwf	127
@@ -9929,7 +9929,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9890  09AB  1803               	skipnc
   9891  09AC  29C0               	goto	l4610
   9892                           
-  9893                           ;menu.c: 59: _MenuNav *= 10;
+  9893                           ;menu.c: 58: _MenuNav *= 10;
   9894  09AD  300A               	movlw	10
   9895  09AE  1283               	bcf	3,5	;RP0=0, select bank0
   9896  09AF  1303               	bcf	3,6	;RP1=0, select bank0
@@ -9948,14 +9948,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9909  09BF  00FB               	movwf	__MenuNav
   9910  09C0                     l4610:
   9911                           
-  9912                           ;menu.c: 33: flSwitchButton = 1;
+  9912                           ;menu.c: 32: flSwitchButton = 1;
   9913  09C0  147A               	bsf	_flSwitchButton/(0+8),_flSwitchButton& (0+7)
   9914                           
-  9915                           ;menu.c: 34: flClearLCD = 0;
+  9915                           ;menu.c: 33: flClearLCD = 0;
   9916  09C1  10FA               	bcf	_flClearLCD/(0+8),_flClearLCD& (0+7)
   9917  09C2                     l4680:
   9918                           
-  9919                           ;menu.c: 64: };menu.c: 65: if(_MenuNav >= 100){
+  9919                           ;menu.c: 63: };menu.c: 64: if(_MenuNav >= 100){
   9920  09C2  087C               	movf	__MenuNav+1,w
   9921  09C3  3A80               	xorlw	128
   9922  09C4  00FF               	movwf	127
@@ -9969,7 +9969,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9930  09CB  1C03               	skipc
   9931  09CC  2A3D               	goto	l4684
   9932                           
-  9933                           ;menu.c: 66: _firstCell = (unsigned char)(_MenuNav / 100 - 2);
+  9933                           ;menu.c: 65: _firstCell = (unsigned char)(_MenuNav / 100 - 2);
   9934  09CD  3064               	movlw	100
   9935  09CE  1283               	bcf	3,5	;RP0=0, select bank0
   9936  09CF  1303               	bcf	3,6	;RP1=0, select bank0
@@ -9988,7 +9988,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9949  09E0  1683               	bsf	3,5	;RP0=1, select bank1
   9950  09E1  00BD               	movwf	__firstCell^(0+128)
   9951                           
-  9952                           ;menu.c: 67: _secondCell = (unsigned char)(_MenuNav / 10 % 10);
+  9952                           ;menu.c: 66: _secondCell = (unsigned char)(_MenuNav / 10 % 10);
   9953  09E2  300A               	movlw	10
   9954  09E3  1283               	bcf	3,5	;RP0=0, select bank0
   9955  09E4  00A9               	movwf	___awmod@divisor
@@ -10014,7 +10014,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
   9975  0A00  1683               	bsf	3,5	;RP0=1, select bank1
   9976  0A01  00BC               	movwf	__secondCell^(0+128)
   9977                           
-  9978                           ;menu.c: 68: _tempDigit = (unsigned short int)(((_firstCell + 2) * 100) + (_secondCell *
+  9978                           ;menu.c: 67: _tempDigit = (unsigned short int)(((_firstCell + 2) * 100) + (_secondCell *
       +                           10));
   9979  0A02  083D               	movf	__firstCell^(0+128),w
   9980  0A03  1283               	bcf	3,5	;RP0=0, select bank0
@@ -10067,11 +10067,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10027  0A3A  1683               	bsf	3,5	;RP0=1, select bank1
  10028  0A3B  00AB               	movwf	(__tempDigit+1)^(0+128)
  10029                           
- 10030                           ;menu.c: 69: }
+ 10030                           ;menu.c: 68: }
  10031  0A3C  2A79               	goto	l4688
  10032  0A3D                     l4684:
  10033                           
- 10034                           ;menu.c: 70: else if(_MenuNav >= 10){
+ 10034                           ;menu.c: 69: else if(_MenuNav >= 10){
  10035  0A3D  087C               	movf	__MenuNav+1,w
  10036  0A3E  3A80               	xorlw	128
  10037  0A3F  00FF               	movwf	127
@@ -10085,7 +10085,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10045  0A46  1C03               	skipc
  10046  0A47  2A79               	goto	l4688
  10047                           
- 10048                           ;menu.c: 71: _cellTwoDigit = (unsigned char)(_MenuNav / 10 - 1);
+ 10048                           ;menu.c: 70: _cellTwoDigit = (unsigned char)(_MenuNav / 10 - 1);
  10049  0A48  300A               	movlw	10
  10050  0A49  1283               	bcf	3,5	;RP0=0, select bank0
  10051  0A4A  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10104,7 +10104,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10064  0A5B  1683               	bsf	3,5	;RP0=1, select bank1
  10065  0A5C  00BB               	movwf	__cellTwoDigit^(0+128)
  10066                           
- 10067                           ;menu.c: 72: _tempTwoDigit = (unsigned char)(_MenuNav / 10 * 10);
+ 10067                           ;menu.c: 71: _tempTwoDigit = (unsigned char)(_MenuNav / 10 * 10);
  10068  0A5D  300A               	movlw	10
  10069  0A5E  1283               	bcf	3,5	;RP0=0, select bank0
  10070  0A5F  00CA               	movwf	??_fMenuStrip
@@ -10127,14 +10127,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10087  0A78  00BA               	movwf	__tempTwoDigit^(0+128)
  10088  0A79                     l4688:
  10089                           
- 10090                           ;menu.c: 73: };menu.c: 74: if(flClearLCD == 0) LCD_clear();
+ 10090                           ;menu.c: 72: };menu.c: 73: if(flClearLCD == 0) LCD_clear();
  10091  0A79  18FA               	btfsc	_flClearLCD/(0+8),_flClearLCD& (0+7)
  10092  0A7A  2F1E               	goto	l4842
  10093  0A7B  160A  158A  2405  120A  158A  	fcall	_LCD_clear
  10094  0A80  2F1E               	goto	l4842
  10095  0A81                     l4692:
  10096                           
- 10097                           ;menu.c: 90: sprintf(str, "%16s", "Настройки");
+ 10097                           ;menu.c: 89: sprintf(str, "%16s", "Настройки");
  10098  0A81  30D7               	movlw	low (STR_4| (0+32768))
  10099  0A82  1283               	bcf	3,5	;RP0=0, select bank0
  10100  0A83  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10148,11 +10148,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10108  0A8B  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  10109  0A8C  120A  118A  224B  120A  158A  	fcall	_sprintf
  10110                           
- 10111                           ;menu.c: 94: break;
+ 10111                           ;menu.c: 93: break;
  10112  0A91  2FD4               	goto	l4844
  10113  0A92                     l4694:
  10114                           
- 10115                           ;menu.c: 96: sprintf(str, "%16s", "ДО1-Имп/пост");
+ 10115                           ;menu.c: 95: sprintf(str, "%16s", "ДО1-Имп/пост");
  10116  0A92  30D7               	movlw	low (STR_4| (0+32768))
  10117  0A93  1283               	bcf	3,5	;RP0=0, select bank0
  10118  0A94  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10166,11 +10166,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10126  0A9C  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  10127  0A9D  120A  118A  224B  120A  158A  	fcall	_sprintf
  10128                           
- 10129                           ;menu.c: 97: break;
+ 10129                           ;menu.c: 96: break;
  10130  0AA2  2FD4               	goto	l4844
  10131  0AA3                     l4696:
  10132                           
- 10133                           ;menu.c: 99: sprintf(str2, "%s", "Импульс");
+ 10133                           ;menu.c: 98: sprintf(str2, "%s", "Импульс");
  10134  0AA3  30F0               	movlw	low (STR_8| (0+32768))
  10135  0AA4  1283               	bcf	3,5	;RP0=0, select bank0
  10136  0AA5  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10184,12 +10184,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10144  0AAD  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  10145  0AAE  120A  118A  224B  120A  158A  	fcall	_sprintf
  10146                           
- 10147                           ;menu.c: 100: if(_settingsBit & (1 << 1))
+ 10147                           ;menu.c: 99: if(_settingsBit & (1 << 1))
  10148  0AB3  1683               	bsf	3,5	;RP0=1, select bank1
  10149  0AB4  1CC4               	btfss	__settingsBit^(0+128),1
  10150  0AB5  2FD4               	goto	l4844
  10151                           
- 10152                           ;menu.c: 101: strcat(str2, '*');
+ 10152                           ;menu.c: 100: strcat(str2, '*');
  10153  0AB6  302A               	movlw	42
  10154  0AB7  1283               	bcf	3,5	;RP0=0, select bank0
  10155  0AB8  00A0               	movwf	strcat@from
@@ -10200,26 +10200,26 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10160  0AC1  2FD4               	goto	l4844
  10161  0AC2                     l4702:
  10162                           
- 10163                           ;menu.c: 104: _settingTimeImpDO1 = 0;
+ 10163                           ;menu.c: 103: _settingTimeImpDO1 = 0;
  10164  0AC2  1683               	bsf	3,5	;RP0=1, select bank1
  10165  0AC3  1303               	bcf	3,6	;RP1=0, select bank1
  10166  0AC4  01B4               	clrf	__settingTimeImpDO1^(0+128)
  10167  0AC5  01B5               	clrf	(__settingTimeImpDO1+1)^(0+128)
  10168                           
- 10169                           ;menu.c: 105: ((_settingTimeImpDO1) |= 1UL << (0));
+ 10169                           ;menu.c: 104: ((_settingTimeImpDO1) |= 1UL << (0));
  10170  0AC6  1434               	bsf	__settingTimeImpDO1^(0+128),0
  10171                           
- 10172                           ;menu.c: 106: ((_settingsBit) |= 1UL << (1));
+ 10172                           ;menu.c: 105: ((_settingsBit) |= 1UL << (1));
  10173  0AC7  14C4               	bsf	__settingsBit^(0+128),1
  10174                           
- 10175                           ;menu.c: 107: _MenuNav = 200;
+ 10175                           ;menu.c: 106: _MenuNav = 200;
  10176  0AC8  30C8               	movlw	200
  10177  0AC9  2C2F               	goto	L19
  10178  0ACA                     l4710:	
- 10179                           ;menu.c: 108: break;
+ 10179                           ;menu.c: 107: break;
  10180                           
  10181                           
- 10182                           ;menu.c: 110: sprintf(str2, "%s", "Постоянный");
+ 10182                           ;menu.c: 109: sprintf(str2, "%s", "Постоянный");
  10183  0ACA  30F0               	movlw	low (STR_8| (0+32768))
  10184  0ACB  1283               	bcf	3,5	;RP0=0, select bank0
  10185  0ACC  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10233,12 +10233,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10193  0AD4  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  10194  0AD5  120A  118A  224B  120A  158A  	fcall	_sprintf
  10195                           
- 10196                           ;menu.c: 111: if(!(_settingsBit & (1 << 1)))
+ 10196                           ;menu.c: 110: if(!(_settingsBit & (1 << 1)))
  10197  0ADA  1683               	bsf	3,5	;RP0=1, select bank1
  10198  0ADB  18C4               	btfsc	__settingsBit^(0+128),1
  10199  0ADC  2FD4               	goto	l4844
  10200                           
- 10201                           ;menu.c: 112: strcat(str2, '*');
+ 10201                           ;menu.c: 111: strcat(str2, '*');
  10202  0ADD  302A               	movlw	42
  10203  0ADE  1283               	bcf	3,5	;RP0=0, select bank0
  10204  0ADF  00A0               	movwf	strcat@from
@@ -10249,7 +10249,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10209  0AE8  2FD4               	goto	l4844
  10210  0AE9                     l4716:
  10211                           
- 10212                           ;menu.c: 115: ((_settingsBit) &= ~(1UL << (1)));
+ 10212                           ;menu.c: 114: ((_settingsBit) &= ~(1UL << (1)));
  10213  0AE9  30FD               	movlw	253
  10214  0AEA  1283               	bcf	3,5	;RP0=0, select bank0
  10215  0AEB  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10258,14 +10258,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10218  0AEE  1683               	bsf	3,5	;RP0=1, select bank1
  10219  0AEF  05C4               	andwf	__settingsBit^(0+128),f
  10220                           
- 10221                           ;menu.c: 116: _MenuNav = 201;
+ 10221                           ;menu.c: 115: _MenuNav = 201;
  10222  0AF0  30C9               	movlw	201
  10223  0AF1  2C2F               	goto	L19
  10224  0AF2                     l4720:	
- 10225                           ;menu.c: 117: break;
+ 10225                           ;menu.c: 116: break;
  10226                           
  10227                           
- 10228                           ;menu.c: 119: sprintf(str, "%16s", "ДО1-Время имп");
+ 10228                           ;menu.c: 118: sprintf(str, "%16s", "ДО1-Время имп");
  10229  0AF2  30D7               	movlw	low (STR_4| (0+32768))
  10230  0AF3  1283               	bcf	3,5	;RP0=0, select bank0
  10231  0AF4  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10279,11 +10279,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10239  0AFC  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  10240  0AFD  120A  118A  224B  120A  158A  	fcall	_sprintf
  10241                           
- 10242                           ;menu.c: 120: break;
+ 10242                           ;menu.c: 119: break;
  10243  0B02  2FD4               	goto	l4844
  10244  0B03                     l4722:
  10245                           
- 10246                           ;menu.c: 122: sprintf(str2, "%4d сек.", _settingTimeImpDO1);
+ 10246                           ;menu.c: 121: sprintf(str2, "%4d сек.", _settingTimeImpDO1);
  10247  0B03  3096               	movlw	low (STR_14| (0+32768))
  10248  0B04  1283               	bcf	3,5	;RP0=0, select bank0
  10249  0B05  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10301,18 +10301,18 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10261  0B11  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  10262  0B12  120A  118A  224B  120A  158A  	fcall	_sprintf
  10263                           
- 10264                           ;menu.c: 123: break;
+ 10264                           ;menu.c: 122: break;
  10265  0B17  2FD4               	goto	l4844
  10266  0B18                     l4724:
  10267                           
- 10268                           ;menu.c: 126: _MenuNav = 210;
+ 10268                           ;menu.c: 125: _MenuNav = 210;
  10269  0B18  30D2               	movlw	210
  10270  0B19  2C2F               	goto	L19
  10271  0B1A                     l4726:	
- 10272                           ;menu.c: 127: break;
+ 10272                           ;menu.c: 126: break;
  10273                           
  10274                           
- 10275                           ;menu.c: 129: sprintf(str, "%16s", "ДО2-Вкл таймер");
+ 10275                           ;menu.c: 128: sprintf(str, "%16s", "ДО2-Вкл таймер");
  10276  0B1A  30D7               	movlw	low (STR_4| (0+32768))
  10277  0B1B  1283               	bcf	3,5	;RP0=0, select bank0
  10278  0B1C  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10326,11 +10326,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10286  0B24  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  10287  0B25  120A  118A  224B  120A  158A  	fcall	_sprintf
  10288                           
- 10289                           ;menu.c: 130: break;
+ 10289                           ;menu.c: 129: break;
  10290  0B2A  2FD4               	goto	l4844
  10291  0B2B                     l4728:
  10292                           
- 10293                           ;menu.c: 132: sprintf(str2, "%s", "Да");
+ 10293                           ;menu.c: 131: sprintf(str2, "%s", "Да");
  10294  0B2B  30F0               	movlw	low (STR_8| (0+32768))
  10295  0B2C  1283               	bcf	3,5	;RP0=0, select bank0
  10296  0B2D  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10344,12 +10344,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10304  0B35  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  10305  0B36  120A  118A  224B  120A  158A  	fcall	_sprintf
  10306                           
- 10307                           ;menu.c: 133: if(_settingsBit & (1 << 3))
+ 10307                           ;menu.c: 132: if(_settingsBit & (1 << 3))
  10308  0B3B  1683               	bsf	3,5	;RP0=1, select bank1
  10309  0B3C  1DC4               	btfss	__settingsBit^(0+128),3
  10310  0B3D  2FD4               	goto	l4844
  10311                           
- 10312                           ;menu.c: 134: strcat(str2, '*');
+ 10312                           ;menu.c: 133: strcat(str2, '*');
  10313  0B3E  302A               	movlw	42
  10314  0B3F  1283               	bcf	3,5	;RP0=0, select bank0
  10315  0B40  00A0               	movwf	strcat@from
@@ -10360,7 +10360,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10320  0B49  2FD4               	goto	l4844
  10321  0B4A                     l4734:
  10322                           
- 10323                           ;menu.c: 137: if(_settingTimerOnDO2 == 0 || _settingTimerOffDO2 == 0)
+ 10323                           ;menu.c: 136: if(_settingTimerOnDO2 == 0 || _settingTimerOffDO2 == 0)
  10324  0B4A  1683               	bsf	3,5	;RP0=1, select bank1
  10325  0B4B  1303               	bcf	3,6	;RP1=0, select bank1
  10326  0B4C  0832               	movf	__settingTimerOnDO2^(0+128),w
@@ -10373,30 +10373,30 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10333  0B53  2B5C               	goto	l4740
  10334  0B54                     l4738:
  10335                           
- 10336                           ;menu.c: 138: {;menu.c: 139: _settingTimerOnDO2 = 5;
+ 10336                           ;menu.c: 137: {;menu.c: 138: _settingTimerOnDO2 = 5;
  10337  0B54  3005               	movlw	5
  10338  0B55  00B2               	movwf	__settingTimerOnDO2^(0+128)
  10339  0B56  3000               	movlw	0
  10340  0B57  00B3               	movwf	(__settingTimerOnDO2^(0+128)+1)
  10341                           
- 10342                           ;menu.c: 140: _settingTimerOffDO2 = 5;
+ 10342                           ;menu.c: 139: _settingTimerOffDO2 = 5;
  10343  0B58  3005               	movlw	5
  10344  0B59  00B0               	movwf	__settingTimerOffDO2^(0+128)
  10345  0B5A  3000               	movlw	0
  10346  0B5B  00B1               	movwf	(__settingTimerOffDO2^(0+128)+1)
  10347  0B5C                     l4740:
  10348                           
- 10349                           ;menu.c: 141: };menu.c: 142: ((_settingsBit) |= 1UL << (3));
+ 10349                           ;menu.c: 140: };menu.c: 141: ((_settingsBit) |= 1UL << (3));
  10350  0B5C  15C4               	bsf	__settingsBit^(0+128),3
  10351                           
- 10352                           ;menu.c: 143: _MenuNav = 220;
+ 10352                           ;menu.c: 142: _MenuNav = 220;
  10353  0B5D  30DC               	movlw	220
  10354  0B5E  2C2F               	goto	L19
  10355  0B5F                     l4742:	
- 10356                           ;menu.c: 144: break;
+ 10356                           ;menu.c: 143: break;
  10357                           
  10358                           
- 10359                           ;menu.c: 146: sprintf(str2, "%s", "Нет");
+ 10359                           ;menu.c: 145: sprintf(str2, "%s", "Нет");
  10360  0B5F  30F0               	movlw	low (STR_8| (0+32768))
  10361  0B60  1283               	bcf	3,5	;RP0=0, select bank0
  10362  0B61  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10410,12 +10410,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10370  0B69  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  10371  0B6A  120A  118A  224B  120A  158A  	fcall	_sprintf
  10372                           
- 10373                           ;menu.c: 147: if(!(_settingsBit & (1 << 3)))
+ 10373                           ;menu.c: 146: if(!(_settingsBit & (1 << 3)))
  10374  0B6F  1683               	bsf	3,5	;RP0=1, select bank1
  10375  0B70  19C4               	btfsc	__settingsBit^(0+128),3
  10376  0B71  2FD4               	goto	l4844
  10377                           
- 10378                           ;menu.c: 148: strcat(str2, '*');
+ 10378                           ;menu.c: 147: strcat(str2, '*');
  10379  0B72  302A               	movlw	42
  10380  0B73  1283               	bcf	3,5	;RP0=0, select bank0
  10381  0B74  00A0               	movwf	strcat@from
@@ -10426,7 +10426,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10386  0B7D  2FD4               	goto	l4844
  10387  0B7E                     l4748:
  10388                           
- 10389                           ;menu.c: 151: ((_settingsBit) &= ~(1UL << (3)));
+ 10389                           ;menu.c: 150: ((_settingsBit) &= ~(1UL << (3)));
  10390  0B7E  30F7               	movlw	247
  10391  0B7F  1283               	bcf	3,5	;RP0=0, select bank0
  10392  0B80  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10435,14 +10435,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10395  0B83  1683               	bsf	3,5	;RP0=1, select bank1
  10396  0B84  05C4               	andwf	__settingsBit^(0+128),f
  10397                           
- 10398                           ;menu.c: 152: _MenuNav = 221;
+ 10398                           ;menu.c: 151: _MenuNav = 221;
  10399  0B85  30DD               	movlw	221
  10400  0B86  2C2F               	goto	L19
  10401  0B87                     l4752:	
- 10402                           ;menu.c: 153: break;
+ 10402                           ;menu.c: 152: break;
  10403                           
  10404                           
- 10405                           ;menu.c: 155: sprintf(str, "%16s", "ДО2-Таймер вкл");
+ 10405                           ;menu.c: 154: sprintf(str, "%16s", "ДО2-Таймер вкл");
  10406  0B87  30D7               	movlw	low (STR_4| (0+32768))
  10407  0B88  1283               	bcf	3,5	;RP0=0, select bank0
  10408  0B89  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10456,11 +10456,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10416  0B91  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  10417  0B92  120A  118A  224B  120A  158A  	fcall	_sprintf
  10418                           
- 10419                           ;menu.c: 156: break;
+ 10419                           ;menu.c: 155: break;
  10420  0B97  2FD4               	goto	l4844
  10421  0B98                     l4754:
  10422                           
- 10423                           ;menu.c: 158: sprintf(str2, "%4d мин.", _settingTimerOnDO2);
+ 10423                           ;menu.c: 157: sprintf(str2, "%4d мин.", _settingTimerOnDO2);
  10424  0B98  309F               	movlw	low (STR_23| (0+32768))
  10425  0B99  1283               	bcf	3,5	;RP0=0, select bank0
  10426  0B9A  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10478,11 +10478,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10438  0BA6  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  10439  0BA7  120A  118A  224B  120A  158A  	fcall	_sprintf
  10440                           
- 10441                           ;menu.c: 159: break;
+ 10441                           ;menu.c: 158: break;
  10442  0BAC  2FD4               	goto	l4844
  10443  0BAD                     l4756:
  10444                           
- 10445                           ;menu.c: 165: sprintf(str, "%16s", "ДО2-Таймер выкл");
+ 10445                           ;menu.c: 164: sprintf(str, "%16s", "ДО2-Таймер выкл");
  10446  0BAD  30D7               	movlw	low (STR_4| (0+32768))
  10447  0BAE  1283               	bcf	3,5	;RP0=0, select bank0
  10448  0BAF  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10496,11 +10496,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10456  0BB7  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  10457  0BB8  120A  118A  224B  120A  158A  	fcall	_sprintf
  10458                           
- 10459                           ;menu.c: 166: break;
+ 10459                           ;menu.c: 165: break;
  10460  0BBD  2FD4               	goto	l4844
  10461  0BBE                     l4758:
  10462                           
- 10463                           ;menu.c: 168: sprintf(str2, "%4d мин.", _settingTimerOffDO2);
+ 10463                           ;menu.c: 167: sprintf(str2, "%4d мин.", _settingTimerOffDO2);
  10464  0BBE  309F               	movlw	low (STR_23| (0+32768))
  10465  0BBF  1283               	bcf	3,5	;RP0=0, select bank0
  10466  0BC0  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10518,11 +10518,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10478  0BCC  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  10479  0BCD  120A  118A  224B  120A  158A  	fcall	_sprintf
  10480                           
- 10481                           ;menu.c: 169: break;
+ 10481                           ;menu.c: 168: break;
  10482  0BD2  2FD4               	goto	l4844
  10483  0BD3                     l4760:
  10484                           
- 10485                           ;menu.c: 175: sprintf(str, "%16s", "ДО2-Вкл по темп");
+ 10485                           ;menu.c: 174: sprintf(str, "%16s", "ДО2-Вкл по темп");
  10486  0BD3  30D7               	movlw	low (STR_4| (0+32768))
  10487  0BD4  1283               	bcf	3,5	;RP0=0, select bank0
  10488  0BD5  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10536,11 +10536,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10496  0BDD  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  10497  0BDE  120A  118A  224B  120A  158A  	fcall	_sprintf
  10498                           
- 10499                           ;menu.c: 176: break;
+ 10499                           ;menu.c: 175: break;
  10500  0BE3  2FD4               	goto	l4844
  10501  0BE4                     l4762:
  10502                           
- 10503                           ;menu.c: 178: sprintf(str2, "%s", "Да");
+ 10503                           ;menu.c: 177: sprintf(str2, "%s", "Да");
  10504  0BE4  30F0               	movlw	low (STR_8| (0+32768))
  10505  0BE5  1283               	bcf	3,5	;RP0=0, select bank0
  10506  0BE6  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10554,12 +10554,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10514  0BEE  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  10515  0BEF  120A  118A  224B  120A  158A  	fcall	_sprintf
  10516                           
- 10517                           ;menu.c: 179: if(_settingsBit & (1 << 4))
+ 10517                           ;menu.c: 178: if(_settingsBit & (1 << 4))
  10518  0BF4  1683               	bsf	3,5	;RP0=1, select bank1
  10519  0BF5  1E44               	btfss	__settingsBit^(0+128),4
  10520  0BF6  2FD4               	goto	l4844
  10521                           
- 10522                           ;menu.c: 180: strcat(str2, '*');
+ 10522                           ;menu.c: 179: strcat(str2, '*');
  10523  0BF7  302A               	movlw	42
  10524  0BF8  1283               	bcf	3,5	;RP0=0, select bank0
  10525  0BF9  00A0               	movwf	strcat@from
@@ -10569,22 +10569,22 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10529  0BFD  160A  158A  24E8  120A  158A  	fcall	_strcat
  10530  0C02  2FD4               	goto	l4844
  10531  0C03                     l669:	
- 10532                           ;menu.c: 182: case 2500:
+ 10532                           ;menu.c: 181: case 2500:
  10533                           
  10534                           
- 10535                           ;menu.c: 183: ((_settingsBit) |= 1UL << (4));
+ 10535                           ;menu.c: 182: ((_settingsBit) |= 1UL << (4));
  10536  0C03  1683               	bsf	3,5	;RP0=1, select bank1
  10537  0C04  1303               	bcf	3,6	;RP1=0, select bank1
  10538  0C05  1644               	bsf	__settingsBit^(0+128),4
  10539                           
- 10540                           ;menu.c: 184: _MenuNav = 250;
+ 10540                           ;menu.c: 183: _MenuNav = 250;
  10541  0C06  30FA               	movlw	250
  10542  0C07  2C2F               	goto	L19
  10543  0C08                     l4770:	
- 10544                           ;menu.c: 185: break;
+ 10544                           ;menu.c: 184: break;
  10545                           
  10546                           
- 10547                           ;menu.c: 187: sprintf(str2, "%s", "Нет");
+ 10547                           ;menu.c: 186: sprintf(str2, "%s", "Нет");
  10548  0C08  30F0               	movlw	low (STR_8| (0+32768))
  10549  0C09  1283               	bcf	3,5	;RP0=0, select bank0
  10550  0C0A  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10598,12 +10598,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10558  0C12  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  10559  0C13  120A  118A  224B  120A  158A  	fcall	_sprintf
  10560                           
- 10561                           ;menu.c: 188: if(!(_settingsBit & (1 << 4)))
+ 10561                           ;menu.c: 187: if(!(_settingsBit & (1 << 4)))
  10562  0C18  1683               	bsf	3,5	;RP0=1, select bank1
  10563  0C19  1A44               	btfsc	__settingsBit^(0+128),4
  10564  0C1A  2FD4               	goto	l4844
  10565                           
- 10566                           ;menu.c: 189: strcat(str2, '*');
+ 10566                           ;menu.c: 188: strcat(str2, '*');
  10567  0C1B  302A               	movlw	42
  10568  0C1C  1283               	bcf	3,5	;RP0=0, select bank0
  10569  0C1D  00A0               	movwf	strcat@from
@@ -10614,7 +10614,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10574  0C26  2FD4               	goto	l4844
  10575  0C27                     l4776:
  10576                           
- 10577                           ;menu.c: 192: ((_settingsBit) &= ~(1UL << (4)));
+ 10577                           ;menu.c: 191: ((_settingsBit) &= ~(1UL << (4)));
  10578  0C27  30EF               	movlw	239
  10579  0C28  1283               	bcf	3,5	;RP0=0, select bank0
  10580  0C29  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10623,17 +10623,17 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10583  0C2C  1683               	bsf	3,5	;RP0=1, select bank1
  10584  0C2D  05C4               	andwf	__settingsBit^(0+128),f
  10585                           
- 10586                           ;menu.c: 193: _MenuNav = 251;
+ 10586                           ;menu.c: 192: _MenuNav = 251;
  10587  0C2E  30FB               	movlw	251
  10588  0C2F                     L19:
  10589  0C2F  00FB               	movwf	__MenuNav
  10590  0C30  3000               	movlw	0
  10591  0C31  2ED0               	goto	L22
  10592  0C32                     l4780:	
- 10593                           ;menu.c: 194: break;
+ 10593                           ;menu.c: 193: break;
  10594                           
  10595                           
- 10596                           ;menu.c: 196: sprintf(str, "%16s", "Показания");
+ 10596                           ;menu.c: 195: sprintf(str, "%16s", "Показания");
  10597  0C32  30D7               	movlw	low (STR_4| (0+32768))
  10598  0C33  1283               	bcf	3,5	;RP0=0, select bank0
  10599  0C34  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10647,11 +10647,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10607  0C3C  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  10608  0C3D  120A  118A  224B  120A  158A  	fcall	_sprintf
  10609                           
- 10610                           ;menu.c: 200: break;
+ 10610                           ;menu.c: 199: break;
  10611  0C42  2FD4               	goto	l4844
  10612  0C43                     l4782:
  10613                           
- 10614                           ;menu.c: 202: sprintf(str, "%16s", "Аналог. ввод");
+ 10614                           ;menu.c: 201: sprintf(str, "%16s", "Аналог. ввод");
  10615  0C43  30D7               	movlw	low (STR_4| (0+32768))
  10616  0C44  1283               	bcf	3,5	;RP0=0, select bank0
  10617  0C45  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10665,11 +10665,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10625  0C4D  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  10626  0C4E  120A  118A  224B  120A  158A  	fcall	_sprintf
  10627                           
- 10628                           ;menu.c: 203: break;
+ 10628                           ;menu.c: 202: break;
  10629  0C53  2FD4               	goto	l4844
  10630  0C54                     l4784:
  10631                           
- 10632                           ;menu.c: 205: sprintf(str2, "%3s%3u  %3s%3u", "Ан1:", Analog.AI1, "Aн2:", Analog.AI2);
+ 10632                           ;menu.c: 204: sprintf(str2, "%3s%3u  %3s%3u", "Ан1:", Analog.AI1, "Aн2:", Analog.AI2);
  10633  0C54  30F8               	movlw	low (STR_37| (0+32768))
  10634  0C55  1283               	bcf	3,5	;RP0=0, select bank0
  10635  0C56  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10705,11 +10705,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10665  0C74  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  10666  0C75  120A  118A  224B  120A  158A  	fcall	_sprintf
  10667                           
- 10668                           ;menu.c: 206: break;
+ 10668                           ;menu.c: 205: break;
  10669  0C7A  2FD4               	goto	l4844
  10670  0C7B                     l4786:
  10671                           
- 10672                           ;menu.c: 210: sprintf(str, "%16s", "Цифр. ввод");
+ 10672                           ;menu.c: 209: sprintf(str, "%16s", "Цифр. ввод");
  10673  0C7B  30D7               	movlw	low (STR_4| (0+32768))
  10674  0C7C  1283               	bcf	3,5	;RP0=0, select bank0
  10675  0C7D  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10723,11 +10723,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10683  0C85  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  10684  0C86  120A  118A  224B  120A  158A  	fcall	_sprintf
  10685                           
- 10686                           ;menu.c: 211: break;
+ 10686                           ;menu.c: 210: break;
  10687  0C8B  2FD4               	goto	l4844
  10688  0C8C                     l4788:
  10689                           
- 10690                           ;menu.c: 213: sprintf(str2, "%12s%d%d%d%d", "Д.входы:",RB3,RB4,RB5,RB6);
+ 10690                           ;menu.c: 212: sprintf(str2, "%12s%d%d%d%d", "Д.входы:",RB3,RB4,RB5,RB6);
  10691  0C8C  302F               	movlw	low (STR_42| (0+32768))
  10692  0C8D  1283               	bcf	3,5	;RP0=0, select bank0
  10693  0C8E  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10789,11 +10789,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10749  0CC6  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  10750  0CC7  120A  118A  224B  120A  158A  	fcall	_sprintf
  10751                           
- 10752                           ;menu.c: 214: break;
+ 10752                           ;menu.c: 213: break;
  10753  0CCC  2FD4               	goto	l4844
  10754  0CCD                     l4790:
  10755                           
- 10756                           ;menu.c: 216: _MenuNav /= 10;
+ 10756                           ;menu.c: 215: _MenuNav /= 10;
  10757  0CCD  300A               	movlw	10
  10758  0CCE  1283               	bcf	3,5	;RP0=0, select bank0
  10759  0CCF  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10810,11 +10810,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10770  0CDE  0820               	movf	?___awdiv,w
  10771  0CDF  00FB               	movwf	__MenuNav
  10772                           
- 10773                           ;menu.c: 217: break;
+ 10773                           ;menu.c: 216: break;
  10774  0CE0  2FD4               	goto	l4844
  10775  0CE1                     l4792:
  10776                           
- 10777                           ;menu.c: 219: sprintf(str, "%16s", "Цифр. вывод");
+ 10777                           ;menu.c: 218: sprintf(str, "%16s", "Цифр. вывод");
  10778  0CE1  30D7               	movlw	low (STR_4| (0+32768))
  10779  0CE2  1283               	bcf	3,5	;RP0=0, select bank0
  10780  0CE3  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10828,11 +10828,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10788  0CEB  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  10789  0CEC  120A  118A  224B  120A  158A  	fcall	_sprintf
  10790                           
- 10791                           ;menu.c: 220: break;
+ 10791                           ;menu.c: 219: break;
  10792  0CF1  2FD4               	goto	l4844
  10793  0CF2                     l4794:
  10794                           
- 10795                           ;menu.c: 222: sprintf(str2, "%12s%d%d%d%d", "Д.выходы:",_tempPinDO&0x08?1:0,_tempPinDO&0
+ 10795                           ;menu.c: 221: sprintf(str2, "%12s%d%d%d%d", "Д.выходы:",_tempPinDO&0x08?1:0,_tempPinDO&0
       +                          x04?1:0,_tempPinDO&0x02?1:0,_tempPinDO&0x01?1:0);
  10796  0CF2  302F               	movlw	low (STR_42| (0+32768))
  10797  0CF3  1283               	bcf	3,5	;RP0=0, select bank0
@@ -10907,11 +10907,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10866  0D30  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  10867  0D31  120A  118A  224B  120A  158A  	fcall	_sprintf
  10868                           
- 10869                           ;menu.c: 223: break;
+ 10869                           ;menu.c: 222: break;
  10870  0D36  2FD4               	goto	l4844
  10871  0D37                     l4798:
  10872                           
- 10873                           ;menu.c: 228: sprintf(str, "%16s", "Память");
+ 10873                           ;menu.c: 227: sprintf(str, "%16s", "Память");
  10874  0D37  30D7               	movlw	low (STR_4| (0+32768))
  10875  0D38  1283               	bcf	3,5	;RP0=0, select bank0
  10876  0D39  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10925,11 +10925,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10884  0D41  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  10885  0D42  120A  118A  224B  120A  158A  	fcall	_sprintf
  10886                           
- 10887                           ;menu.c: 231: break;
+ 10887                           ;menu.c: 230: break;
  10888  0D47  2FD4               	goto	l4844
  10889  0D48                     l4800:
  10890                           
- 10891                           ;menu.c: 233: sprintf(str, "%16s", "Сохр.тек.настр.");
+ 10891                           ;menu.c: 232: sprintf(str, "%16s", "Сохр.тек.настр.");
  10892  0D48  30D7               	movlw	low (STR_4| (0+32768))
  10893  0D49  1283               	bcf	3,5	;RP0=0, select bank0
  10894  0D4A  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10943,11 +10943,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10902  0D52  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  10903  0D53  120A  118A  224B  120A  158A  	fcall	_sprintf
  10904                           
- 10905                           ;menu.c: 234: break;
+ 10905                           ;menu.c: 233: break;
  10906  0D58  2FD4               	goto	l4844
  10907  0D59                     l4802:
  10908                           
- 10909                           ;menu.c: 236: sprintf(str2, "%s", "Да");
+ 10909                           ;menu.c: 235: sprintf(str2, "%s", "Да");
  10910  0D59  30F0               	movlw	low (STR_8| (0+32768))
  10911  0D5A  1283               	bcf	3,5	;RP0=0, select bank0
  10912  0D5B  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10961,11 +10961,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10920  0D63  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  10921  0D64  120A  118A  224B  120A  158A  	fcall	_sprintf
  10922                           
- 10923                           ;menu.c: 237: if(flUpdate)
+ 10923                           ;menu.c: 236: if(flUpdate)
  10924  0D69  1D7A               	btfss	_flUpdate/(0+8),_flUpdate& (0+7)
  10925  0D6A  2FD4               	goto	l4844
  10926                           
- 10927                           ;menu.c: 238: strcat(str2, '*');
+ 10927                           ;menu.c: 237: strcat(str2, '*');
  10928  0D6B  302A               	movlw	42
  10929  0D6C  00A0               	movwf	strcat@from
  10930  0D6D  3080               	movlw	128
@@ -10974,13 +10974,13 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10933  0D70  160A  158A  24E8  120A  158A  	fcall	_strcat
  10934  0D75  2FD4               	goto	l4844
  10935  0D76                     l687:	
- 10936                           ;menu.c: 240: case 4000:
+ 10936                           ;menu.c: 239: case 4000:
  10937                           
  10938                           
- 10939                           ;menu.c: 241: flUpdate = 1;
+ 10939                           ;menu.c: 240: flUpdate = 1;
  10940  0D76  157A               	bsf	_flUpdate/(0+8),_flUpdate& (0+7)
  10941                           
- 10942                           ;menu.c: 242: SPI_Write(0,_settingsBit);
+ 10942                           ;menu.c: 241: SPI_Write(0,_settingsBit);
  10943  0D77  3000               	movlw	0
  10944  0D78  1283               	bcf	3,5	;RP0=0, select bank0
  10945  0D79  1303               	bcf	3,6	;RP1=0, select bank0
@@ -10999,7 +10999,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10958  0D86  00AA               	movwf	SPI_Write@data
  10959  0D87  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  10960                           
- 10961                           ;menu.c: 243: SPI_Write(1,_settingTimeImpDO1>>8);
+ 10961                           ;menu.c: 242: SPI_Write(1,_settingTimeImpDO1>>8);
  10962  0D8C  3000               	movlw	0
  10963  0D8D  00A9               	movwf	SPI_Write@address+3
  10964  0D8E  3000               	movlw	0
@@ -11016,7 +11016,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10975  0D99  00AA               	movwf	SPI_Write@data
  10976  0D9A  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  10977                           
- 10978                           ;menu.c: 244: SPI_Write(2,_settingTimeImpDO1);
+ 10978                           ;menu.c: 243: SPI_Write(2,_settingTimeImpDO1);
  10979  0D9F  3000               	movlw	0
  10980  0DA0  00A9               	movwf	SPI_Write@address+3
  10981  0DA1  3000               	movlw	0
@@ -11033,7 +11033,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  10992  0DAC  00AA               	movwf	SPI_Write@data
  10993  0DAD  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  10994                           
- 10995                           ;menu.c: 245: SPI_Write(3,_settingTimerOnDO2>>8);
+ 10995                           ;menu.c: 244: SPI_Write(3,_settingTimerOnDO2>>8);
  10996  0DB2  3000               	movlw	0
  10997  0DB3  00A9               	movwf	SPI_Write@address+3
  10998  0DB4  3000               	movlw	0
@@ -11050,7 +11050,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11009  0DBF  00AA               	movwf	SPI_Write@data
  11010  0DC0  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  11011                           
- 11012                           ;menu.c: 246: SPI_Write(4,_settingTimerOnDO2);
+ 11012                           ;menu.c: 245: SPI_Write(4,_settingTimerOnDO2);
  11013  0DC5  3000               	movlw	0
  11014  0DC6  00A9               	movwf	SPI_Write@address+3
  11015  0DC7  3000               	movlw	0
@@ -11067,7 +11067,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11026  0DD2  00AA               	movwf	SPI_Write@data
  11027  0DD3  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  11028                           
- 11029                           ;menu.c: 247: SPI_Write(5,_settingTimerOffDO2>>8);
+ 11029                           ;menu.c: 246: SPI_Write(5,_settingTimerOffDO2>>8);
  11030  0DD8  3000               	movlw	0
  11031  0DD9  00A9               	movwf	SPI_Write@address+3
  11032  0DDA  3000               	movlw	0
@@ -11084,7 +11084,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11043  0DE5  00AA               	movwf	SPI_Write@data
  11044  0DE6  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  11045                           
- 11046                           ;menu.c: 248: SPI_Write(6,_settingTimerOffDO2);
+ 11046                           ;menu.c: 247: SPI_Write(6,_settingTimerOffDO2);
  11047  0DEB  3000               	movlw	0
  11048  0DEC  00A9               	movwf	SPI_Write@address+3
  11049  0DED  3000               	movlw	0
@@ -11101,14 +11101,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11060  0DF8  00AA               	movwf	SPI_Write@data
  11061  0DF9  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  11062                           
- 11063                           ;menu.c: 249: _MenuNav = 400;
+ 11063                           ;menu.c: 248: _MenuNav = 400;
  11064  0DFE  3090               	movlw	144
  11065  0DFF  2ECE               	goto	L23
  11066  0E00                     l4812:	
- 11067                           ;menu.c: 250: break;
+ 11067                           ;menu.c: 249: break;
  11068                           
  11069                           
- 11070                           ;menu.c: 252: sprintf(str, "%16s", "Сброс настр. ОЗУ");
+ 11070                           ;menu.c: 251: sprintf(str, "%16s", "Сброс настр. ОЗУ");
  11071  0E00  30D7               	movlw	low (STR_4| (0+32768))
  11072  0E01  1283               	bcf	3,5	;RP0=0, select bank0
  11073  0E02  1303               	bcf	3,6	;RP1=0, select bank0
@@ -11122,11 +11122,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11081  0E0A  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  11082  0E0B  120A  118A  224B  120A  158A  	fcall	_sprintf
  11083                           
- 11084                           ;menu.c: 253: break;
+ 11084                           ;menu.c: 252: break;
  11085  0E10  2FD4               	goto	l4844
  11086  0E11                     l4814:
  11087                           
- 11088                           ;menu.c: 255: sprintf(str, "%16s", "Да");
+ 11088                           ;menu.c: 254: sprintf(str, "%16s", "Да");
  11089  0E11  30D7               	movlw	low (STR_4| (0+32768))
  11090  0E12  1283               	bcf	3,5	;RP0=0, select bank0
  11091  0E13  1303               	bcf	3,6	;RP1=0, select bank0
@@ -11140,11 +11140,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11099  0E1B  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  11100  0E1C  120A  118A  224B  120A  158A  	fcall	_sprintf
  11101                           
- 11102                           ;menu.c: 256: if(flUpdate)
+ 11102                           ;menu.c: 255: if(flUpdate)
  11103  0E21  1D7A               	btfss	_flUpdate/(0+8),_flUpdate& (0+7)
  11104  0E22  2FD4               	goto	l4844
  11105                           
- 11106                           ;menu.c: 257: strcat(str2, '*');
+ 11106                           ;menu.c: 256: strcat(str2, '*');
  11107  0E23  302A               	movlw	42
  11108  0E24  00A0               	movwf	strcat@from
  11109  0E25  3080               	movlw	128
@@ -11153,37 +11153,37 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11112  0E28  160A  158A  24E8  120A  158A  	fcall	_strcat
  11113  0E2D  2FD4               	goto	l4844
  11114  0E2E                     l691:	
- 11115                           ;menu.c: 259: case 4100:
+ 11115                           ;menu.c: 258: case 4100:
  11116                           
  11117                           
- 11118                           ;menu.c: 260: flUpdate = 1;
+ 11118                           ;menu.c: 259: flUpdate = 1;
  11119  0E2E  157A               	bsf	_flUpdate/(0+8),_flUpdate& (0+7)
  11120                           
- 11121                           ;menu.c: 261: _settingsBit = 0;
+ 11121                           ;menu.c: 260: _settingsBit = 0;
  11122  0E2F  1683               	bsf	3,5	;RP0=1, select bank1
  11123  0E30  1303               	bcf	3,6	;RP1=0, select bank1
  11124  0E31  01C4               	clrf	__settingsBit^(0+128)
  11125                           
- 11126                           ;menu.c: 262: _settingTimeImpDO1 = 0;
+ 11126                           ;menu.c: 261: _settingTimeImpDO1 = 0;
  11127  0E32  01B4               	clrf	__settingTimeImpDO1^(0+128)
  11128  0E33  01B5               	clrf	(__settingTimeImpDO1+1)^(0+128)
  11129                           
- 11130                           ;menu.c: 263: _settingTimerOnDO2 = 0;
+ 11130                           ;menu.c: 262: _settingTimerOnDO2 = 0;
  11131  0E34  01B2               	clrf	__settingTimerOnDO2^(0+128)
  11132  0E35  01B3               	clrf	(__settingTimerOnDO2+1)^(0+128)
  11133                           
- 11134                           ;menu.c: 264: _settingTimerOffDO2 = 0;
+ 11134                           ;menu.c: 263: _settingTimerOffDO2 = 0;
  11135  0E36  01B0               	clrf	__settingTimerOffDO2^(0+128)
  11136  0E37  01B1               	clrf	(__settingTimerOffDO2+1)^(0+128)
  11137                           
- 11138                           ;menu.c: 265: _MenuNav = 410;
+ 11138                           ;menu.c: 264: _MenuNav = 410;
  11139  0E38  309A               	movlw	154
  11140  0E39  2ECE               	goto	L23
  11141  0E3A                     l4824:	
- 11142                           ;menu.c: 266: break;
+ 11142                           ;menu.c: 265: break;
  11143                           
  11144                           
- 11145                           ;menu.c: 268: sprintf(str, "%16s", "Сброс настр. ПЗУ");
+ 11145                           ;menu.c: 267: sprintf(str, "%16s", "Сброс настр. ПЗУ");
  11146  0E3A  30D7               	movlw	low (STR_4| (0+32768))
  11147  0E3B  1283               	bcf	3,5	;RP0=0, select bank0
  11148  0E3C  1303               	bcf	3,6	;RP1=0, select bank0
@@ -11197,11 +11197,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11156  0E44  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  11157  0E45  120A  118A  224B  120A  158A  	fcall	_sprintf
  11158                           
- 11159                           ;menu.c: 269: break;
+ 11159                           ;menu.c: 268: break;
  11160  0E4A  2FD4               	goto	l4844
  11161  0E4B                     l4826:
  11162                           
- 11163                           ;menu.c: 271: sprintf(str, "%16s", "Да");
+ 11163                           ;menu.c: 270: sprintf(str, "%16s", "Да");
  11164  0E4B  30D7               	movlw	low (STR_4| (0+32768))
  11165  0E4C  1283               	bcf	3,5	;RP0=0, select bank0
  11166  0E4D  1303               	bcf	3,6	;RP1=0, select bank0
@@ -11215,11 +11215,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11174  0E55  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  11175  0E56  120A  118A  224B  120A  158A  	fcall	_sprintf
  11176                           
- 11177                           ;menu.c: 272: if(flUpdate)
+ 11177                           ;menu.c: 271: if(flUpdate)
  11178  0E5B  1D7A               	btfss	_flUpdate/(0+8),_flUpdate& (0+7)
  11179  0E5C  2FD4               	goto	l4844
  11180                           
- 11181                           ;menu.c: 273: strcat(str2, '*');
+ 11181                           ;menu.c: 272: strcat(str2, '*');
  11182  0E5D  302A               	movlw	42
  11183  0E5E  00A0               	movwf	strcat@from
  11184  0E5F  3080               	movlw	128
@@ -11228,13 +11228,13 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11187  0E62  160A  158A  24E8  120A  158A  	fcall	_strcat
  11188  0E67  2FD4               	goto	l4844
  11189  0E68                     l695:	
- 11190                           ;menu.c: 275: case 4200:
+ 11190                           ;menu.c: 274: case 4200:
  11191                           
  11192                           
- 11193                           ;menu.c: 276: flUpdate = 1;
+ 11193                           ;menu.c: 275: flUpdate = 1;
  11194  0E68  157A               	bsf	_flUpdate/(0+8),_flUpdate& (0+7)
  11195                           
- 11196                           ;menu.c: 278: SPI_Write(0,0);
+ 11196                           ;menu.c: 277: SPI_Write(0,0);
  11197  0E69  3000               	movlw	0
  11198  0E6A  1283               	bcf	3,5	;RP0=0, select bank0
  11199  0E6B  1303               	bcf	3,6	;RP1=0, select bank0
@@ -11248,7 +11248,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11207  0E73  01AA               	clrf	SPI_Write@data
  11208  0E74  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  11209                           
- 11210                           ;menu.c: 279: SPI_Write(1,0);
+ 11210                           ;menu.c: 278: SPI_Write(1,0);
  11211  0E79  3000               	movlw	0
  11212  0E7A  00A9               	movwf	SPI_Write@address+3
  11213  0E7B  3000               	movlw	0
@@ -11260,7 +11260,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11219  0E81  01AA               	clrf	SPI_Write@data
  11220  0E82  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  11221                           
- 11222                           ;menu.c: 280: SPI_Write(2,0);
+ 11222                           ;menu.c: 279: SPI_Write(2,0);
  11223  0E87  3000               	movlw	0
  11224  0E88  00A9               	movwf	SPI_Write@address+3
  11225  0E89  3000               	movlw	0
@@ -11272,7 +11272,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11231  0E8F  01AA               	clrf	SPI_Write@data
  11232  0E90  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  11233                           
- 11234                           ;menu.c: 281: SPI_Write(3,0);
+ 11234                           ;menu.c: 280: SPI_Write(3,0);
  11235  0E95  3000               	movlw	0
  11236  0E96  00A9               	movwf	SPI_Write@address+3
  11237  0E97  3000               	movlw	0
@@ -11284,7 +11284,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11243  0E9D  01AA               	clrf	SPI_Write@data
  11244  0E9E  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  11245                           
- 11246                           ;menu.c: 282: SPI_Write(4,0);
+ 11246                           ;menu.c: 281: SPI_Write(4,0);
  11247  0EA3  3000               	movlw	0
  11248  0EA4  00A9               	movwf	SPI_Write@address+3
  11249  0EA5  3000               	movlw	0
@@ -11296,7 +11296,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11255  0EAB  01AA               	clrf	SPI_Write@data
  11256  0EAC  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  11257                           
- 11258                           ;menu.c: 283: SPI_Write(5,0);
+ 11258                           ;menu.c: 282: SPI_Write(5,0);
  11259  0EB1  3000               	movlw	0
  11260  0EB2  00A9               	movwf	SPI_Write@address+3
  11261  0EB3  3000               	movlw	0
@@ -11308,7 +11308,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11267  0EB9  01AA               	clrf	SPI_Write@data
  11268  0EBA  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  11269                           
- 11270                           ;menu.c: 284: SPI_Write(6,0);
+ 11270                           ;menu.c: 283: SPI_Write(6,0);
  11271  0EBF  3000               	movlw	0
  11272  0EC0  00A9               	movwf	SPI_Write@address+3
  11273  0EC1  3000               	movlw	0
@@ -11320,7 +11320,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11279  0EC7  01AA               	clrf	SPI_Write@data
  11280  0EC8  160A  158A  2693  120A  158A  	fcall	_SPI_Write
  11281                           
- 11282                           ;menu.c: 286: _MenuNav = 420;
+ 11282                           ;menu.c: 285: _MenuNav = 420;
  11283  0ECD  30A4               	movlw	164
  11284  0ECE                     L23:
  11285  0ECE  00FB               	movwf	__MenuNav
@@ -11328,11 +11328,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11287  0ED0                     L22:
  11288  0ED0  00FC               	movwf	__MenuNav+1
  11289                           
- 11290                           ;menu.c: 287: break;
+ 11290                           ;menu.c: 286: break;
  11291  0ED1  2FD4               	goto	l4844
  11292  0ED2                     l4836:
  11293                           
- 11294                           ;menu.c: 289: sprintf(str, "Твн:%3d Тнар:%3d", temperatureAI1, temperatureAI2);
+ 11294                           ;menu.c: 288: sprintf(str, "Твн:%3d Тнар:%3d", temperatureAI1, temperatureAI2);
  11295  0ED2  3099               	movlw	low (STR_62| (0+32768))
  11296  0ED3  1283               	bcf	3,5	;RP0=0, select bank0
  11297  0ED4  1303               	bcf	3,6	;RP1=0, select bank0
@@ -11356,7 +11356,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11315  0EE6  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  11316  0EE7  120A  118A  224B  120A  158A  	fcall	_sprintf
  11317                           
- 11318                           ;menu.c: 292: sprintf(str2, "%3s%4s%5s%4u", "ДУ:", LCD_StringOnOff(_tempPinDO,3),"НАГР:"
+ 11318                           ;menu.c: 291: sprintf(str2, "%3s%4s%5s%4u", "ДУ:", LCD_StringOnOff(_tempPinDO,3),"НАГР:"
       +                          ,LCD_StringOnOff(_tempPinDO,4));
  11319  0EEC  303C               	movlw	low (STR_63| (0+32768))
  11320  0EED  00AE               	movwf	sprintf@f
@@ -11395,10 +11395,10 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11353  0F16  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  11354  0F17  120A  118A  224B  120A  158A  	fcall	_sprintf
  11355                           
- 11356                           ;menu.c: 296: flClearLCD = 1;
+ 11356                           ;menu.c: 295: flClearLCD = 1;
  11357  0F1C  14FA               	bsf	_flClearLCD/(0+8),_flClearLCD& (0+7)
  11358                           
- 11359                           ;menu.c: 297: break;
+ 11359                           ;menu.c: 296: break;
  11360  0F1D  2FD4               	goto	l4844
  11361  0F1E                     l4842:
  11362                           
@@ -11680,14 +11680,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11637  0FD3  2ED2               	goto	l4836
  11638  0FD4                     l4844:
  11639                           
- 11640                           ;menu.c: 304: LCD_SetPos(0,0);
+ 11640                           ;menu.c: 303: LCD_SetPos(0,0);
  11641  0FD4  1283               	bcf	3,5	;RP0=0, select bank0
  11642  0FD5  1303               	bcf	3,6	;RP1=0, select bank0
  11643  0FD6  01AC               	clrf	LCD_SetPos@y
  11644  0FD7  3000               	movlw	0
  11645  0FD8  160A  158A  2449  120A  158A  	fcall	_LCD_SetPos
  11646                           
- 11647                           ;menu.c: 305: LCD_string((char*)str);
+ 11647                           ;menu.c: 304: LCD_string((char*)str);
  11648  0FDD  30C2               	movlw	(low (_str| (0+256)))& (0+255)
  11649  0FDE  1283               	bcf	3,5	;RP0=0, select bank0
  11650  0FDF  1303               	bcf	3,6	;RP1=0, select bank0
@@ -11696,13 +11696,13 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11653  0FE2  00AF               	movwf	LCD_string@st+1
  11654  0FE3  160A  158A  27B1  120A  158A  	fcall	_LCD_string
  11655                           
- 11656                           ;menu.c: 306: LCD_SetPos(0,1);
+ 11656                           ;menu.c: 305: LCD_SetPos(0,1);
  11657  0FE8  01AC               	clrf	LCD_SetPos@y
  11658  0FE9  0AAC               	incf	LCD_SetPos@y,f
  11659  0FEA  3000               	movlw	0
  11660  0FEB  160A  158A  2449  120A  158A  	fcall	_LCD_SetPos
  11661                           
- 11662                           ;menu.c: 307: LCD_string((char*)str2);
+ 11662                           ;menu.c: 306: LCD_string((char*)str2);
  11663  0FF0  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  11664  0FF1  1283               	bcf	3,5	;RP0=0, select bank0
  11665  0FF2  1303               	bcf	3,6	;RP1=0, select bank0
@@ -11711,7 +11711,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
  11668  0FF5  00AF               	movwf	LCD_string@st+1
  11669  0FF6  160A  158A  27B1  120A  158A  	fcall	_LCD_string
  11670                           
- 11671                           ;menu.c: 310: fEraseString(str2);
+ 11671                           ;menu.c: 309: fEraseString(str2);
  11672  0FFB  30B2               	movlw	(low (_str2| (0+256)))& (0+255)
  11673  0FFC  160A  158A  23AA   	fcall	_fEraseString
  11674  0FFF  0008               	return
@@ -12257,7 +12257,7 @@ STACK                0      0       0       2        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Wed Dec 08 16:16:29 2021
+Symbol Table                                                                                   Tue Dec 07 19:23:04 2021
 
                ??_LCD_StringOnOff 0021                                 pc 0002                    ___bmul@product 002B  
                      ?_LCD_SetPos 002C                       _SSPSTATbits 0094                      ___awdiv@sign 0026  

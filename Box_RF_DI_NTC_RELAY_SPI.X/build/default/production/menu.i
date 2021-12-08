@@ -1635,7 +1635,6 @@ unsigned char _firstDigitMenu(short int _digit);
 
 # 3 "menu.c"
 void fMenuStrip(void){
-
 if(flMenuStrip == 0x01 && flSwitchButton == 0){
 if(_MenuNav == 1) _MenuNav = 2;
 else if(_MenuNav >= 20 && _MenuNav < _MenuArr[0] * 10 + 9) _MenuNav /= 10;
@@ -1709,7 +1708,7 @@ if(flClearLCD == 0) LCD_clear();
 
 switch (_MenuNav){
 
-# 89
+# 88
 case 2:
 sprintf(str, "%16s", "Íàñòğîéêè");
 
@@ -1920,7 +1919,7 @@ sprintf(str2, "%3s%4s%5s%4u", "ÄÓ:", LCD_StringOnOff(_tempPinDO,3),"ÍÀÃĞ:",LCD_S
 flClearLCD = 1;
 break;
 
-# 303
+# 302
 }
 LCD_SetPos(0,0);
 LCD_string((char*)str);

@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F76 ]
 [d frameptr 0 ]
-"95 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\Bb_device.c
+"95 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\Bb_device.c
 [v _fInterruptRecieveDevice fInterruptRecieveDevice `(v  1 e 1 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -48,11 +48,11 @@
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
-"5 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\config.c
+"5 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\config.c
 [v _init init `(v  1 e 1 0 ]
 "149
 [v _fEraseString fEraseString `(v  1 e 1 0 ]
-"18 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\lcd.c
+"18 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\lcd.c
 [v _LCD_init LCD_init `(v  1 e 1 0 ]
 "45
 [v _sendhalfbyte sendhalfbyte `(v  1 e 1 0 ]
@@ -66,17 +66,17 @@
 [v _LCD_clear LCD_clear `(v  1 e 1 0 ]
 "123
 [v _LCD_StringOnOff LCD_StringOnOff `(*.25uc  1 e 1 0 ]
-"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\menu.c
+"3 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\menu.c
 [v _fMenuStrip fMenuStrip `(v  1 e 1 0 ]
-"10 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\newmain.c
+"10 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\newmain.c
 [v _linkup linkup `II(v  1 e 1 0 ]
 "62
 [v _fACP fACP `(v  1 e 1 0 ]
 "94
 [v _main main `(v  1 e 1 0 ]
-"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\shift_registr.c
+"3 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\shift_registr.c
 [v _fShiftData fShiftData `(v  1 e 1 0 ]
-"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\spi_flash.c
+"3 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\spi_flash.c
 [v _SPI_init SPI_init `(v  1 e 1 0 ]
 "24
 [v _SPI_WriteByte SPI_WriteByte `(v  1 e 1 0 ]
@@ -90,11 +90,11 @@
 [v _SPI_ReadStatus SPI_ReadStatus `(uc  1 e 1 0 ]
 "74
 [v _SPI_notRDY SPI_notRDY `(uc  1 e 1 0 ]
-"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\temp_ntc.c
+"3 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\temp_ntc.c
 [v _rThermistor rThermistor `(s  1 e 2 0 ]
 "8
 [v _rTemperature rTemperature `(c  1 e 1 0 ]
-"21 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\Bb_device.h
+"21 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\Bb_device.h
 [v _flStartBitRecieve flStartBitRecieve `b  1 e 0 0 ]
 "22
 [v _flStopBitRecieve flStopBitRecieve `b  1 e 0 0 ]
@@ -418,7 +418,7 @@
 [v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
 "3 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\errno.c
 [v _errno errno `i  1 e 2 0 ]
-"35 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\config.h
+"35 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\config.h
 [v __countTMR2trigger _countTMR2trigger `uc  1 e 1 0 ]
 "36
 [v __countSecond _countSecond `us  1 e 2 0 ]
@@ -449,13 +449,13 @@
 [v __timerDO2 _timerDO2 `s  1 e 2 0 ]
 "83
 [v __tempPinDO _tempPinDO `uc  1 e 1 0 ]
-"9 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\lcd.h
+"9 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\lcd.h
 [v _str str `[16]uc  1 e 16 0 ]
 "10
 [v _str2 str2 `[16]uc  1 e 16 0 ]
 "20
 [v _SHRIFT SHRIFT `DC[64]uc  1 e 64 0 ]
-"15 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\menu.h
+"15 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\menu.h
 [v _flMenuStrip flMenuStrip `uc  1 e 1 0 ]
 "17
 [v __MenuNav _MenuNav `s  1 e 2 0 ]
@@ -479,17 +479,17 @@
 [v _flClearLCD flClearLCD `b  1 e 0 0 ]
 "67
 [v _flSwitchButton flSwitchButton `b  1 e 0 0 ]
-"22 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\temp_ntc.h
+"22 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\temp_ntc.h
 [v _temperatureAI1 temperatureAI1 `c  1 e 1 0 ]
 [v _temperatureAI2 temperatureAI2 `c  1 e 1 0 ]
-"94 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\newmain.c
+"94 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\newmain.c
 [v _main main `(v  1 e 1 0 ]
 {
 "104
 [v main@SPI_i SPI_i `uc  1 a 1 34 ]
 "213
 } 0
-"8 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\temp_ntc.c
+"8 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\temp_ntc.c
 [v _rTemperature rTemperature `(c  1 e 1 0 ]
 {
 [v rTemperature@analogAI analogAI `uc  1 a 1 wreg ]
@@ -622,15 +622,15 @@
 [v ___ftpack@sign sign `uc  1 p 1 4 ]
 "86
 } 0
-"5 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\config.c
+"5 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\config.c
 [v _init init `(v  1 e 1 0 ]
 {
 "132
 } 0
-"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\menu.c
+"3 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\menu.c
 [v _fMenuStrip fMenuStrip `(v  1 e 1 0 ]
 {
-"312
+"311
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\strcat.c
 [v _strcat strcat `(*.5uc  1 e 1 0 ]
@@ -713,7 +713,7 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "30
 } 0
-"149 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\config.c
+"149 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\config.c
 [v _fEraseString fEraseString `(v  1 e 1 0 ]
 {
 [v fEraseString@string string `*.5uc  1 a 1 wreg ]
@@ -758,14 +758,14 @@
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"32 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\spi_flash.c
+"32 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\spi_flash.c
 [v _SPI_Write SPI_Write `(v  1 e 1 0 ]
 {
 [v SPI_Write@address address `l  1 p 4 6 ]
 [v SPI_Write@data data `uc  1 p 1 10 ]
 "45
 } 0
-"89 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\lcd.c
+"89 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\lcd.c
 [v _LCD_string LCD_string `(v  1 e 1 0 ]
 {
 "91
@@ -794,12 +794,12 @@
 [v LCD_StringOnOff@st st `uc  1 a 1 2 ]
 "126
 } 0
-"62 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\newmain.c
+"62 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\newmain.c
 [v _fACP fACP `(v  1 e 1 0 ]
 {
 "93
 } 0
-"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\spi_flash.c
+"3 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\spi_flash.c
 [v _SPI_init SPI_init `(v  1 e 1 0 ]
 {
 "23
@@ -843,7 +843,7 @@
 [v SPI_WriteByte@data data `uc  1 a 1 0 ]
 "27
 } 0
-"18 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\lcd.c
+"18 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\lcd.c
 [v _LCD_init LCD_init `(v  1 e 1 0 ]
 {
 "43
@@ -874,7 +874,7 @@
 [v sendhalfbyte@c c `uc  1 a 1 7 ]
 "67
 } 0
-"3 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\shift_registr.c
+"3 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\shift_registr.c
 [v _fShiftData fShiftData `(v  1 e 1 0 ]
 {
 [v fShiftData@shiftVar shiftVar `uc  1 a 1 wreg ]
@@ -887,7 +887,7 @@
 [v fShiftData@shiftVar shiftVar `uc  1 a 1 2 ]
 "26
 } 0
-"10 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\newmain.c
+"10 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\newmain.c
 [v _linkup linkup `II(v  1 e 1 0 ]
 {
 "61
@@ -902,7 +902,7 @@
 [v i1___lwmod@dividend dividend `ui  1 p 2 2 ]
 "25
 } 0
-"95 C:\Users\User\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\Bb_device.c
+"95 D:\YandexDisk\ProjectX\01_NewProjects\Box_RF_DI_NTC_RLY_SPI\Box_RF_DI_NTC_RELAY_SPI.X\Bb_device.c
 [v _fInterruptRecieveDevice fInterruptRecieveDevice `(v  1 e 1 0 ]
 {
 "210
