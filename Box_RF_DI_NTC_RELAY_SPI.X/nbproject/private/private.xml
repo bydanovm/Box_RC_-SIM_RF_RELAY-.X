@@ -3,14 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/newmain.c</file>
+            <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/Bb_device.h</file>
             <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/lcd.h</file>
             <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/Bb_device.c</file>
+            <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/temp_ntc.h</file>
             <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/menu.h</file>
             <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/lcd.c</file>
             <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/menu.c</file>
+            <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/shift_registr.h</file>
+            <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/newmain.c</file>
+            <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/spi_flash.c</file>
             <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/config.c</file>
             <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/config.h</file>
+            <file>file:/C:/Users/User/YandexDisk/ProjectX/01_NewProjects/Box_RF_DI_NTC_RLY_SPI/Box_RF_DI_NTC_RELAY_SPI.X/spi_flash.h</file>
         </group>
     </open-files>
 </project-private>

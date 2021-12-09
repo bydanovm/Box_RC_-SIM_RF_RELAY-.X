@@ -88,10 +88,7 @@ void fMenuStrip(void){
 //            flClearLCD = TRUE;
 //            break;
         case 2:
-            sprintf(str, "%16s", "Настройки");    
-//            LCD_SetPos(0,0);
-//            LCD_string((char*)str);
-//            fEraseString(str);
+            sprintf(str, "%16s", "Настройки");   
             break;
         case 20:
             sprintf(str, "%16s", "ДО1-Имп/пост");
@@ -99,22 +96,22 @@ void fMenuStrip(void){
         case 200:
             sprintf(str2, "%s", "Импульс");
             if(_settingsBit & (1 << 1))
-                strcat(str2, (unsigned char*)'*');
+                strcat(str2, (unsigned char)"*");
             break;
         case 2000:
-             _settingTimeImpDO1 = 0;
-            bitset(_settingTimeImpDO1, 0);  //Set IMP to 1 sec
+            _settingTimeImpDO1 = 5u;
             bitset(_settingsBit, 1);        //Set bit IMP
-            _MenuNav = 200;
+            _MenuNav = 200u;
             break;
         case 201:
+            //strcat(str, "Постоянный");
             sprintf(str2, "%s", "Постоянный");
             if(!(_settingsBit & (1 << 1)))  
-                strcat(str2, (unsigned char*)'*');
+                strcat(str2, (unsigned char)"*");
             break;
         case 2010:
             bitclr(_settingsBit, 1);
-            _MenuNav = 201;
+            _MenuNav = 201u;
             break;
         case 21: 
             sprintf(str, "%16s", "ДО1-Время имп");
@@ -132,7 +129,7 @@ void fMenuStrip(void){
         case 220:
             sprintf(str2, "%s", "Да");  
             if(_settingsBit & (1 << 3)) 
-                strcat(str2, (unsigned char*)'*');
+                strcat(str2, (unsigned char)"*");
             break;
         case 2200:
             if(_settingTimerOnDO2 == 0 || _settingTimerOffDO2 == 0)
@@ -146,7 +143,7 @@ void fMenuStrip(void){
         case 221:
             sprintf(str2, "%s", "Нет"); 
             if(!(_settingsBit & (1 << 3)))  
-                strcat(str2, (unsigned char*)'*');
+                strcat(str2, (unsigned char)"*");
             break;
         case 2210:
             bitclr(_settingsBit, 3);
@@ -160,7 +157,7 @@ void fMenuStrip(void){
             break;
         case 2300:
             _settingTimerOnDO2 = _settingTimerOnDO2;
-            _MenuNav == 230;
+            _MenuNav = 230;
             break;
         case 24:
             sprintf(str, "%16s", "ДО2-Таймер выкл");
@@ -170,7 +167,7 @@ void fMenuStrip(void){
             break;
         case 2400:
             _settingTimerOffDO2 = _settingTimerOffDO2;
-            _MenuNav == 240;
+            _MenuNav = 240;
             break;
         case 25:
             sprintf(str, "%16s", "ДО2-Вкл по темп");
@@ -178,7 +175,7 @@ void fMenuStrip(void){
         case 250:
             sprintf(str2, "%s", "Да");  
             if(_settingsBit & (1 << 4)) 
-                strcat(str2, (unsigned char*)'*');
+                strcat(str2, (unsigned char)"*");
             break;
         case 2500:
             bitset(_settingsBit, 4);        //Set bit DO2 On at low temp
@@ -187,7 +184,7 @@ void fMenuStrip(void){
         case 251:
             sprintf(str2, "%s", "Нет");  
             if(!(_settingsBit & (1 << 4))) 
-                strcat(str2, (unsigned char*)'*');
+                strcat(str2, (unsigned char)"*");
             break;
         case 2510:
             bitclr(_settingsBit, 4);        //Set bit IMP
@@ -195,9 +192,6 @@ void fMenuStrip(void){
             break;
         case 3:
             sprintf(str, "%16s", "Показания");
-//            LCD_SetPos(0,0);
-//            LCD_string((char*)str);
-//            fEraseString(str);
             break;
         case 30:
             sprintf(str, "%16s", "Аналог. ввод");
@@ -206,6 +200,7 @@ void fMenuStrip(void){
             sprintf(str2, "%3s%3u  %3s%3u", "Ан1:", Analog.AI1, "Aн2:", Analog.AI2);
             break;
         case 3000:
+            _MenuNav /= 10;
             break;
         case 31:
             sprintf(str, "%16s", "Цифр. ввод");
@@ -227,16 +222,14 @@ void fMenuStrip(void){
             break;             
         case 4:
             sprintf(str, "%16s", "Память");
-//            LCD_SetPos(0,0);
-//            LCD_string((char*)str);
             break;
         case 40:
             sprintf(str, "%16s", "Сохр.тек.настр.");
             break;
         case 400:
-                sprintf(str2, "%s", "Да");
+            sprintf(str2, "%s", "Да");
             if(flUpdate)
-                strcat(str2, (unsigned char*)'*');
+                strcat(str2, (unsigned char)"*");
             break;
         case 4000:
             flUpdate = TRUE;
@@ -255,7 +248,7 @@ void fMenuStrip(void){
         case 410:
             sprintf(str, "%16s", "Да");
             if(flUpdate)
-                strcat(str2, (unsigned char*)'*');
+                strcat(str2, (unsigned char)"*");
             break;
         case 4100:
             flUpdate = TRUE;
@@ -271,7 +264,7 @@ void fMenuStrip(void){
         case 420:
             sprintf(str, "%16s", "Да");
             if(flUpdate)
-                strcat(str2, (unsigned char*)'*');
+                strcat(str2, (unsigned char)"*");
             break;
         case 4200:
             flUpdate = TRUE;
@@ -287,29 +280,27 @@ void fMenuStrip(void){
             _MenuNav = 420;
             break;
         default:
-            sprintf(str, "%4s%3d %5s%3d", "Твн:", temperatureAI1, "Тнар:", temperatureAI2);
-//            LCD_SetPos(0,0);
-//            LCD_string((char*)str);
-            sprintf(str2, "%3s%4s%5s%4s", "ДУ:", LCD_StringOnOff((const unsigned char)_tempPinDO,3u),"НАГР:",LCD_StringOnOff((const unsigned char)_tempPinDO,4u));
-//            LCD_SetPos(0,1);
-//            LCD_string((char*)str);
-//            LCD_SetPos(15,0);
-            flClearLCD = TRUE;
+            sprintf(str, "%4s%3d %5s%3d%3s%4s%5s%4s", 
+                    "Твн:", 
+                    temperatureAI1, 
+                    "Тнар:", 
+                    temperatureAI2,
+                    "ДУ:", 
+                    //_MenuNav,
+                    LCD_StringOnOff((const unsigned char)_tempPinDO,3u),
+                    "НАГР:",
+                    LCD_StringOnOff((const unsigned char)_tempPinDO,4u));
             break;
-//            sprintf(str, "%u", _MenuNav);
-//            LCD_SetPos(0,0);
-//            LCD_string((char*)str);
-//            flClearLCD = TRUE;
-//            break;
     }
+    
+    if(_MenuNav < 100)
+        fEraseString(str2);
+    
     LCD_SetPos(0,0);
     LCD_string((char*)str);
     LCD_SetPos(0,1);
     LCD_string((char*)str2);
-//    if(_MenuNav<100)
-//        fEraseString(str);
-    fEraseString(str2);
-            
+    flClearLCD = TRUE;            
 }
 
 /*unsigned char _firstDigitMenu(short int _digit){
