@@ -827,7 +827,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.h: 16: void sendhalfbyte(unsigned char c);
 [; ;lcd.h: 17: void LCD_string(char* st);
 [; ;lcd.h: 18: void LCD_SetPos(unsigned char x, unsigned char y);
-[; ;lcd.h: 19: char* LCD_StringOnOff(char st,char numb);
+[; ;lcd.h: 19: char* LCD_StringOnOff(const unsigned char st, const unsigned char numb);
 "20
 [v _SHRIFT `Cuc ~T0 @X0 -> 0 `x e ]
 [i _SHRIFT
@@ -962,7 +962,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 199 `i `uc
 ..
 ]
-[; ;lcd.h: 20: const char SHRIFT[] = {
+[; ;lcd.h: 20: const unsigned char SHRIFT[] = {
 [; ;lcd.h: 21: 0x41,
 [; ;lcd.h: 22: 0xA0,
 [; ;lcd.h: 23: 0x42,
@@ -1030,7 +1030,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.h: 85: };
 [; ;lcd.h: 86: extern void fShiftData(unsigned char shiftVar);
 [; ;lcd.h: 87: extern unsigned char _tempPinDO;
-[; ;lcd.h: 161: void define_char(unsigned char pc[],unsigned char char_code);
 "18 lcd.c
 [v _LCD_init `(v ~T0 @X0 1 ef ]
 {
@@ -1209,10 +1208,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.c: 100: symbol = st[i++];
 "100
 [e = _symbol *U + _st * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U _st `ui `ux ]
-[; ;lcd.c: 101: if(symbol > 0xBF) symbol = SHRIFT[(symbol-0xC0)];
+[; ;lcd.c: 101: if(symbol > 0xBFu) symbol = SHRIFT[(symbol-0xC0u)];
 "101
-[e $ ! > -> _symbol `i -> 191 `i 91  ]
-[e = _symbol *U + &U _SHRIFT * -> -> - -> _symbol `i -> 192 `i `ui `ux -> -> # *U &U _SHRIFT `ui `ux ]
+[e $ ! > -> _symbol `ui -> 191 `ui 91  ]
+[e = _symbol *U + &U _SHRIFT * -> - -> _symbol `ui -> 192 `ui `ux -> -> # *U &U _SHRIFT `ui `ux ]
 [e :U 91 ]
 [; ;lcd.c: 102: sendbyte(symbol,1);
 "102
@@ -1290,16 +1289,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 97 ]
 }
 "123
-[v _LCD_StringOnOff `(*uc ~T0 @X0 1 ef2`uc`uc ]
+[v _LCD_StringOnOff `(*uc ~T0 @X0 1 ef2`Cuc`Cuc ]
 {
-[; ;lcd.c: 123: char* LCD_StringOnOff(char st, char numb){
+[; ;lcd.c: 123: char* LCD_StringOnOff(const unsigned char st, const unsigned char numb){
 [e :U _LCD_StringOnOff ]
-[v _st `uc ~T0 @X0 1 r1 ]
-[v _numb `uc ~T0 @X0 1 r2 ]
+[v _st `Cuc ~T0 @X0 1 r1 ]
+[v _numb `Cuc ~T0 @X0 1 r2 ]
 [f ]
-[; ;lcd.c: 124: if(st & (1 << numb)) return "Âêë";
+[; ;lcd.c: 124: if(st & (1u << numb)) return "Âêë";
 "124
-[e $ ! != & -> _st `i << -> 1 `i _numb -> 0 `i 99  ]
+[e $ ! != & -> _st `ui << -> 1 `ui _numb -> -> 0 `i `ui 99  ]
 [e ) -> :s 1C `*uc ]
 [e $UE 98  ]
 [e $U 100  ]
@@ -1312,40 +1311,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.c: 126: }
 "126
 [e :UE 98 ]
-}
-"128
-[v _define_char `(v ~T0 @X0 1 ef2`*uc`uc ]
-{
-[; ;lcd.c: 128: void define_char(unsigned char pc[],unsigned char char_code){
-[e :U _define_char ]
-[v _pc `*uc ~T0 @X0 1 r1 ]
-[v _char_code `uc ~T0 @X0 1 r2 ]
-[f ]
-"129
-[v _i `uc ~T0 @X0 1 a ]
-[v _a `uc ~T0 @X0 1 a ]
-[; ;lcd.c: 129: unsigned char i,a;
-[; ;lcd.c: 130: a=(char_code<<3)|0x40;
-"130
-[e = _a -> | << -> _char_code `i -> 3 `i -> 64 `i `uc ]
-[; ;lcd.c: 131: sendbyte(a,0);
-"131
-[e ( _sendbyte (2 , _a -> -> 0 `i `uc ]
-[; ;lcd.c: 132: for (i=0; i<8; i++) sendbyte(pc[i],1);
-"132
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 102  ]
-[e $U 103  ]
-[e :U 102 ]
-[e ( _sendbyte (2 , *U + _pc * -> _i `ux -> -> # *U _pc `ui `ux -> -> 1 `i `uc ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 102  ]
-[e :U 103 ]
-}
-[; ;lcd.c: 133: }
-"133
-[e :UE 101 ]
 }
 [a 2C 194 251 234 235 0 ]
 [a 1C 194 234 235 0 ]

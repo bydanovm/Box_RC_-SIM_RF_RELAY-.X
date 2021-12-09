@@ -131,7 +131,7 @@ void init(void){
     __delay_ms(10);
     }
 
-short int strtoint(char *string){
+/*short int strtoint(char *string){
     unsigned char lenghtString = strlen(string);
     unsigned char i = 0;
     unsigned char sign = 0;
@@ -145,7 +145,7 @@ short int strtoint(char *string){
         tempInt += ((short int)(string[i++] - '0')) * powInt;
     }
     return sign ? tempInt * -1: tempInt;
-}
+}*/
 void fEraseString(char* string){
     string[0] = 0;
 }

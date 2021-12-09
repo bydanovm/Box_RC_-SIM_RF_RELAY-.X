@@ -994,8 +994,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;config.h: 30: unsigned char counter;
 [; ;config.h: 31: extern char TMR0_Value;
 [; ;config.h: 32: extern char cTMR0;
-[; ;config.h: 33: extern void SPI_Write(long int address, char data);
-[; ;config.h: 34: extern char SPI_Read(long int address);
+[; ;config.h: 33: extern void SPI_Write(unsigned int address, unsigned char data);
+[; ;config.h: 34: extern char SPI_Read(unsigned int address);
 "35
 [v __countTMR2trigger `uc ~T0 @X0 1 e ]
 [; ;config.h: 35: char _countTMR2trigger;
@@ -1039,14 +1039,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v __settingsBit `uc ~T0 @X0 1 e ]
 [; ;config.h: 69: unsigned char _settingsBit;
 "78
-[v __settingTimeImpDO1 `i ~T0 @X0 1 e ]
-[; ;config.h: 78: int _settingTimeImpDO1;
+[v __settingTimeImpDO1 `ui ~T0 @X0 1 e ]
+[; ;config.h: 78: unsigned int _settingTimeImpDO1;
 "79
-[v __settingTimerOnDO2 `i ~T0 @X0 1 e ]
-[; ;config.h: 79: int _settingTimerOnDO2;
+[v __settingTimerOnDO2 `ui ~T0 @X0 1 e ]
+[; ;config.h: 79: unsigned int _settingTimerOnDO2;
 "80
-[v __settingTimerOffDO2 `i ~T0 @X0 1 e ]
-[; ;config.h: 80: int _settingTimerOffDO2;
+[v __settingTimerOffDO2 `ui ~T0 @X0 1 e ]
+[; ;config.h: 80: unsigned int _settingTimerOffDO2;
 "81
 [v __timerDO1 `s ~T0 @X0 1 e ]
 [i __timerDO1
@@ -1063,7 +1063,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v __tempPinDO `uc ~T0 @X0 1 e ]
 [; ;config.h: 83: unsigned char _tempPinDO;
 [; ;config.h: 95: void init(void);
-[; ;config.h: 96: short int strtoint(char *string);
 [; ;config.h: 97: void fEraseString(char* string);
 "21 Bb_device.h
 [v _flStartBitRecieve `b ~T0 @X0 1 e ]

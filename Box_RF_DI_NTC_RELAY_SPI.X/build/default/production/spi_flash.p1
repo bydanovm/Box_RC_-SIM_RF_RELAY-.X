@@ -868,8 +868,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi_flash.h: 34: void SPI_init();
 [; ;spi_flash.h: 35: void SPI_WriteByte(char data);
 [; ;spi_flash.h: 36: char SPI_ReadByte(char data);
-[; ;spi_flash.h: 37: void SPI_Write(long int address, char data);
-[; ;spi_flash.h: 38: char SPI_Read(long int address);
+[; ;spi_flash.h: 37: void SPI_Write(unsigned int address, unsigned char data);
+[; ;spi_flash.h: 38: char SPI_Read(unsigned int address);
 [; ;spi_flash.h: 39: char SPI_ReadStatus();
 [; ;spi_flash.h: 40: int SPI_ReadRDID();
 [; ;spi_flash.h: 41: char SPI_notRDY();
@@ -971,11 +971,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 85 ]
 }
 "32
-[v _SPI_Write `(v ~T0 @X0 1 ef2`l`uc ]
+[v _SPI_Write `(v ~T0 @X0 1 ef2`ui`uc ]
 {
-[; ;spi_flash.c: 32: void SPI_Write(long int address, char data){
+[; ;spi_flash.c: 32: void SPI_Write(unsigned int address, unsigned char data){
 [e :U _SPI_Write ]
-[v _address `l ~T0 @X0 1 r1 ]
+[v _address `ui ~T0 @X0 1 r1 ]
 [v _data `uc ~T0 @X0 1 r2 ]
 [f ]
 [; ;spi_flash.c: 33: while(SPI_notRDY() == 1);
@@ -999,7 +999,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
 [; ;spi_flash.c: 39: SPI_WriteByte(address > 255 ? 0x02|0x08 : 0x02);
 "39
-[e ( _SPI_WriteByte (1 -> ? > _address -> -> 255 `i `l : | -> 2 `i -> 8 `i -> 2 `i `uc ]
+[e ( _SPI_WriteByte (1 -> ? > _address -> -> 255 `i `ui : | -> 2 `i -> 8 `i -> 2 `i `uc ]
 [; ;spi_flash.c: 42: SPI_WriteByte(address);
 "42
 [e ( _SPI_WriteByte (1 -> _address `uc ]
@@ -1014,11 +1014,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 86 ]
 }
 "46
-[v _SPI_Read `(uc ~T0 @X0 1 ef1`l ]
+[v _SPI_Read `(uc ~T0 @X0 1 ef1`ui ]
 {
-[; ;spi_flash.c: 46: char SPI_Read(long int address){
+[; ;spi_flash.c: 46: char SPI_Read(unsigned int address){
 [e :U _SPI_Read ]
-[v _address `l ~T0 @X0 1 r1 ]
+[v _address `ui ~T0 @X0 1 r1 ]
 [f ]
 [; ;spi_flash.c: 47: while(SPI_notRDY() == 1);
 "47
@@ -1032,7 +1032,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
 [; ;spi_flash.c: 49: SPI_WriteByte(address > 255 ? 0x03|0x08 : 0x03);
 "49
-[e ( _SPI_WriteByte (1 -> ? > _address -> -> 255 `i `l : | -> 3 `i -> 8 `i -> 3 `i `uc ]
+[e ( _SPI_WriteByte (1 -> ? > _address -> -> 255 `i `ui : | -> 3 `i -> 8 `i -> 3 `i `uc ]
 [; ;spi_flash.c: 52: SPI_WriteByte(address);
 "52
 [e ( _SPI_WriteByte (1 -> _address `uc ]

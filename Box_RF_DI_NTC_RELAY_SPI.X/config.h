@@ -30,8 +30,8 @@ char cACP;
 unsigned char counter;
 extern char TMR0_Value;
 extern char cTMR0;
-extern void SPI_Write(long int address, char data);
-extern char SPI_Read(long int address);
+extern void SPI_Write(unsigned int address, unsigned char  data);
+extern char SPI_Read(unsigned int address);
 char _countTMR2trigger; //подсчёт количества срабатываний TMR2
 unsigned short int _countSecond;
 //unsigned short int _countMinute;
@@ -75,9 +75,9 @@ unsigned char _settingsBit;//0 cell in spi flash
 //5 bit - reserv
 //6 bit - reserv
 //7 bit - reserv
-int _settingTimeImpDO1;//1 cell in spi flash
-int _settingTimerOnDO2;
-int _settingTimerOffDO2;    
+unsigned int _settingTimeImpDO1;//1 cell in spi flash
+unsigned int _settingTimerOnDO2;
+unsigned int _settingTimerOffDO2;    
 short int _timerDO1 = 0;
 short int _timerDO2 = 0;
 unsigned char _tempPinDO;
@@ -93,7 +93,7 @@ unsigned char _tempPinDO;
 //AnalogInput Analog;// = {0, 127, 254, 90};
 
 void init(void);
-short int strtoint(char *string);
+//short int strtoint(char *string);
 void fEraseString(char* string);
 
 // TODO Insert declarations or function prototypes (right here) to leverage 

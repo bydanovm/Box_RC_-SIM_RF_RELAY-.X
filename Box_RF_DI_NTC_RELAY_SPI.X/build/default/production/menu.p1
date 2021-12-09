@@ -21,21 +21,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 "2060
 [v _RB6 `Vb ~T0 @X0 0 e@54 ]
 "33 config.h
-[v _SPI_Write `(v ~T0 @X0 0 ef2`l`uc ]
+[v _SPI_Write `(v ~T0 @X0 0 ef2`ui`uc ]
 "42 menu.h
 [v _temperatureAI1 `c ~T0 @X0 0 e ]
 "43
 [v _temperatureAI2 `c ~T0 @X0 0 e ]
 "50
-[v _LCD_StringOnOff `(*uc ~T0 @X0 0 ef2`uc`uc ]
+[v _LCD_StringOnOff `(*uc ~T0 @X0 0 ef2`Cuc`Cuc ]
 "48
 [v _LCD_SetPos `(v ~T0 @X0 0 ef2`uc`uc ]
 "47
 [v _LCD_string `(v ~T0 @X0 0 ef1`*uc ]
 "97 config.h
 [v _fEraseString `(v ~T0 @X0 0 ef1`*uc ]
-"49 menu.h
-[v _sendbyte `(v ~T0 @X0 0 ef2`uc`uc ]
 "7 config.h
 [p x FOSC=HS ]
 "8
@@ -988,8 +986,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;config.h: 30: unsigned char counter;
 [; ;config.h: 31: extern char TMR0_Value;
 [; ;config.h: 32: extern char cTMR0;
-[; ;config.h: 33: extern void SPI_Write(long int address, char data);
-[; ;config.h: 34: extern char SPI_Read(long int address);
+[; ;config.h: 33: extern void SPI_Write(unsigned int address, unsigned char data);
+[; ;config.h: 34: extern char SPI_Read(unsigned int address);
 "35
 [v __countTMR2trigger `uc ~T0 @X0 1 e ]
 [; ;config.h: 35: char _countTMR2trigger;
@@ -1033,14 +1031,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v __settingsBit `uc ~T0 @X0 1 e ]
 [; ;config.h: 69: unsigned char _settingsBit;
 "78
-[v __settingTimeImpDO1 `i ~T0 @X0 1 e ]
-[; ;config.h: 78: int _settingTimeImpDO1;
+[v __settingTimeImpDO1 `ui ~T0 @X0 1 e ]
+[; ;config.h: 78: unsigned int _settingTimeImpDO1;
 "79
-[v __settingTimerOnDO2 `i ~T0 @X0 1 e ]
-[; ;config.h: 79: int _settingTimerOnDO2;
+[v __settingTimerOnDO2 `ui ~T0 @X0 1 e ]
+[; ;config.h: 79: unsigned int _settingTimerOnDO2;
 "80
-[v __settingTimerOffDO2 `i ~T0 @X0 1 e ]
-[; ;config.h: 80: int _settingTimerOffDO2;
+[v __settingTimerOffDO2 `ui ~T0 @X0 1 e ]
+[; ;config.h: 80: unsigned int _settingTimerOffDO2;
 "81
 [v __timerDO1 `s ~T0 @X0 1 e ]
 [i __timerDO1
@@ -1057,7 +1055,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v __tempPinDO `uc ~T0 @X0 1 e ]
 [; ;config.h: 83: unsigned char _tempPinDO;
 [; ;config.h: 95: void init(void);
-[; ;config.h: 96: short int strtoint(char *string);
 [; ;config.h: 97: void fEraseString(char* string);
 "15 menu.h
 [v _flMenuStrip `uc ~T0 @X0 1 e ]
@@ -1088,9 +1085,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ]
 [; ;menu.h: 18: unsigned char _MenuArr[10] = {4, 6, 3, 3, 0, 0, 0, 0, 0, 0};
-[v F1027 `uc ~T0 @X0 -> 6 `i t ]
+[v F1025 `uc ~T0 @X0 -> 6 `i t ]
 "19
-[v __SubMenuArr `F1027 ~T0 @X0 -> 4 `i e ]
+[v __SubMenuArr `F1025 ~T0 @X0 -> 4 `i e ]
 [i __SubMenuArr
 :U ..
 :U ..
@@ -1176,9 +1173,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;menu.h: 36: extern unsigned short int _countSecond;
 [; ;menu.h: 37: extern unsigned char _tempPinDO;
 [; ;menu.h: 38: extern unsigned char _settingsBit;
-[; ;menu.h: 39: extern int _settingTimeImpDO1;
-[; ;menu.h: 40: extern int _settingTimerOnDO2;
-[; ;menu.h: 41: extern int _settingTimerOffDO2;
+[; ;menu.h: 39: extern unsigned int _settingTimeImpDO1;
+[; ;menu.h: 40: extern unsigned int _settingTimerOnDO2;
+[; ;menu.h: 41: extern unsigned int _settingTimerOffDO2;
 [; ;menu.h: 42: extern signed char temperatureAI1;
 [; ;menu.h: 43: extern signed char temperatureAI2;
 [; ;menu.h: 44: extern unsigned char str[16];
@@ -1187,9 +1184,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;menu.h: 47: extern void LCD_string(char* st);
 [; ;menu.h: 48: extern void LCD_SetPos(unsigned char x, unsigned char y);
 [; ;menu.h: 49: extern void sendbyte(unsigned char c, unsigned char mode);
-[; ;menu.h: 50: extern char* LCD_StringOnOff(char st,char numb);
-[; ;menu.h: 51: extern void SPI_Write(long int address, char data);
-[; ;menu.h: 52: extern char SPI_Read(long int address);
+[; ;menu.h: 50: extern char* LCD_StringOnOff(const unsigned char st, const unsigned char numb);
+[; ;menu.h: 51: extern void SPI_Write(unsigned int address, unsigned char data);
+[; ;menu.h: 52: extern char SPI_Read(unsigned int address);
 "66
 [v _flClearLCD `b ~T0 @X0 1 e ]
 [; ;menu.h: 66: __bit flClearLCD;
@@ -1197,8 +1194,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _flSwitchButton `b ~T0 @X0 1 e ]
 [; ;menu.h: 67: __bit flSwitchButton;
 [; ;menu.h: 70: void fMenuStrip(void);
-[; ;menu.h: 71: void fShowStar(unsigned char position, unsigned char string);
-[; ;menu.h: 73: unsigned char _firstDigitMenu(short int _digit);
 "3 menu.c
 [v _fMenuStrip `(v ~T0 @X0 1 ef ]
 {
@@ -1293,20 +1288,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;menu.c: 23: if(_MenuNav == 210 && _settingTimeImpDO1 != 0) _settingTimeImpDO1--;
 "23
-[e $ ! && == -> __MenuNav `i -> 210 `i != __settingTimeImpDO1 -> 0 `i 105  ]
-[e -- __settingTimeImpDO1 -> 1 `i ]
+[e $ ! && == -> __MenuNav `i -> 210 `i != __settingTimeImpDO1 -> -> 0 `i `ui 105  ]
+[e -- __settingTimeImpDO1 -> -> 1 `i `ui ]
 [e $U 106  ]
 "24
 [e :U 105 ]
 [; ;menu.c: 24: else if(_MenuNav == 230 && _settingTimerOnDO2 != 0) _settingTimerOnDO2--;
-[e $ ! && == -> __MenuNav `i -> 230 `i != __settingTimerOnDO2 -> 0 `i 107  ]
-[e -- __settingTimerOnDO2 -> 1 `i ]
+[e $ ! && == -> __MenuNav `i -> 230 `i != __settingTimerOnDO2 -> -> 0 `i `ui 107  ]
+[e -- __settingTimerOnDO2 -> -> 1 `i `ui ]
 [e $U 108  ]
 "25
 [e :U 107 ]
 [; ;menu.c: 25: else if(_MenuNav == 240 && _settingTimerOffDO2 != 0) _settingTimerOffDO2--;
-[e $ ! && == -> __MenuNav `i -> 240 `i != __settingTimerOffDO2 -> 0 `i 109  ]
-[e -- __settingTimerOffDO2 -> 1 `i ]
+[e $ ! && == -> __MenuNav `i -> 240 `i != __settingTimerOffDO2 -> -> 0 `i `ui 109  ]
+[e -- __settingTimerOffDO2 -> -> 1 `i `ui ]
 [e $U 110  ]
 "26
 [e :U 109 ]
@@ -1393,19 +1388,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;menu.c: 44: if(_MenuNav == 210) _settingTimeImpDO1++;
 "44
 [e $ ! == -> __MenuNav `i -> 210 `i 125  ]
-[e ++ __settingTimeImpDO1 -> 1 `i ]
+[e ++ __settingTimeImpDO1 -> -> 1 `i `ui ]
 [e $U 126  ]
 "45
 [e :U 125 ]
 [; ;menu.c: 45: else if(_MenuNav == 230) _settingTimerOnDO2++;
 [e $ ! == -> __MenuNav `i -> 230 `i 127  ]
-[e ++ __settingTimerOnDO2 -> 1 `i ]
+[e ++ __settingTimerOnDO2 -> -> 1 `i `ui ]
 [e $U 128  ]
 "46
 [e :U 127 ]
 [; ;menu.c: 46: else if(_MenuNav == 240) _settingTimerOffDO2++;
 [e $ ! == -> __MenuNav `i -> 240 `i 129  ]
-[e ++ __settingTimerOffDO2 -> 1 `i ]
+[e ++ __settingTimerOffDO2 -> -> 1 `i `ui ]
 [e $U 130  ]
 "47
 [e :U 129 ]
@@ -1476,649 +1471,649 @@ Version 3.2 HI-TECH Software Intermediate Code
 "63
 }
 [e :U 137 ]
-"64
+"65
 [e :U 136 ]
 [e :U 116 ]
 [e :U 96 ]
 [; ;menu.c: 63: }
-[; ;menu.c: 64: if(_MenuNav >= 100){
+[; ;menu.c: 65: if(_MenuNav >= 100){
 [e $ ! >= -> __MenuNav `i -> 100 `i 139  ]
 {
-[; ;menu.c: 65: _firstCell = (unsigned char)(_MenuNav / 100 - 2);
-"65
-[e = __firstCell -> - / -> __MenuNav `i -> 100 `i -> 2 `i `uc ]
-[; ;menu.c: 66: _secondCell = (unsigned char)(_MenuNav / 10 % 10);
+[; ;menu.c: 66: _firstCell = (unsigned char)(_MenuNav / 100 - 2);
 "66
-[e = __secondCell -> % / -> __MenuNav `i -> 10 `i -> 10 `i `uc ]
-[; ;menu.c: 67: _tempDigit = (unsigned short int)(((_firstCell + 2) * 100) + (_secondCell * 10));
+[e = __firstCell -> - / -> __MenuNav `i -> 100 `i -> 2 `i `uc ]
+[; ;menu.c: 67: _secondCell = (unsigned char)(_MenuNav / 10 % 10);
 "67
-[e = __tempDigit -> + * + -> __firstCell `i -> 2 `i -> 100 `i * -> __secondCell `i -> 10 `i `us ]
+[e = __secondCell -> % / -> __MenuNav `i -> 10 `i -> 10 `i `uc ]
+[; ;menu.c: 68: _tempDigit = (unsigned short int)(((_firstCell + 2) * 100) + (_secondCell * 10));
 "68
-}
-[; ;menu.c: 68: }
-[e $U 140  ]
+[e = __tempDigit -> + * + -> __firstCell `i -> 2 `i -> 100 `i * -> __secondCell `i -> 10 `i `us ]
 "69
+}
+[; ;menu.c: 69: }
+[e $U 140  ]
+"70
 [e :U 139 ]
-[; ;menu.c: 69: else if(_MenuNav >= 10){
+[; ;menu.c: 70: else if(_MenuNav >= 10){
 [e $ ! >= -> __MenuNav `i -> 10 `i 141  ]
 {
-[; ;menu.c: 70: _cellTwoDigit = (unsigned char)(_MenuNav / 10 - 1);
-"70
-[e = __cellTwoDigit -> - / -> __MenuNav `i -> 10 `i -> 1 `i `uc ]
-[; ;menu.c: 71: _tempTwoDigit = (unsigned char)(_MenuNav / 10 * 10);
+[; ;menu.c: 71: _cellTwoDigit = (unsigned char)(_MenuNav / 10 - 1);
 "71
-[e = __tempTwoDigit -> * / -> __MenuNav `i -> 10 `i -> 10 `i `uc ]
+[e = __cellTwoDigit -> - / -> __MenuNav `i -> 10 `i -> 1 `i `uc ]
+[; ;menu.c: 72: _tempTwoDigit = (unsigned char)(_MenuNav / 10 * 10);
 "72
+[e = __tempTwoDigit -> * / -> __MenuNav `i -> 10 `i -> 10 `i `uc ]
+"73
 }
 [e :U 141 ]
-"73
+"75
 [e :U 140 ]
-[; ;menu.c: 72: }
-[; ;menu.c: 73: if(flClearLCD == 0) LCD_clear();
+[; ;menu.c: 73: }
+[; ;menu.c: 75: if(flClearLCD == 0) LCD_clear();
 [e $ ! == -> _flClearLCD `i -> 0 `i 142  ]
 [e ( _LCD_clear ..  ]
 [e :U 142 ]
-[; ;menu.c: 75: switch (_MenuNav){
-"75
+[; ;menu.c: 77: switch (_MenuNav){
+"77
 [e $U 144  ]
 {
-[; ;menu.c: 88: case 2:
-"88
+[; ;menu.c: 90: case 2:
+"90
 [e :U 145 ]
-[; ;menu.c: 89: sprintf(str, "%16s", "Настройки");
-"89
+[; ;menu.c: 91: sprintf(str, "%16s", "Настройки");
+"91
 [e ( _sprintf (1 , (. , &U _str :s 1C :s 2C ]
-[; ;menu.c: 93: break;
-"93
-[e $U 143  ]
-[; ;menu.c: 94: case 20:
-"94
-[e :U 146 ]
-[; ;menu.c: 95: sprintf(str, "%16s", "ДО1-Имп/пост");
+[; ;menu.c: 95: break;
 "95
-[e ( _sprintf (1 , (. , &U _str :s 3C :s 4C ]
-[; ;menu.c: 96: break;
+[e $U 143  ]
+[; ;menu.c: 96: case 20:
 "96
-[e $U 143  ]
-[; ;menu.c: 97: case 200:
+[e :U 146 ]
+[; ;menu.c: 97: sprintf(str, "%16s", "ДО1-Имп/пост");
 "97
-[e :U 147 ]
-[; ;menu.c: 98: sprintf(str2, "%s", "Импульс");
+[e ( _sprintf (1 , (. , &U _str :s 3C :s 4C ]
+[; ;menu.c: 98: break;
 "98
-[e ( _sprintf (1 , (. , &U _str2 :s 5C :s 6C ]
-[; ;menu.c: 99: if(_settingsBit & (1 << 1))
+[e $U 143  ]
+[; ;menu.c: 99: case 200:
 "99
-[e $ ! != & -> __settingsBit `i << -> 1 `i -> 1 `i -> 0 `i 148  ]
-[; ;menu.c: 100: strcat(str2, '*');
+[e :U 147 ]
+[; ;menu.c: 100: sprintf(str2, "%s", "Импульс");
 "100
-[e ( _strcat (2 , &U _str2 -> -> 42 `ui `*Cuc ]
-[e :U 148 ]
-[; ;menu.c: 101: break;
+[e ( _sprintf (1 , (. , &U _str2 :s 5C :s 6C ]
+[; ;menu.c: 101: if(_settingsBit & (1 << 1))
 "101
-[e $U 143  ]
-[; ;menu.c: 102: case 2000:
+[e $ ! != & -> __settingsBit `i << -> 1 `i -> 1 `i -> 0 `i 148  ]
+[; ;menu.c: 102: strcat(str2, (unsigned char*)'*');
 "102
-[e :U 149 ]
-[; ;menu.c: 103: _settingTimeImpDO1 = 0;
+[e ( _strcat (2 , &U _str2 -> -> -> 42 `ui `*uc `*Cuc ]
+[e :U 148 ]
+[; ;menu.c: 103: break;
 "103
-[e = __settingTimeImpDO1 -> 0 `i ]
-[; ;menu.c: 104: ((_settingTimeImpDO1) |= 1UL << (0));
+[e $U 143  ]
+[; ;menu.c: 104: case 2000:
 "104
-[e =| __settingTimeImpDO1 -> << -> 1 `ul -> 0 `i `i ]
-[; ;menu.c: 105: ((_settingsBit) |= 1UL << (1));
+[e :U 149 ]
+[; ;menu.c: 105: _settingTimeImpDO1 = 0;
 "105
-[e =| __settingsBit -> << -> 1 `ul -> 1 `i `uc ]
-[; ;menu.c: 106: _MenuNav = 200;
+[e = __settingTimeImpDO1 -> -> 0 `i `ui ]
+[; ;menu.c: 106: ((_settingTimeImpDO1) |= 1UL << (0));
 "106
-[e = __MenuNav -> -> 200 `i `s ]
-[; ;menu.c: 107: break;
+[e =| __settingTimeImpDO1 -> << -> 1 `ul -> 0 `i `ui ]
+[; ;menu.c: 107: ((_settingsBit) |= 1UL << (1));
 "107
-[e $U 143  ]
-[; ;menu.c: 108: case 201:
+[e =| __settingsBit -> << -> 1 `ul -> 1 `i `uc ]
+[; ;menu.c: 108: _MenuNav = 200;
 "108
-[e :U 150 ]
-[; ;menu.c: 109: sprintf(str2, "%s", "Постоянный");
+[e = __MenuNav -> -> 200 `i `s ]
+[; ;menu.c: 109: break;
 "109
-[e ( _sprintf (1 , (. , &U _str2 :s 7C :s 8C ]
-[; ;menu.c: 110: if(!(_settingsBit & (1 << 1)))
+[e $U 143  ]
+[; ;menu.c: 110: case 201:
 "110
-[e $ ! ! != & -> __settingsBit `i << -> 1 `i -> 1 `i -> 0 `i 151  ]
-[; ;menu.c: 111: strcat(str2, '*');
+[e :U 150 ]
+[; ;menu.c: 111: sprintf(str2, "%s", "Постоянный");
 "111
-[e ( _strcat (2 , &U _str2 -> -> 42 `ui `*Cuc ]
-[e :U 151 ]
-[; ;menu.c: 112: break;
+[e ( _sprintf (1 , (. , &U _str2 :s 7C :s 8C ]
+[; ;menu.c: 112: if(!(_settingsBit & (1 << 1)))
 "112
-[e $U 143  ]
-[; ;menu.c: 113: case 2010:
+[e $ ! ! != & -> __settingsBit `i << -> 1 `i -> 1 `i -> 0 `i 151  ]
+[; ;menu.c: 113: strcat(str2, (unsigned char*)'*');
 "113
-[e :U 152 ]
-[; ;menu.c: 114: ((_settingsBit) &= ~(1UL << (1)));
+[e ( _strcat (2 , &U _str2 -> -> -> 42 `ui `*uc `*Cuc ]
+[e :U 151 ]
+[; ;menu.c: 114: break;
 "114
-[e =& __settingsBit -> ~ << -> 1 `ul -> 1 `i `uc ]
-[; ;menu.c: 115: _MenuNav = 201;
+[e $U 143  ]
+[; ;menu.c: 115: case 2010:
 "115
-[e = __MenuNav -> -> 201 `i `s ]
-[; ;menu.c: 116: break;
+[e :U 152 ]
+[; ;menu.c: 116: ((_settingsBit) &= ~(1UL << (1)));
 "116
-[e $U 143  ]
-[; ;menu.c: 117: case 21:
+[e =& __settingsBit -> ~ << -> 1 `ul -> 1 `i `uc ]
+[; ;menu.c: 117: _MenuNav = 201;
 "117
-[e :U 153 ]
-[; ;menu.c: 118: sprintf(str, "%16s", "ДО1-Время имп");
+[e = __MenuNav -> -> 201 `i `s ]
+[; ;menu.c: 118: break;
 "118
-[e ( _sprintf (1 , (. , &U _str :s 9C :s 10C ]
-[; ;menu.c: 119: break;
+[e $U 143  ]
+[; ;menu.c: 119: case 21:
 "119
-[e $U 143  ]
-[; ;menu.c: 120: case 210:
+[e :U 153 ]
+[; ;menu.c: 120: sprintf(str, "%16s", "ДО1-Время имп");
 "120
-[e :U 154 ]
-[; ;menu.c: 121: sprintf(str2, "%4d сек.", _settingTimeImpDO1);
+[e ( _sprintf (1 , (. , &U _str :s 9C :s 10C ]
+[; ;menu.c: 121: break;
 "121
-[e ( _sprintf (1 , (. , &U _str2 :s 11C __settingTimeImpDO1 ]
-[; ;menu.c: 122: break;
+[e $U 143  ]
+[; ;menu.c: 122: case 210:
 "122
-[e $U 143  ]
-[; ;menu.c: 123: case 2100:
+[e :U 154 ]
+[; ;menu.c: 123: sprintf(str2, "%4d сек.", _settingTimeImpDO1);
 "123
-[e :U 155 ]
-[; ;menu.c: 124: _settingTimeImpDO1 = _settingTimeImpDO1;
+[e ( _sprintf (1 , (. , &U _str2 :s 11C __settingTimeImpDO1 ]
+[; ;menu.c: 124: break;
 "124
-[e = __settingTimeImpDO1 __settingTimeImpDO1 ]
-[; ;menu.c: 125: _MenuNav = 210;
+[e $U 143  ]
+[; ;menu.c: 125: case 2100:
 "125
-[e = __MenuNav -> -> 210 `i `s ]
-[; ;menu.c: 126: break;
+[e :U 155 ]
+[; ;menu.c: 126: _settingTimeImpDO1 = _settingTimeImpDO1;
 "126
-[e $U 143  ]
-[; ;menu.c: 127: case 22:
+[e = __settingTimeImpDO1 __settingTimeImpDO1 ]
+[; ;menu.c: 127: _MenuNav = 210;
 "127
-[e :U 156 ]
-[; ;menu.c: 128: sprintf(str, "%16s", "ДО2-Вкл таймер");
+[e = __MenuNav -> -> 210 `i `s ]
+[; ;menu.c: 128: break;
 "128
-[e ( _sprintf (1 , (. , &U _str :s 12C :s 13C ]
-[; ;menu.c: 129: break;
+[e $U 143  ]
+[; ;menu.c: 129: case 22:
 "129
-[e $U 143  ]
-[; ;menu.c: 130: case 220:
+[e :U 156 ]
+[; ;menu.c: 130: sprintf(str, "%16s", "ДО2-Вкл таймер");
 "130
-[e :U 157 ]
-[; ;menu.c: 131: sprintf(str2, "%s", "Да");
+[e ( _sprintf (1 , (. , &U _str :s 12C :s 13C ]
+[; ;menu.c: 131: break;
 "131
-[e ( _sprintf (1 , (. , &U _str2 :s 14C :s 15C ]
-[; ;menu.c: 132: if(_settingsBit & (1 << 3))
-"132
-[e $ ! != & -> __settingsBit `i << -> 1 `i -> 3 `i -> 0 `i 158  ]
-[; ;menu.c: 133: strcat(str2, '*');
-"133
-[e ( _strcat (2 , &U _str2 -> -> 42 `ui `*Cuc ]
-[e :U 158 ]
-[; ;menu.c: 134: break;
-"134
 [e $U 143  ]
-[; ;menu.c: 135: case 2200:
+[; ;menu.c: 132: case 220:
+"132
+[e :U 157 ]
+[; ;menu.c: 133: sprintf(str2, "%s", "Да");
+"133
+[e ( _sprintf (1 , (. , &U _str2 :s 14C :s 15C ]
+[; ;menu.c: 134: if(_settingsBit & (1 << 3))
+"134
+[e $ ! != & -> __settingsBit `i << -> 1 `i -> 3 `i -> 0 `i 158  ]
+[; ;menu.c: 135: strcat(str2, (unsigned char*)'*');
 "135
-[e :U 159 ]
-[; ;menu.c: 136: if(_settingTimerOnDO2 == 0 || _settingTimerOffDO2 == 0)
+[e ( _strcat (2 , &U _str2 -> -> -> 42 `ui `*uc `*Cuc ]
+[e :U 158 ]
+[; ;menu.c: 136: break;
 "136
-[e $ ! || == __settingTimerOnDO2 -> 0 `i == __settingTimerOffDO2 -> 0 `i 160  ]
-[; ;menu.c: 137: {
+[e $U 143  ]
+[; ;menu.c: 137: case 2200:
 "137
-{
-[; ;menu.c: 138: _settingTimerOnDO2 = 5;
+[e :U 159 ]
+[; ;menu.c: 138: if(_settingTimerOnDO2 == 0 || _settingTimerOffDO2 == 0)
 "138
-[e = __settingTimerOnDO2 -> 5 `i ]
-[; ;menu.c: 139: _settingTimerOffDO2 = 5;
+[e $ ! || == __settingTimerOnDO2 -> -> 0 `i `ui == __settingTimerOffDO2 -> -> 0 `i `ui 160  ]
+[; ;menu.c: 139: {
 "139
-[e = __settingTimerOffDO2 -> 5 `i ]
+{
+[; ;menu.c: 140: _settingTimerOnDO2 = 5;
 "140
+[e = __settingTimerOnDO2 -> -> 5 `i `ui ]
+[; ;menu.c: 141: _settingTimerOffDO2 = 5;
+"141
+[e = __settingTimerOffDO2 -> -> 5 `i `ui ]
+"142
 }
 [e :U 160 ]
-[; ;menu.c: 140: }
-[; ;menu.c: 141: ((_settingsBit) |= 1UL << (3));
-"141
-[e =| __settingsBit -> << -> 1 `ul -> 3 `i `uc ]
-[; ;menu.c: 142: _MenuNav = 220;
-"142
-[e = __MenuNav -> -> 220 `i `s ]
-[; ;menu.c: 143: break;
+[; ;menu.c: 142: }
+[; ;menu.c: 143: ((_settingsBit) |= 1UL << (3));
 "143
-[e $U 143  ]
-[; ;menu.c: 144: case 221:
+[e =| __settingsBit -> << -> 1 `ul -> 3 `i `uc ]
+[; ;menu.c: 144: _MenuNav = 220;
 "144
-[e :U 161 ]
-[; ;menu.c: 145: sprintf(str2, "%s", "Нет");
+[e = __MenuNav -> -> 220 `i `s ]
+[; ;menu.c: 145: break;
 "145
-[e ( _sprintf (1 , (. , &U _str2 :s 16C :s 17C ]
-[; ;menu.c: 146: if(!(_settingsBit & (1 << 3)))
+[e $U 143  ]
+[; ;menu.c: 146: case 221:
 "146
-[e $ ! ! != & -> __settingsBit `i << -> 1 `i -> 3 `i -> 0 `i 162  ]
-[; ;menu.c: 147: strcat(str2, '*');
+[e :U 161 ]
+[; ;menu.c: 147: sprintf(str2, "%s", "Нет");
 "147
-[e ( _strcat (2 , &U _str2 -> -> 42 `ui `*Cuc ]
-[e :U 162 ]
-[; ;menu.c: 148: break;
+[e ( _sprintf (1 , (. , &U _str2 :s 16C :s 17C ]
+[; ;menu.c: 148: if(!(_settingsBit & (1 << 3)))
 "148
-[e $U 143  ]
-[; ;menu.c: 149: case 2210:
+[e $ ! ! != & -> __settingsBit `i << -> 1 `i -> 3 `i -> 0 `i 162  ]
+[; ;menu.c: 149: strcat(str2, (unsigned char*)'*');
 "149
-[e :U 163 ]
-[; ;menu.c: 150: ((_settingsBit) &= ~(1UL << (3)));
+[e ( _strcat (2 , &U _str2 -> -> -> 42 `ui `*uc `*Cuc ]
+[e :U 162 ]
+[; ;menu.c: 150: break;
 "150
-[e =& __settingsBit -> ~ << -> 1 `ul -> 3 `i `uc ]
-[; ;menu.c: 151: _MenuNav = 221;
+[e $U 143  ]
+[; ;menu.c: 151: case 2210:
 "151
-[e = __MenuNav -> -> 221 `i `s ]
-[; ;menu.c: 152: break;
+[e :U 163 ]
+[; ;menu.c: 152: ((_settingsBit) &= ~(1UL << (3)));
 "152
-[e $U 143  ]
-[; ;menu.c: 153: case 23:
+[e =& __settingsBit -> ~ << -> 1 `ul -> 3 `i `uc ]
+[; ;menu.c: 153: _MenuNav = 221;
 "153
-[e :U 164 ]
-[; ;menu.c: 154: sprintf(str, "%16s", "ДО2-Таймер вкл");
+[e = __MenuNav -> -> 221 `i `s ]
+[; ;menu.c: 154: break;
 "154
-[e ( _sprintf (1 , (. , &U _str :s 18C :s 19C ]
-[; ;menu.c: 155: break;
+[e $U 143  ]
+[; ;menu.c: 155: case 23:
 "155
-[e $U 143  ]
-[; ;menu.c: 156: case 230:
+[e :U 164 ]
+[; ;menu.c: 156: sprintf(str, "%16s", "ДО2-Таймер вкл");
 "156
-[e :U 165 ]
-[; ;menu.c: 157: sprintf(str2, "%4d мин.", _settingTimerOnDO2);
+[e ( _sprintf (1 , (. , &U _str :s 18C :s 19C ]
+[; ;menu.c: 157: break;
 "157
-[e ( _sprintf (1 , (. , &U _str2 :s 20C __settingTimerOnDO2 ]
-[; ;menu.c: 158: break;
+[e $U 143  ]
+[; ;menu.c: 158: case 230:
 "158
-[e $U 143  ]
-[; ;menu.c: 159: case 2300:
+[e :U 165 ]
+[; ;menu.c: 159: sprintf(str2, "%4d мин.", _settingTimerOnDO2);
 "159
-[e :U 166 ]
-[; ;menu.c: 160: _settingTimerOnDO2 = _settingTimerOnDO2;
+[e ( _sprintf (1 , (. , &U _str2 :s 20C __settingTimerOnDO2 ]
+[; ;menu.c: 160: break;
 "160
-[e = __settingTimerOnDO2 __settingTimerOnDO2 ]
-[; ;menu.c: 161: _MenuNav == 230;
+[e $U 143  ]
+[; ;menu.c: 161: case 2300:
 "161
-[e == -> __MenuNav `i -> 230 `i ]
-[; ;menu.c: 162: break;
+[e :U 166 ]
+[; ;menu.c: 162: _settingTimerOnDO2 = _settingTimerOnDO2;
 "162
-[e $U 143  ]
-[; ;menu.c: 163: case 24:
+[e = __settingTimerOnDO2 __settingTimerOnDO2 ]
+[; ;menu.c: 163: _MenuNav == 230;
 "163
-[e :U 167 ]
-[; ;menu.c: 164: sprintf(str, "%16s", "ДО2-Таймер выкл");
+[e == -> __MenuNav `i -> 230 `i ]
+[; ;menu.c: 164: break;
 "164
-[e ( _sprintf (1 , (. , &U _str :s 21C :s 22C ]
-[; ;menu.c: 165: break;
+[e $U 143  ]
+[; ;menu.c: 165: case 24:
 "165
-[e $U 143  ]
-[; ;menu.c: 166: case 240:
+[e :U 167 ]
+[; ;menu.c: 166: sprintf(str, "%16s", "ДО2-Таймер выкл");
 "166
-[e :U 168 ]
-[; ;menu.c: 167: sprintf(str2, "%4d мин.", _settingTimerOffDO2);
+[e ( _sprintf (1 , (. , &U _str :s 21C :s 22C ]
+[; ;menu.c: 167: break;
 "167
-[e ( _sprintf (1 , (. , &U _str2 :s 23C __settingTimerOffDO2 ]
-[; ;menu.c: 168: break;
+[e $U 143  ]
+[; ;menu.c: 168: case 240:
 "168
-[e $U 143  ]
-[; ;menu.c: 169: case 2400:
+[e :U 168 ]
+[; ;menu.c: 169: sprintf(str2, "%4d мин.", _settingTimerOffDO2);
 "169
-[e :U 169 ]
-[; ;menu.c: 170: _settingTimerOffDO2 = _settingTimerOffDO2;
+[e ( _sprintf (1 , (. , &U _str2 :s 23C __settingTimerOffDO2 ]
+[; ;menu.c: 170: break;
 "170
-[e = __settingTimerOffDO2 __settingTimerOffDO2 ]
-[; ;menu.c: 171: _MenuNav == 240;
+[e $U 143  ]
+[; ;menu.c: 171: case 2400:
 "171
-[e == -> __MenuNav `i -> 240 `i ]
-[; ;menu.c: 172: break;
+[e :U 169 ]
+[; ;menu.c: 172: _settingTimerOffDO2 = _settingTimerOffDO2;
 "172
-[e $U 143  ]
-[; ;menu.c: 173: case 25:
+[e = __settingTimerOffDO2 __settingTimerOffDO2 ]
+[; ;menu.c: 173: _MenuNav == 240;
 "173
-[e :U 170 ]
-[; ;menu.c: 174: sprintf(str, "%16s", "ДО2-Вкл по темп");
+[e == -> __MenuNav `i -> 240 `i ]
+[; ;menu.c: 174: break;
 "174
-[e ( _sprintf (1 , (. , &U _str :s 24C :s 25C ]
-[; ;menu.c: 175: break;
+[e $U 143  ]
+[; ;menu.c: 175: case 25:
 "175
-[e $U 143  ]
-[; ;menu.c: 176: case 250:
+[e :U 170 ]
+[; ;menu.c: 176: sprintf(str, "%16s", "ДО2-Вкл по темп");
 "176
-[e :U 171 ]
-[; ;menu.c: 177: sprintf(str2, "%s", "Да");
+[e ( _sprintf (1 , (. , &U _str :s 24C :s 25C ]
+[; ;menu.c: 177: break;
 "177
-[e ( _sprintf (1 , (. , &U _str2 :s 26C :s 27C ]
-[; ;menu.c: 178: if(_settingsBit & (1 << 4))
+[e $U 143  ]
+[; ;menu.c: 178: case 250:
 "178
-[e $ ! != & -> __settingsBit `i << -> 1 `i -> 4 `i -> 0 `i 172  ]
-[; ;menu.c: 179: strcat(str2, '*');
+[e :U 171 ]
+[; ;menu.c: 179: sprintf(str2, "%s", "Да");
 "179
-[e ( _strcat (2 , &U _str2 -> -> 42 `ui `*Cuc ]
-[e :U 172 ]
-[; ;menu.c: 180: break;
+[e ( _sprintf (1 , (. , &U _str2 :s 26C :s 27C ]
+[; ;menu.c: 180: if(_settingsBit & (1 << 4))
 "180
-[e $U 143  ]
-[; ;menu.c: 181: case 2500:
+[e $ ! != & -> __settingsBit `i << -> 1 `i -> 4 `i -> 0 `i 172  ]
+[; ;menu.c: 181: strcat(str2, (unsigned char*)'*');
 "181
-[e :U 173 ]
-[; ;menu.c: 182: ((_settingsBit) |= 1UL << (4));
+[e ( _strcat (2 , &U _str2 -> -> -> 42 `ui `*uc `*Cuc ]
+[e :U 172 ]
+[; ;menu.c: 182: break;
 "182
-[e =| __settingsBit -> << -> 1 `ul -> 4 `i `uc ]
-[; ;menu.c: 183: _MenuNav = 250;
+[e $U 143  ]
+[; ;menu.c: 183: case 2500:
 "183
-[e = __MenuNav -> -> 250 `i `s ]
-[; ;menu.c: 184: break;
+[e :U 173 ]
+[; ;menu.c: 184: ((_settingsBit) |= 1UL << (4));
 "184
-[e $U 143  ]
-[; ;menu.c: 185: case 251:
+[e =| __settingsBit -> << -> 1 `ul -> 4 `i `uc ]
+[; ;menu.c: 185: _MenuNav = 250;
 "185
-[e :U 174 ]
-[; ;menu.c: 186: sprintf(str2, "%s", "Нет");
+[e = __MenuNav -> -> 250 `i `s ]
+[; ;menu.c: 186: break;
 "186
-[e ( _sprintf (1 , (. , &U _str2 :s 28C :s 29C ]
-[; ;menu.c: 187: if(!(_settingsBit & (1 << 4)))
+[e $U 143  ]
+[; ;menu.c: 187: case 251:
 "187
-[e $ ! ! != & -> __settingsBit `i << -> 1 `i -> 4 `i -> 0 `i 175  ]
-[; ;menu.c: 188: strcat(str2, '*');
+[e :U 174 ]
+[; ;menu.c: 188: sprintf(str2, "%s", "Нет");
 "188
-[e ( _strcat (2 , &U _str2 -> -> 42 `ui `*Cuc ]
-[e :U 175 ]
-[; ;menu.c: 189: break;
+[e ( _sprintf (1 , (. , &U _str2 :s 28C :s 29C ]
+[; ;menu.c: 189: if(!(_settingsBit & (1 << 4)))
 "189
-[e $U 143  ]
-[; ;menu.c: 190: case 2510:
+[e $ ! ! != & -> __settingsBit `i << -> 1 `i -> 4 `i -> 0 `i 175  ]
+[; ;menu.c: 190: strcat(str2, (unsigned char*)'*');
 "190
-[e :U 176 ]
-[; ;menu.c: 191: ((_settingsBit) &= ~(1UL << (4)));
+[e ( _strcat (2 , &U _str2 -> -> -> 42 `ui `*uc `*Cuc ]
+[e :U 175 ]
+[; ;menu.c: 191: break;
 "191
-[e =& __settingsBit -> ~ << -> 1 `ul -> 4 `i `uc ]
-[; ;menu.c: 192: _MenuNav = 251;
+[e $U 143  ]
+[; ;menu.c: 192: case 2510:
 "192
-[e = __MenuNav -> -> 251 `i `s ]
-[; ;menu.c: 193: break;
+[e :U 176 ]
+[; ;menu.c: 193: ((_settingsBit) &= ~(1UL << (4)));
 "193
-[e $U 143  ]
-[; ;menu.c: 194: case 3:
+[e =& __settingsBit -> ~ << -> 1 `ul -> 4 `i `uc ]
+[; ;menu.c: 194: _MenuNav = 251;
 "194
-[e :U 177 ]
-[; ;menu.c: 195: sprintf(str, "%16s", "Показания");
+[e = __MenuNav -> -> 251 `i `s ]
+[; ;menu.c: 195: break;
 "195
+[e $U 143  ]
+[; ;menu.c: 196: case 3:
+"196
+[e :U 177 ]
+[; ;menu.c: 197: sprintf(str, "%16s", "Показания");
+"197
 [e ( _sprintf (1 , (. , &U _str :s 30C :s 31C ]
-[; ;menu.c: 199: break;
-"199
-[e $U 143  ]
-[; ;menu.c: 200: case 30:
-"200
-[e :U 178 ]
-[; ;menu.c: 201: sprintf(str, "%16s", "Аналог. ввод");
+[; ;menu.c: 201: break;
 "201
-[e ( _sprintf (1 , (. , &U _str :s 32C :s 33C ]
-[; ;menu.c: 202: break;
+[e $U 143  ]
+[; ;menu.c: 202: case 30:
 "202
-[e $U 143  ]
-[; ;menu.c: 203: case 300:
+[e :U 178 ]
+[; ;menu.c: 203: sprintf(str, "%16s", "Аналог. ввод");
 "203
-[e :U 179 ]
-[; ;menu.c: 204: sprintf(str2, "%3s%3u  %3s%3u", "Ан1:", Analog.AI1, "Aн2:", Analog.AI2);
+[e ( _sprintf (1 , (. , &U _str :s 32C :s 33C ]
+[; ;menu.c: 204: break;
 "204
-[e ( _sprintf (1 , , , , (. , &U _str2 :s 34C :s 35C -> . _Analog 1 `i :s 36C -> . _Analog 2 `i ]
-[; ;menu.c: 205: break;
-"205
 [e $U 143  ]
-[; ;menu.c: 206: case 3000:
+[; ;menu.c: 205: case 300:
+"205
+[e :U 179 ]
+[; ;menu.c: 206: sprintf(str2, "%3s%3u  %3s%3u", "Ан1:", Analog.AI1, "Aн2:", Analog.AI2);
 "206
-[e :U 180 ]
+[e ( _sprintf (1 , , , , (. , &U _str2 :s 34C :s 35C -> . _Analog 1 `i :s 36C -> . _Analog 2 `i ]
 [; ;menu.c: 207: break;
 "207
 [e $U 143  ]
-[; ;menu.c: 208: case 31:
+[; ;menu.c: 208: case 3000:
 "208
-[e :U 181 ]
-[; ;menu.c: 209: sprintf(str, "%16s", "Цифр. ввод");
+[e :U 180 ]
+[; ;menu.c: 209: break;
 "209
-[e ( _sprintf (1 , (. , &U _str :s 37C :s 38C ]
-[; ;menu.c: 210: break;
+[e $U 143  ]
+[; ;menu.c: 210: case 31:
 "210
-[e $U 143  ]
-[; ;menu.c: 211: case 310:
+[e :U 181 ]
+[; ;menu.c: 211: sprintf(str, "%16s", "Цифр. ввод");
 "211
-[e :U 182 ]
-[; ;menu.c: 212: sprintf(str2, "%12s%d%d%d%d", "Д.входы:",RB3,RB4,RB5,RB6);
+[e ( _sprintf (1 , (. , &U _str :s 37C :s 38C ]
+[; ;menu.c: 212: break;
 "212
-[e ( _sprintf (1 , , , , , (. , &U _str2 :s 39C :s 40C -> _RB3 `i -> _RB4 `i -> _RB5 `i -> _RB6 `i ]
-[; ;menu.c: 213: break;
+[e $U 143  ]
+[; ;menu.c: 213: case 310:
 "213
-[e $U 143  ]
-[; ;menu.c: 214: case 3100:
+[e :U 182 ]
+[; ;menu.c: 214: sprintf(str2, "%12s%d%d%d%d", "Д.входы:",RB3,RB4,RB5,RB6);
 "214
-[e :U 183 ]
-[; ;menu.c: 215: _MenuNav /= 10;
+[e ( _sprintf (1 , , , , , (. , &U _str2 :s 39C :s 40C -> _RB3 `i -> _RB4 `i -> _RB5 `i -> _RB6 `i ]
+[; ;menu.c: 215: break;
 "215
-[e =/ __MenuNav -> -> 10 `uc `s ]
-[; ;menu.c: 216: break;
+[e $U 143  ]
+[; ;menu.c: 216: case 3100:
 "216
-[e $U 143  ]
-[; ;menu.c: 217: case 32:
+[e :U 183 ]
+[; ;menu.c: 217: _MenuNav /= 10;
 "217
-[e :U 184 ]
-[; ;menu.c: 218: sprintf(str, "%16s", "Цифр. вывод");
-"218
-[e ( _sprintf (1 , (. , &U _str :s 41C :s 42C ]
-[; ;menu.c: 219: break;
-"219
-[e $U 143  ]
-[; ;menu.c: 220: case 320:
-"220
-[e :U 185 ]
-[; ;menu.c: 221: sprintf(str2, "%12s%d%d%d%d", "Д.выходы:",_tempPinDO&0x08?1:0,_tempPinDO&0x04?1:0,_tempPinDO&0x02?1:0,_tempPinDO&0x01?1:0);
-"221
-[e ( _sprintf (1 , , , , , (. , &U _str2 :s 43C :s 44C ? != & -> __tempPinDO `i -> 8 `i -> 0 `i : -> 1 `i -> 0 `i ? != & -> __tempPinDO `i -> 4 `i -> 0 `i : -> 1 `i -> 0 `i ? != & -> __tempPinDO `i -> 2 `i -> 0 `i : -> 1 `i -> 0 `i ? != & -> __tempPinDO `i -> 1 `i -> 0 `i : -> 1 `i -> 0 `i ]
-[; ;menu.c: 222: break;
-"222
-[e $U 143  ]
-[; ;menu.c: 223: case 3200:
-"223
-[e :U 186 ]
-[; ;menu.c: 224: _MenuNav /= 10;
-"224
 [e =/ __MenuNav -> -> 10 `uc `s ]
-[; ;menu.c: 225: break;
+[; ;menu.c: 218: break;
+"218
+[e $U 143  ]
+[; ;menu.c: 219: case 32:
+"219
+[e :U 184 ]
+[; ;menu.c: 220: sprintf(str, "%16s", "Цифр. вывод");
+"220
+[e ( _sprintf (1 , (. , &U _str :s 41C :s 42C ]
+[; ;menu.c: 221: break;
+"221
+[e $U 143  ]
+[; ;menu.c: 222: case 320:
+"222
+[e :U 185 ]
+[; ;menu.c: 223: sprintf(str2, "%12s%d%d%d%d", "Д.выходы:",_tempPinDO&0x08?1:0,_tempPinDO&0x04?1:0,_tempPinDO&0x02?1:0,_tempPinDO&0x01?1:0);
+"223
+[e ( _sprintf (1 , , , , , (. , &U _str2 :s 43C :s 44C ? != & -> __tempPinDO `i -> 8 `i -> 0 `i : -> 1 `i -> 0 `i ? != & -> __tempPinDO `i -> 4 `i -> 0 `i : -> 1 `i -> 0 `i ? != & -> __tempPinDO `i -> 2 `i -> 0 `i : -> 1 `i -> 0 `i ? != & -> __tempPinDO `i -> 1 `i -> 0 `i : -> 1 `i -> 0 `i ]
+[; ;menu.c: 224: break;
+"224
+[e $U 143  ]
+[; ;menu.c: 225: case 3200:
 "225
-[e $U 143  ]
-[; ;menu.c: 226: case 4:
+[e :U 186 ]
+[; ;menu.c: 226: _MenuNav /= 10;
 "226
-[e :U 187 ]
-[; ;menu.c: 227: sprintf(str, "%16s", "Память");
+[e =/ __MenuNav -> -> 10 `uc `s ]
+[; ;menu.c: 227: break;
 "227
+[e $U 143  ]
+[; ;menu.c: 228: case 4:
+"228
+[e :U 187 ]
+[; ;menu.c: 229: sprintf(str, "%16s", "Память");
+"229
 [e ( _sprintf (1 , (. , &U _str :s 45C :s 46C ]
-[; ;menu.c: 230: break;
-"230
-[e $U 143  ]
-[; ;menu.c: 231: case 40:
-"231
-[e :U 188 ]
-[; ;menu.c: 232: sprintf(str, "%16s", "Сохр.тек.настр.");
+[; ;menu.c: 232: break;
 "232
-[e ( _sprintf (1 , (. , &U _str :s 47C :s 48C ]
-[; ;menu.c: 233: break;
+[e $U 143  ]
+[; ;menu.c: 233: case 40:
 "233
-[e $U 143  ]
-[; ;menu.c: 234: case 400:
+[e :U 188 ]
+[; ;menu.c: 234: sprintf(str, "%16s", "Сохр.тек.настр.");
 "234
-[e :U 189 ]
-[; ;menu.c: 235: sprintf(str2, "%s", "Да");
+[e ( _sprintf (1 , (. , &U _str :s 47C :s 48C ]
+[; ;menu.c: 235: break;
 "235
-[e ( _sprintf (1 , (. , &U _str2 :s 49C :s 50C ]
-[; ;menu.c: 236: if(flUpdate)
+[e $U 143  ]
+[; ;menu.c: 236: case 400:
 "236
-[e $ ! _flUpdate 190  ]
-[; ;menu.c: 237: strcat(str2, '*');
+[e :U 189 ]
+[; ;menu.c: 237: sprintf(str2, "%s", "Да");
 "237
-[e ( _strcat (2 , &U _str2 -> -> 42 `ui `*Cuc ]
-[e :U 190 ]
-[; ;menu.c: 238: break;
+[e ( _sprintf (1 , (. , &U _str2 :s 49C :s 50C ]
+[; ;menu.c: 238: if(flUpdate)
 "238
-[e $U 143  ]
-[; ;menu.c: 239: case 4000:
+[e $ ! _flUpdate 190  ]
+[; ;menu.c: 239: strcat(str2, (unsigned char*)'*');
 "239
-[e :U 191 ]
-[; ;menu.c: 240: flUpdate = 1;
+[e ( _strcat (2 , &U _str2 -> -> -> 42 `ui `*uc `*Cuc ]
+[e :U 190 ]
+[; ;menu.c: 240: break;
 "240
-[e = _flUpdate -> -> 1 `i `b ]
-[; ;menu.c: 241: SPI_Write(0,_settingsBit);
+[e $U 143  ]
+[; ;menu.c: 241: case 4000:
 "241
-[e ( _SPI_Write (2 , -> -> 0 `i `l __settingsBit ]
-[; ;menu.c: 242: SPI_Write(1,_settingTimeImpDO1>>8);
+[e :U 191 ]
+[; ;menu.c: 242: flUpdate = 1;
 "242
-[e ( _SPI_Write (2 , -> -> 1 `i `l -> >> __settingTimeImpDO1 -> 8 `i `uc ]
-[; ;menu.c: 243: SPI_Write(2,_settingTimeImpDO1);
+[e = _flUpdate -> -> 1 `i `b ]
+[; ;menu.c: 243: SPI_Write(0,_settingsBit);
 "243
-[e ( _SPI_Write (2 , -> -> 2 `i `l -> __settingTimeImpDO1 `uc ]
-[; ;menu.c: 244: SPI_Write(3,_settingTimerOnDO2>>8);
+[e ( _SPI_Write (2 , -> -> 0 `i `ui __settingsBit ]
+[; ;menu.c: 244: SPI_Write(1,_settingTimeImpDO1>>8);
 "244
-[e ( _SPI_Write (2 , -> -> 3 `i `l -> >> __settingTimerOnDO2 -> 8 `i `uc ]
-[; ;menu.c: 245: SPI_Write(4,_settingTimerOnDO2);
+[e ( _SPI_Write (2 , -> -> 1 `i `ui -> >> __settingTimeImpDO1 -> 8 `i `uc ]
+[; ;menu.c: 245: SPI_Write(2,_settingTimeImpDO1);
 "245
-[e ( _SPI_Write (2 , -> -> 4 `i `l -> __settingTimerOnDO2 `uc ]
-[; ;menu.c: 246: SPI_Write(5,_settingTimerOffDO2>>8);
+[e ( _SPI_Write (2 , -> -> 2 `i `ui -> __settingTimeImpDO1 `uc ]
+[; ;menu.c: 246: SPI_Write(3,_settingTimerOnDO2>>8);
 "246
-[e ( _SPI_Write (2 , -> -> 5 `i `l -> >> __settingTimerOffDO2 -> 8 `i `uc ]
-[; ;menu.c: 247: SPI_Write(6,_settingTimerOffDO2);
+[e ( _SPI_Write (2 , -> -> 3 `i `ui -> >> __settingTimerOnDO2 -> 8 `i `uc ]
+[; ;menu.c: 247: SPI_Write(4,_settingTimerOnDO2);
 "247
-[e ( _SPI_Write (2 , -> -> 6 `i `l -> __settingTimerOffDO2 `uc ]
-[; ;menu.c: 248: _MenuNav = 400;
+[e ( _SPI_Write (2 , -> -> 4 `i `ui -> __settingTimerOnDO2 `uc ]
+[; ;menu.c: 248: SPI_Write(5,_settingTimerOffDO2>>8);
 "248
-[e = __MenuNav -> -> 400 `i `s ]
-[; ;menu.c: 249: break;
+[e ( _SPI_Write (2 , -> -> 5 `i `ui -> >> __settingTimerOffDO2 -> 8 `i `uc ]
+[; ;menu.c: 249: SPI_Write(6,_settingTimerOffDO2);
 "249
-[e $U 143  ]
-[; ;menu.c: 250: case 41:
+[e ( _SPI_Write (2 , -> -> 6 `i `ui -> __settingTimerOffDO2 `uc ]
+[; ;menu.c: 250: _MenuNav = 400;
 "250
-[e :U 192 ]
-[; ;menu.c: 251: sprintf(str, "%16s", "Сброс настр. ОЗУ");
+[e = __MenuNav -> -> 400 `i `s ]
+[; ;menu.c: 251: break;
 "251
-[e ( _sprintf (1 , (. , &U _str :s 51C :s 52C ]
-[; ;menu.c: 252: break;
+[e $U 143  ]
+[; ;menu.c: 252: case 41:
 "252
-[e $U 143  ]
-[; ;menu.c: 253: case 410:
+[e :U 192 ]
+[; ;menu.c: 253: sprintf(str, "%16s", "Сброс настр. ОЗУ");
 "253
-[e :U 193 ]
-[; ;menu.c: 254: sprintf(str, "%16s", "Да");
+[e ( _sprintf (1 , (. , &U _str :s 51C :s 52C ]
+[; ;menu.c: 254: break;
 "254
-[e ( _sprintf (1 , (. , &U _str :s 53C :s 54C ]
-[; ;menu.c: 255: if(flUpdate)
+[e $U 143  ]
+[; ;menu.c: 255: case 410:
 "255
-[e $ ! _flUpdate 194  ]
-[; ;menu.c: 256: strcat(str2, '*');
+[e :U 193 ]
+[; ;menu.c: 256: sprintf(str, "%16s", "Да");
 "256
-[e ( _strcat (2 , &U _str2 -> -> 42 `ui `*Cuc ]
-[e :U 194 ]
-[; ;menu.c: 257: break;
+[e ( _sprintf (1 , (. , &U _str :s 53C :s 54C ]
+[; ;menu.c: 257: if(flUpdate)
 "257
-[e $U 143  ]
-[; ;menu.c: 258: case 4100:
+[e $ ! _flUpdate 194  ]
+[; ;menu.c: 258: strcat(str2, (unsigned char*)'*');
 "258
-[e :U 195 ]
-[; ;menu.c: 259: flUpdate = 1;
+[e ( _strcat (2 , &U _str2 -> -> -> 42 `ui `*uc `*Cuc ]
+[e :U 194 ]
+[; ;menu.c: 259: break;
 "259
-[e = _flUpdate -> -> 1 `i `b ]
-[; ;menu.c: 260: _settingsBit = 0;
+[e $U 143  ]
+[; ;menu.c: 260: case 4100:
 "260
-[e = __settingsBit -> -> 0 `i `uc ]
-[; ;menu.c: 261: _settingTimeImpDO1 = 0;
+[e :U 195 ]
+[; ;menu.c: 261: flUpdate = 1;
 "261
-[e = __settingTimeImpDO1 -> 0 `i ]
-[; ;menu.c: 262: _settingTimerOnDO2 = 0;
-"262
-[e = __settingTimerOnDO2 -> 0 `i ]
-[; ;menu.c: 263: _settingTimerOffDO2 = 0;
-"263
-[e = __settingTimerOffDO2 -> 0 `i ]
-[; ;menu.c: 264: _MenuNav = 410;
-"264
-[e = __MenuNav -> -> 410 `i `s ]
-[; ;menu.c: 265: break;
-"265
-[e $U 143  ]
-[; ;menu.c: 266: case 42:
-"266
-[e :U 196 ]
-[; ;menu.c: 267: sprintf(str, "%16s", "Сброс настр. ПЗУ");
-"267
-[e ( _sprintf (1 , (. , &U _str :s 55C :s 56C ]
-[; ;menu.c: 268: break;
-"268
-[e $U 143  ]
-[; ;menu.c: 269: case 420:
-"269
-[e :U 197 ]
-[; ;menu.c: 270: sprintf(str, "%16s", "Да");
-"270
-[e ( _sprintf (1 , (. , &U _str :s 57C :s 58C ]
-[; ;menu.c: 271: if(flUpdate)
-"271
-[e $ ! _flUpdate 198  ]
-[; ;menu.c: 272: strcat(str2, '*');
-"272
-[e ( _strcat (2 , &U _str2 -> -> 42 `ui `*Cuc ]
-[e :U 198 ]
-[; ;menu.c: 273: break;
-"273
-[e $U 143  ]
-[; ;menu.c: 274: case 4200:
-"274
-[e :U 199 ]
-[; ;menu.c: 275: flUpdate = 1;
-"275
 [e = _flUpdate -> -> 1 `i `b ]
-[; ;menu.c: 277: SPI_Write(0,0);
+[; ;menu.c: 262: _settingsBit = 0;
+"262
+[e = __settingsBit -> -> 0 `i `uc ]
+[; ;menu.c: 263: _settingTimeImpDO1 = 0;
+"263
+[e = __settingTimeImpDO1 -> -> 0 `i `ui ]
+[; ;menu.c: 264: _settingTimerOnDO2 = 0;
+"264
+[e = __settingTimerOnDO2 -> -> 0 `i `ui ]
+[; ;menu.c: 265: _settingTimerOffDO2 = 0;
+"265
+[e = __settingTimerOffDO2 -> -> 0 `i `ui ]
+[; ;menu.c: 266: _MenuNav = 410;
+"266
+[e = __MenuNav -> -> 410 `i `s ]
+[; ;menu.c: 267: break;
+"267
+[e $U 143  ]
+[; ;menu.c: 268: case 42:
+"268
+[e :U 196 ]
+[; ;menu.c: 269: sprintf(str, "%16s", "Сброс настр. ПЗУ");
+"269
+[e ( _sprintf (1 , (. , &U _str :s 55C :s 56C ]
+[; ;menu.c: 270: break;
+"270
+[e $U 143  ]
+[; ;menu.c: 271: case 420:
+"271
+[e :U 197 ]
+[; ;menu.c: 272: sprintf(str, "%16s", "Да");
+"272
+[e ( _sprintf (1 , (. , &U _str :s 57C :s 58C ]
+[; ;menu.c: 273: if(flUpdate)
+"273
+[e $ ! _flUpdate 198  ]
+[; ;menu.c: 274: strcat(str2, (unsigned char*)'*');
+"274
+[e ( _strcat (2 , &U _str2 -> -> -> 42 `ui `*uc `*Cuc ]
+[e :U 198 ]
+[; ;menu.c: 275: break;
+"275
+[e $U 143  ]
+[; ;menu.c: 276: case 4200:
+"276
+[e :U 199 ]
+[; ;menu.c: 277: flUpdate = 1;
 "277
-[e ( _SPI_Write (2 , -> -> 0 `i `l -> -> 0 `i `uc ]
-[; ;menu.c: 278: SPI_Write(1,0);
-"278
-[e ( _SPI_Write (2 , -> -> 1 `i `l -> -> 0 `i `uc ]
-[; ;menu.c: 279: SPI_Write(2,0);
+[e = _flUpdate -> -> 1 `i `b ]
+[; ;menu.c: 279: SPI_Write(0,0);
 "279
-[e ( _SPI_Write (2 , -> -> 2 `i `l -> -> 0 `i `uc ]
-[; ;menu.c: 280: SPI_Write(3,0);
+[e ( _SPI_Write (2 , -> -> 0 `i `ui -> -> 0 `i `uc ]
+[; ;menu.c: 280: SPI_Write(1,0);
 "280
-[e ( _SPI_Write (2 , -> -> 3 `i `l -> -> 0 `i `uc ]
-[; ;menu.c: 281: SPI_Write(4,0);
+[e ( _SPI_Write (2 , -> -> 1 `i `ui -> -> 0 `i `uc ]
+[; ;menu.c: 281: SPI_Write(2,0);
 "281
-[e ( _SPI_Write (2 , -> -> 4 `i `l -> -> 0 `i `uc ]
-[; ;menu.c: 282: SPI_Write(5,0);
+[e ( _SPI_Write (2 , -> -> 2 `i `ui -> -> 0 `i `uc ]
+[; ;menu.c: 282: SPI_Write(3,0);
 "282
-[e ( _SPI_Write (2 , -> -> 5 `i `l -> -> 0 `i `uc ]
-[; ;menu.c: 283: SPI_Write(6,0);
+[e ( _SPI_Write (2 , -> -> 3 `i `ui -> -> 0 `i `uc ]
+[; ;menu.c: 283: SPI_Write(4,0);
 "283
-[e ( _SPI_Write (2 , -> -> 6 `i `l -> -> 0 `i `uc ]
-[; ;menu.c: 285: _MenuNav = 420;
+[e ( _SPI_Write (2 , -> -> 4 `i `ui -> -> 0 `i `uc ]
+[; ;menu.c: 284: SPI_Write(5,0);
+"284
+[e ( _SPI_Write (2 , -> -> 5 `i `ui -> -> 0 `i `uc ]
+[; ;menu.c: 285: SPI_Write(6,0);
 "285
-[e = __MenuNav -> -> 420 `i `s ]
-[; ;menu.c: 286: break;
-"286
-[e $U 143  ]
-[; ;menu.c: 287: default:
+[e ( _SPI_Write (2 , -> -> 6 `i `ui -> -> 0 `i `uc ]
+[; ;menu.c: 287: _MenuNav = 420;
 "287
-[e :U 200 ]
-[; ;menu.c: 288: sprintf(str, "Твн:%3d Тнар:%3d", temperatureAI1, temperatureAI2);
+[e = __MenuNav -> -> 420 `i `s ]
+[; ;menu.c: 288: break;
 "288
-[e ( _sprintf (1 , , (. , &U _str :s 59C -> _temperatureAI1 `i -> _temperatureAI2 `i ]
-[; ;menu.c: 291: sprintf(str2, "%3s%4s%5s%4u", "ДУ:", LCD_StringOnOff(_tempPinDO,3),"НАГР:",LCD_StringOnOff(_tempPinDO,4));
-"291
-[e ( _sprintf (1 , , , , (. , &U _str2 :s 60C :s 61C -> ( _LCD_StringOnOff (2 , __tempPinDO -> -> 3 `i `uc `*Cuc :s 62C ( _LCD_StringOnOff (2 , __tempPinDO -> -> 4 `i `uc ]
-[; ;menu.c: 295: flClearLCD = 1;
-"295
+[e $U 143  ]
+[; ;menu.c: 289: default:
+"289
+[e :U 200 ]
+[; ;menu.c: 290: sprintf(str, "%4s%3d %5s%3d", "Твн:", temperatureAI1, "Тнар:", temperatureAI2);
+"290
+[e ( _sprintf (1 , , , , (. , &U _str :s 59C :s 60C -> _temperatureAI1 `i :s 61C -> _temperatureAI2 `i ]
+[; ;menu.c: 293: sprintf(str2, "%3s%4s%5s%4s", "ДУ:", LCD_StringOnOff((const unsigned char)_tempPinDO,3u),"НАГР:",LCD_StringOnOff((const unsigned char)_tempPinDO,4u));
+"293
+[e ( _sprintf (1 , , , , (. , &U _str2 :s 62C :s 63C -> ( _LCD_StringOnOff (2 , __tempPinDO -> -> 3 `ui `uc `*Cuc :s 64C -> ( _LCD_StringOnOff (2 , __tempPinDO -> -> 4 `ui `uc `*Cuc ]
+[; ;menu.c: 297: flClearLCD = 1;
+"297
 [e = _flClearLCD -> -> 1 `i `b ]
-[; ;menu.c: 296: break;
-"296
+[; ;menu.c: 298: break;
+"298
 [e $U 143  ]
-"302
+"304
 }
-[; ;menu.c: 302: }
+[; ;menu.c: 304: }
 [e $U 143  ]
-"75
+"77
 [e :U 144 ]
 [e [\ __MenuNav , $ -> -> 2 `i `s 145
  , $ -> -> 20 `i `s 146
@@ -2166,81 +2161,28 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 420 `i `s 197
  , $ -> -> 4200 `i `s 199
  200 ]
-"302
-[e :U 143 ]
-[; ;menu.c: 303: LCD_SetPos(0,0);
-"303
-[e ( _LCD_SetPos (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;menu.c: 304: LCD_string((char*)str);
 "304
-[e ( _LCD_string (1 &U _str ]
-[; ;menu.c: 305: LCD_SetPos(0,1);
+[e :U 143 ]
+[; ;menu.c: 305: LCD_SetPos(0,0);
 "305
-[e ( _LCD_SetPos (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;menu.c: 306: LCD_string((char*)str2);
+[e ( _LCD_SetPos (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;menu.c: 306: LCD_string((char*)str);
 "306
+[e ( _LCD_string (1 &U _str ]
+[; ;menu.c: 307: LCD_SetPos(0,1);
+"307
+[e ( _LCD_SetPos (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;menu.c: 308: LCD_string((char*)str2);
+"308
 [e ( _LCD_string (1 &U _str2 ]
-[; ;menu.c: 309: fEraseString(str2);
-"309
-[e ( _fEraseString (1 &U _str2 ]
-[; ;menu.c: 311: }
+[; ;menu.c: 311: fEraseString(str2);
 "311
+[e ( _fEraseString (1 &U _str2 ]
+[; ;menu.c: 313: }
+"313
 [e :UE 86 ]
 }
-"313
-[v __firstDigitMenu `(uc ~T0 @X0 1 ef1`s ]
-{
-[; ;menu.c: 313: unsigned char _firstDigitMenu(short int _digit){
-[e :U __firstDigitMenu ]
-[v __digit `s ~T0 @X0 1 r1 ]
-[f ]
-[v __tempDigit `uc ~T0 @X0 1 a ]
-[; ;menu.c: 314: unsigned char _tempDigit;
-[; ;menu.c: 315: for(short int i = _digit; i > 0; i/=10)
-"315
-{
-[v _i `s ~T0 @X0 1 a ]
-[e = _i __digit ]
-[e $ > -> _i `i -> 0 `i 202  ]
-[e $U 203  ]
-"316
-[e :U 202 ]
-[; ;menu.c: 316: _tempDigit = i % 10;
-[e = __tempDigit -> % -> _i `i -> 10 `i `uc ]
-"315
-[e =/ _i -> -> 10 `uc `s ]
-[e $ > -> _i `i -> 0 `i 202  ]
-[e :U 203 ]
-"316
-}
-[; ;menu.c: 317: return _tempDigit;
-"317
-[e ) __tempDigit ]
-[e $UE 201  ]
-[; ;menu.c: 318: }
-"318
-[e :UE 201 ]
-}
-"319
-[v _fShowStar `(v ~T0 @X0 1 ef2`uc`uc ]
-{
-[; ;menu.c: 319: void fShowStar(unsigned char position, unsigned char string){
-[e :U _fShowStar ]
-[v _position `uc ~T0 @X0 1 r1 ]
-[v _string `uc ~T0 @X0 1 r2 ]
-[f ]
-[; ;menu.c: 320: LCD_SetPos(position,string);
-"320
-[e ( _LCD_SetPos (2 , _position _string ]
-[; ;menu.c: 321: sendbyte('*', 1);
-"321
-[e ( _sendbyte (2 , -> -> 42 `ui `uc -> -> 1 `i `uc ]
-[; ;menu.c: 322: }
-"322
-[e :UE 205 ]
-}
 [p f _sprintf 8684672 ]
-[a 60C 37 51 115 37 52 115 37 53 115 37 52 117 0 ]
 [a 34C 37 51 115 37 51 117 32 32 37 51 115 37 51 117 0 ]
 [a 1C 37 49 54 115 0 ]
 [a 3C 37 49 54 115 0 ]
@@ -2259,6 +2201,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [a 53C 37 49 54 115 0 ]
 [a 55C 37 49 54 115 0 ]
 [a 57C 37 49 54 115 0 ]
+[a 62C 37 51 115 37 52 115 37 53 115 37 52 115 0 ]
 [a 5C 37 115 0 ]
 [a 7C 37 115 0 ]
 [a 14C 37 115 0 ]
@@ -2266,15 +2209,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [a 26C 37 115 0 ]
 [a 28C 37 115 0 ]
 [a 49C 37 115 0 ]
-[a 59C 210 226 237 58 37 51 100 32 210 237 224 240 58 37 51 100 0 ]
+[a 59C 37 52 115 37 51 100 32 37 53 115 37 51 100 0 ]
 [a 39C 37 49 50 115 37 100 37 100 37 100 37 100 0 ]
 [a 43C 37 49 50 115 37 100 37 100 37 100 37 100 0 ]
 [a 36C 65 237 50 58 0 ]
 [a 35C 192 237 49 58 0 ]
 [a 44C 196 46 226 251 245 238 228 251 58 0 ]
 [a 40C 196 46 226 245 238 228 251 58 0 ]
-[a 61C 196 211 58 0 ]
-[a 62C 205 192 195 208 58 0 ]
+[a 61C 210 237 224 240 58 0 ]
+[a 60C 210 226 237 58 0 ]
+[a 63C 196 211 58 0 ]
+[a 64C 205 192 195 208 58 0 ]
 [a 48C 209 238 245 240 46 242 229 234 46 237 224 241 242 240 46 0 ]
 [a 20C 37 52 100 32 236 232 237 46 0 ]
 [a 23C 37 52 100 32 236 232 237 46 0 ]

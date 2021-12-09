@@ -1543,8 +1543,8 @@ char cACP;
 unsigned char counter;
 extern char TMR0_Value;
 extern char cTMR0;
-extern void SPI_Write(long int address, char data);
-extern char SPI_Read(long int address);
+extern void SPI_Write(unsigned int address, unsigned char data);
+extern char SPI_Read(unsigned int address);
 char _countTMR2trigger;
 unsigned short int _countSecond;
 
@@ -1571,16 +1571,16 @@ struct AnalogInput Analog;
 unsigned char _settingsBit;
 
 # 78
-int _settingTimeImpDO1;
-int _settingTimerOnDO2;
-int _settingTimerOffDO2;
+unsigned int _settingTimeImpDO1;
+unsigned int _settingTimerOnDO2;
+unsigned int _settingTimerOffDO2;
 short int _timerDO1 = 0;
 short int _timerDO2 = 0;
 unsigned char _tempPinDO;
 
 # 95
 void init(void);
-short int strtoint(char *string);
+
 void fEraseString(char* string);
 
 # 21 "Bb_device.h"

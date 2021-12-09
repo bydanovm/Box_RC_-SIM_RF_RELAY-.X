@@ -1340,8 +1340,8 @@ void sendbyte(unsigned char c, unsigned char mode);
 void sendhalfbyte(unsigned char c);
 void LCD_string(char* st);
 void LCD_SetPos(unsigned char x, unsigned char y);
-char* LCD_StringOnOff(char st,char numb);
-const char SHRIFT[] = {
+char* LCD_StringOnOff(const unsigned char st, const unsigned char numb);
+const unsigned char SHRIFT[] = {
 0x41,
 0xA0,
 0x42,
@@ -1409,9 +1409,6 @@ const char SHRIFT[] = {
 };
 extern void fShiftData(unsigned char shiftVar);
 extern unsigned char _tempPinDO;
-
-# 161
-void define_char(unsigned char pc[],unsigned char char_code);
 
 # 18 "lcd.c"
 void LCD_init(){
@@ -1491,7 +1488,7 @@ if(i == 16 ) LCD_SetPos(0,1);
 
 # 100
 symbol = st[i++];
-if(symbol > 0xBF) symbol = SHRIFT[(symbol-0xC0)];
+if(symbol > 0xBFu) symbol = SHRIFT[(symbol-0xC0u)];
 sendbyte(symbol,1);
 }
 
@@ -1513,14 +1510,8 @@ sendbyte(0b00000001,0);
 _delay((unsigned long)((1600)*(8000000/4000000.0)));
 }
 
-char* LCD_StringOnOff(char st, char numb){
-if(st & (1 << numb)) return "Вкл";
+char* LCD_StringOnOff(const unsigned char st, const unsigned char numb){
+if(st & (1u << numb)) return "Вкл";
 else return "Выкл";
 }
 
-void define_char(unsigned char pc[],unsigned char char_code){
-unsigned char i,a;
-a=(char_code<<3)|0x40;
-sendbyte(a,0);
-for (i=0; i<8; i++) sendbyte(pc[i],1);
-}

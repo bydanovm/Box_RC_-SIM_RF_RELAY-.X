@@ -29,7 +29,7 @@ char SPI_ReadByte(char data){
     SPI_WriteByte(data);
     return SSPBUF;
 }
-void SPI_Write(long int address, char data){
+void SPI_Write(unsigned int address, unsigned char data){
     while(SPI_notRDY() == 1);
     CS = FALSE;
     SPI_WriteByte(WREN);
@@ -43,7 +43,7 @@ void SPI_Write(long int address, char data){
     SPI_WriteByte(data);
     CS = TRUE;
 }
-char SPI_Read(long int address){
+char SPI_Read(unsigned int address){
     while(SPI_notRDY() == 1);
     CS = FALSE;
     SPI_WriteByte(address > 255 ? READ|0x08 : READ);

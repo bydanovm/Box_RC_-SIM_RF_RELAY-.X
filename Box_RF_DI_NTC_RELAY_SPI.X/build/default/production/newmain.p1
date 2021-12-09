@@ -83,9 +83,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "17
 [v _LCD_string `(v ~T0 @X0 0 ef1`*uc ]
 "34 config.h
-[v _SPI_Read `(uc ~T0 @X0 0 ef1`l ]
+[v _SPI_Read `(uc ~T0 @X0 0 ef1`ui ]
 "33
-[v _SPI_Write `(v ~T0 @X0 0 ef2`l`uc ]
+[v _SPI_Write `(v ~T0 @X0 0 ef2`ui`uc ]
 "21 temp_ntc.h
 [v _rTemperature `(c ~T0 @X0 0 ef1`uc ]
 "70 menu.h
@@ -1050,8 +1050,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;config.h: 30: unsigned char counter;
 [; ;config.h: 31: extern char TMR0_Value;
 [; ;config.h: 32: extern char cTMR0;
-[; ;config.h: 33: extern void SPI_Write(long int address, char data);
-[; ;config.h: 34: extern char SPI_Read(long int address);
+[; ;config.h: 33: extern void SPI_Write(unsigned int address, unsigned char data);
+[; ;config.h: 34: extern char SPI_Read(unsigned int address);
 "35
 [v __countTMR2trigger `uc ~T0 @X0 1 e ]
 [; ;config.h: 35: char _countTMR2trigger;
@@ -1095,14 +1095,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v __settingsBit `uc ~T0 @X0 1 e ]
 [; ;config.h: 69: unsigned char _settingsBit;
 "78
-[v __settingTimeImpDO1 `i ~T0 @X0 1 e ]
-[; ;config.h: 78: int _settingTimeImpDO1;
+[v __settingTimeImpDO1 `ui ~T0 @X0 1 e ]
+[; ;config.h: 78: unsigned int _settingTimeImpDO1;
 "79
-[v __settingTimerOnDO2 `i ~T0 @X0 1 e ]
-[; ;config.h: 79: int _settingTimerOnDO2;
+[v __settingTimerOnDO2 `ui ~T0 @X0 1 e ]
+[; ;config.h: 79: unsigned int _settingTimerOnDO2;
 "80
-[v __settingTimerOffDO2 `i ~T0 @X0 1 e ]
-[; ;config.h: 80: int _settingTimerOffDO2;
+[v __settingTimerOffDO2 `ui ~T0 @X0 1 e ]
+[; ;config.h: 80: unsigned int _settingTimerOffDO2;
 "81
 [v __timerDO1 `s ~T0 @X0 1 e ]
 [i __timerDO1
@@ -1119,7 +1119,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v __tempPinDO `uc ~T0 @X0 1 e ]
 [; ;config.h: 83: unsigned char _tempPinDO;
 [; ;config.h: 95: void init(void);
-[; ;config.h: 96: short int strtoint(char *string);
 [; ;config.h: 97: void fEraseString(char* string);
 "21 Bb_device.h
 [v _flStartBitRecieve `b ~T0 @X0 1 e ]
@@ -1174,7 +1173,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.h: 16: void sendhalfbyte(unsigned char c);
 [; ;lcd.h: 17: void LCD_string(char* st);
 [; ;lcd.h: 18: void LCD_SetPos(unsigned char x, unsigned char y);
-[; ;lcd.h: 19: char* LCD_StringOnOff(char st,char numb);
+[; ;lcd.h: 19: char* LCD_StringOnOff(const unsigned char st, const unsigned char numb);
 "20
 [v _SHRIFT `Cuc ~T0 @X0 -> 0 `x e ]
 [i _SHRIFT
@@ -1309,7 +1308,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 199 `i `uc
 ..
 ]
-[; ;lcd.h: 20: const char SHRIFT[] = {
+[; ;lcd.h: 20: const unsigned char SHRIFT[] = {
 [; ;lcd.h: 21: 0x41,
 [; ;lcd.h: 22: 0xA0,
 [; ;lcd.h: 23: 0x42,
@@ -1377,7 +1376,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.h: 85: };
 [; ;lcd.h: 86: extern void fShiftData(unsigned char shiftVar);
 [; ;lcd.h: 87: extern unsigned char _tempPinDO;
-[; ;lcd.h: 161: void define_char(unsigned char pc[],unsigned char char_code);
 "15 menu.h
 [v _flMenuStrip `uc ~T0 @X0 1 e ]
 [i _flMenuStrip
@@ -1407,9 +1405,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ]
 [; ;menu.h: 18: unsigned char _MenuArr[10] = {4, 6, 3, 3, 0, 0, 0, 0, 0, 0};
-[v F1058 `uc ~T0 @X0 -> 6 `i t ]
+[v F1053 `uc ~T0 @X0 -> 6 `i t ]
 "19
-[v __SubMenuArr `F1058 ~T0 @X0 -> 4 `i e ]
+[v __SubMenuArr `F1053 ~T0 @X0 -> 4 `i e ]
 [i __SubMenuArr
 :U ..
 :U ..
@@ -1495,9 +1493,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;menu.h: 36: extern unsigned short int _countSecond;
 [; ;menu.h: 37: extern unsigned char _tempPinDO;
 [; ;menu.h: 38: extern unsigned char _settingsBit;
-[; ;menu.h: 39: extern int _settingTimeImpDO1;
-[; ;menu.h: 40: extern int _settingTimerOnDO2;
-[; ;menu.h: 41: extern int _settingTimerOffDO2;
+[; ;menu.h: 39: extern unsigned int _settingTimeImpDO1;
+[; ;menu.h: 40: extern unsigned int _settingTimerOnDO2;
+[; ;menu.h: 41: extern unsigned int _settingTimerOffDO2;
 [; ;menu.h: 42: extern signed char temperatureAI1;
 [; ;menu.h: 43: extern signed char temperatureAI2;
 [; ;menu.h: 44: extern unsigned char str[16];
@@ -1506,9 +1504,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;menu.h: 47: extern void LCD_string(char* st);
 [; ;menu.h: 48: extern void LCD_SetPos(unsigned char x, unsigned char y);
 [; ;menu.h: 49: extern void sendbyte(unsigned char c, unsigned char mode);
-[; ;menu.h: 50: extern char* LCD_StringOnOff(char st,char numb);
-[; ;menu.h: 51: extern void SPI_Write(long int address, char data);
-[; ;menu.h: 52: extern char SPI_Read(long int address);
+[; ;menu.h: 50: extern char* LCD_StringOnOff(const unsigned char st, const unsigned char numb);
+[; ;menu.h: 51: extern void SPI_Write(unsigned int address, unsigned char data);
+[; ;menu.h: 52: extern char SPI_Read(unsigned int address);
 "66
 [v _flClearLCD `b ~T0 @X0 1 e ]
 [; ;menu.h: 66: __bit flClearLCD;
@@ -1516,8 +1514,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _flSwitchButton `b ~T0 @X0 1 e ]
 [; ;menu.h: 67: __bit flSwitchButton;
 [; ;menu.h: 70: void fMenuStrip(void);
-[; ;menu.h: 71: void fShowStar(unsigned char position, unsigned char string);
-[; ;menu.h: 73: unsigned char _firstDigitMenu(short int _digit);
 [; ;shift_registr.h: 13: extern unsigned char _tempPinDO;
 [; ;shift_registr.h: 47: void fShiftData(unsigned char shiftVar);
 [; ;temp_ntc.h: 20: short int rThermistor(unsigned char analogAI);
@@ -1529,15 +1525,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi_flash.h: 34: void SPI_init();
 [; ;spi_flash.h: 35: void SPI_WriteByte(char data);
 [; ;spi_flash.h: 36: char SPI_ReadByte(char data);
-[; ;spi_flash.h: 37: void SPI_Write(long int address, char data);
-[; ;spi_flash.h: 38: char SPI_Read(long int address);
+[; ;spi_flash.h: 37: void SPI_Write(unsigned int address, unsigned char data);
+[; ;spi_flash.h: 38: char SPI_Read(unsigned int address);
 [; ;spi_flash.h: 39: char SPI_ReadStatus();
 [; ;spi_flash.h: 40: int SPI_ReadRDID();
 [; ;spi_flash.h: 41: char SPI_notRDY();
 [v $root$_linkup `(v ~T0 @X0 0 e ]
-[v F1104 `(v ~T0 @X0 1 tf ]
+[v F1094 `(v ~T0 @X0 1 tf ]
 "10 newmain.c
-[v _linkup `IF1104 ~T0 @X0 1 e ]
+[v _linkup `IF1094 ~T0 @X0 1 e ]
 {
 [; ;newmain.c: 10: void __interrupt linkup(void){
 [e :U _linkup ]
@@ -1849,7 +1845,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _LCD_string (1 -> :s 1C `*uc ]
 [; ;newmain.c: 102: if(SPI_Read(100) == 0xFF)
 "102
-[e $ ! == -> ( _SPI_Read (1 -> -> 100 `i `l `i -> 255 `i 116  ]
+[e $ ! == -> ( _SPI_Read (1 -> -> 100 `i `ui `i -> 255 `i 116  ]
 [; ;newmain.c: 103: {
 "103
 {
@@ -1863,7 +1859,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "105
 [e :U 117 ]
 [; ;newmain.c: 105: SPI_Write(SPI_i,0x00);
-[e ( _SPI_Write (2 , -> _SPI_i `l -> -> 0 `i `uc ]
+[e ( _SPI_Write (2 , -> _SPI_i `ui -> -> 0 `i `uc ]
 "104
 [e ++ _SPI_i -> -> 1 `i `uc ]
 [e $ < -> _SPI_i `i -> 100 `i 117  ]
@@ -1872,7 +1868,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [; ;newmain.c: 106: SPI_Write(100,0x01);
 "106
-[e ( _SPI_Write (2 , -> -> 100 `i `l -> -> 1 `i `uc ]
+[e ( _SPI_Write (2 , -> -> 100 `i `ui -> -> 1 `i `uc ]
 "107
 }
 [; ;newmain.c: 107: }
@@ -1880,40 +1876,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 "108
 [e :U 116 ]
 [; ;newmain.c: 108: else if(SPI_Read(100) == 0x01)
-[e $ ! == -> ( _SPI_Read (1 -> -> 100 `i `l `i -> 1 `i 121  ]
+[e $ ! == -> ( _SPI_Read (1 -> -> 100 `i `ui `i -> 1 `i 121  ]
 [; ;newmain.c: 109: {
 "109
 {
 [; ;newmain.c: 110: _settingsBit = SPI_Read(0);
 "110
-[e = __settingsBit ( _SPI_Read (1 -> -> 0 `i `l ]
+[e = __settingsBit ( _SPI_Read (1 -> -> 0 `i `ui ]
 [; ;newmain.c: 112: _settingTimeImpDO1 = SPI_Read(1);
 "112
-[e = __settingTimeImpDO1 -> ( _SPI_Read (1 -> -> 1 `i `l `i ]
+[e = __settingTimeImpDO1 -> ( _SPI_Read (1 -> -> 1 `i `ui `ui ]
 [; ;newmain.c: 113: _settingTimeImpDO1 <<=8;
 "113
 [e =<< __settingTimeImpDO1 -> 8 `i ]
 [; ;newmain.c: 114: _settingTimeImpDO1 |= SPI_Read(2);
 "114
-[e =| __settingTimeImpDO1 -> ( _SPI_Read (1 -> -> 2 `i `l `i ]
+[e =| __settingTimeImpDO1 -> ( _SPI_Read (1 -> -> 2 `i `ui `ui ]
 [; ;newmain.c: 116: _settingTimerOnDO2 = SPI_Read(3);
 "116
-[e = __settingTimerOnDO2 -> ( _SPI_Read (1 -> -> 3 `i `l `i ]
+[e = __settingTimerOnDO2 -> ( _SPI_Read (1 -> -> 3 `i `ui `ui ]
 [; ;newmain.c: 117: _settingTimerOnDO2 <<=8;
 "117
 [e =<< __settingTimerOnDO2 -> 8 `i ]
 [; ;newmain.c: 118: _settingTimerOnDO2 |= SPI_Read(4);
 "118
-[e =| __settingTimerOnDO2 -> ( _SPI_Read (1 -> -> 4 `i `l `i ]
+[e =| __settingTimerOnDO2 -> ( _SPI_Read (1 -> -> 4 `i `ui `ui ]
 [; ;newmain.c: 120: _settingTimerOffDO2 = SPI_Read(5);
 "120
-[e = __settingTimerOffDO2 -> ( _SPI_Read (1 -> -> 5 `i `l `i ]
+[e = __settingTimerOffDO2 -> ( _SPI_Read (1 -> -> 5 `i `ui `ui ]
 [; ;newmain.c: 121: _settingTimerOffDO2 <<=8;
 "121
 [e =<< __settingTimerOffDO2 -> 8 `i ]
 [; ;newmain.c: 122: _settingTimerOffDO2 |= SPI_Read(6);
 "122
-[e =| __settingTimerOffDO2 -> ( _SPI_Read (1 -> -> 6 `i `l `i ]
+[e =| __settingTimerOffDO2 -> ( _SPI_Read (1 -> -> 6 `i `ui `ui ]
 "123
 }
 [e :U 121 ]

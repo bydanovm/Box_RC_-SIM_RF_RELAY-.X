@@ -34,8 +34,8 @@
 void SPI_init();
 void SPI_WriteByte(char data);
 char SPI_ReadByte(char data);
-void SPI_Write(long int address, char data);
-char SPI_Read(long int address);
+void SPI_Write(unsigned int address, unsigned char data);
+char SPI_Read(unsigned int address);
 char SPI_ReadStatus();
 int SPI_ReadRDID();
 char SPI_notRDY();

@@ -200,8 +200,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 "92 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF653 ~T0 @X0 0 e ]
 [p i __delay ]
-"56 C:\Program Files\Microchip\xc8\v2.32\pic\include\c90\string.h
-[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
 "7 config.h
 [p x FOSC=HS ]
 "8
@@ -1154,8 +1152,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;config.h: 30: unsigned char counter;
 [; ;config.h: 31: extern char TMR0_Value;
 [; ;config.h: 32: extern char cTMR0;
-[; ;config.h: 33: extern void SPI_Write(long int address, char data);
-[; ;config.h: 34: extern char SPI_Read(long int address);
+[; ;config.h: 33: extern void SPI_Write(unsigned int address, unsigned char data);
+[; ;config.h: 34: extern char SPI_Read(unsigned int address);
 "35
 [v __countTMR2trigger `uc ~T0 @X0 1 e ]
 [; ;config.h: 35: char _countTMR2trigger;
@@ -1199,14 +1197,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v __settingsBit `uc ~T0 @X0 1 e ]
 [; ;config.h: 69: unsigned char _settingsBit;
 "78
-[v __settingTimeImpDO1 `i ~T0 @X0 1 e ]
-[; ;config.h: 78: int _settingTimeImpDO1;
+[v __settingTimeImpDO1 `ui ~T0 @X0 1 e ]
+[; ;config.h: 78: unsigned int _settingTimeImpDO1;
 "79
-[v __settingTimerOnDO2 `i ~T0 @X0 1 e ]
-[; ;config.h: 79: int _settingTimerOnDO2;
+[v __settingTimerOnDO2 `ui ~T0 @X0 1 e ]
+[; ;config.h: 79: unsigned int _settingTimerOnDO2;
 "80
-[v __settingTimerOffDO2 `i ~T0 @X0 1 e ]
-[; ;config.h: 80: int _settingTimerOffDO2;
+[v __settingTimerOffDO2 `ui ~T0 @X0 1 e ]
+[; ;config.h: 80: unsigned int _settingTimerOffDO2;
 "81
 [v __timerDO1 `s ~T0 @X0 1 e ]
 [i __timerDO1
@@ -1223,7 +1221,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v __tempPinDO `uc ~T0 @X0 1 e ]
 [; ;config.h: 83: unsigned char _tempPinDO;
 [; ;config.h: 95: void init(void);
-[; ;config.h: 96: short int strtoint(char *string);
 [; ;config.h: 97: void fEraseString(char* string);
 "5 config.c
 [v _init `(v ~T0 @X0 1 ef ]
@@ -1555,85 +1552,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 "132
 [e :UE 86 ]
 }
-"134
-[v _strtoint `(s ~T0 @X0 1 ef1`*uc ]
-{
-[; ;config.c: 134: short int strtoint(char *string){
-[e :U _strtoint ]
-[v _string `*uc ~T0 @X0 1 r1 ]
-[f ]
-"135
-[v _lenghtString `uc ~T0 @X0 1 a ]
-[; ;config.c: 135: unsigned char lenghtString = strlen(string);
-[e = _lenghtString -> ( _strlen (1 -> _string `*Cuc `uc ]
-"136
-[v _i `uc ~T0 @X0 1 a ]
-[; ;config.c: 136: unsigned char i = 0;
-[e = _i -> -> 0 `i `uc ]
-"137
-[v _sign `uc ~T0 @X0 1 a ]
-[; ;config.c: 137: unsigned char sign = 0;
-[e = _sign -> -> 0 `i `uc ]
-"138
-[v _tempInt `s ~T0 @X0 1 a ]
-[; ;config.c: 138: short int tempInt = 0;
-[e = _tempInt -> -> 0 `i `s ]
-[; ;config.c: 139: if(string[0] == '-') {i++;sign=1;}
-"139
-[e $ ! == -> *U + _string * -> -> 0 `i `x -> -> # *U _string `i `x `ui -> 45 `ui 90  ]
-{
-[e ++ _i -> -> 1 `i `uc ]
-[e = _sign -> -> 1 `i `uc ]
-}
-[e :U 90 ]
-[; ;config.c: 140: while(string[i] != '\0'){
-"140
-[e $U 91  ]
-[e :U 92 ]
-{
-"141
-[v _powInt `s ~T0 @X0 1 a ]
-[; ;config.c: 141: short int powInt = 1;
-[e = _powInt -> -> 1 `i `s ]
-[; ;config.c: 142: for(char x = 1; x <= lenghtString - i - 1; x++){
-"142
-{
-[v _x `uc ~T0 @X0 1 a ]
-[e = _x -> -> 1 `i `uc ]
-[e $U 97  ]
-[e :U 94 ]
-{
-[; ;config.c: 143: powInt *= 10;
-"143
-[e =* _powInt -> -> 10 `i `s ]
-"144
-}
-"142
-[e ++ _x -> -> 1 `i `uc ]
-[e :U 97 ]
-[e $ <= -> _x `i - - -> _lenghtString `i -> _i `i -> 1 `i 94  ]
-[e :U 95 ]
-"144
-}
-[; ;config.c: 144: }
-[; ;config.c: 145: tempInt += ((short int)(string[i++] - '0')) * powInt;
-"145
-[e =+ _tempInt -> * -> -> - -> *U + _string * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U _string `ui `ux `ui -> 48 `ui `s `i -> _powInt `i `s ]
-"146
-}
-[e :U 91 ]
-"140
-[e $ != -> *U + _string * -> _i `ux -> -> # *U _string `ui `ux `ui -> 0 `ui 92  ]
-[e :U 93 ]
-[; ;config.c: 146: }
-[; ;config.c: 147: return sign ? tempInt * -1: tempInt;
-"147
-[e ) -> ? != -> _sign `i -> -> -> 0 `i `uc `i : * -> _tempInt `i -U -> 1 `i -> _tempInt `i `s ]
-[e $UE 89  ]
-[; ;config.c: 148: }
-"148
-[e :UE 89 ]
-}
 "149
 [v _fEraseString `(v ~T0 @X0 1 ef1`*uc ]
 {
@@ -1646,5 +1564,5 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + _string * -> -> 0 `i `x -> -> # *U _string `i `x -> -> 0 `i `uc ]
 [; ;config.c: 151: }
 "151
-[e :UE 98 ]
+[e :UE 89 ]
 }

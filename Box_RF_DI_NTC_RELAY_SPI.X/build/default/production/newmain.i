@@ -1543,8 +1543,8 @@ char cACP;
 unsigned char counter;
 extern char TMR0_Value;
 extern char cTMR0;
-extern void SPI_Write(long int address, char data);
-extern char SPI_Read(long int address);
+extern void SPI_Write(unsigned int address, unsigned char data);
+extern char SPI_Read(unsigned int address);
 char _countTMR2trigger;
 unsigned short int _countSecond;
 
@@ -1571,16 +1571,16 @@ struct AnalogInput Analog;
 unsigned char _settingsBit;
 
 # 78
-int _settingTimeImpDO1;
-int _settingTimerOnDO2;
-int _settingTimerOffDO2;
+unsigned int _settingTimeImpDO1;
+unsigned int _settingTimerOnDO2;
+unsigned int _settingTimerOffDO2;
 short int _timerDO1 = 0;
 short int _timerDO2 = 0;
 unsigned char _tempPinDO;
 
 # 95
 void init(void);
-short int strtoint(char *string);
+
 void fEraseString(char* string);
 
 # 21 "Bb_device.h"
@@ -1611,8 +1611,8 @@ void sendbyte(unsigned char c, unsigned char mode);
 void sendhalfbyte(unsigned char c);
 void LCD_string(char* st);
 void LCD_SetPos(unsigned char x, unsigned char y);
-char* LCD_StringOnOff(char st,char numb);
-const char SHRIFT[] = {
+char* LCD_StringOnOff(const unsigned char st, const unsigned char numb);
+const unsigned char SHRIFT[] = {
 0x41,
 0xA0,
 0x42,
@@ -1681,9 +1681,6 @@ const char SHRIFT[] = {
 extern void fShiftData(unsigned char shiftVar);
 extern unsigned char _tempPinDO;
 
-# 161
-void define_char(unsigned char pc[],unsigned char char_code);
-
 # 15 "menu.h"
 char flMenuStrip = 0;
 
@@ -1709,9 +1706,9 @@ extern short int _timerDO2;
 extern unsigned short int _countSecond;
 extern unsigned char _tempPinDO;
 extern unsigned char _settingsBit;
-extern int _settingTimeImpDO1;
-extern int _settingTimerOnDO2;
-extern int _settingTimerOffDO2;
+extern unsigned int _settingTimeImpDO1;
+extern unsigned int _settingTimerOnDO2;
+extern unsigned int _settingTimerOffDO2;
 extern signed char temperatureAI1;
 extern signed char temperatureAI2;
 extern unsigned char str[16];
@@ -1720,9 +1717,9 @@ extern void LCD_clear();
 extern void LCD_string(char* st);
 extern void LCD_SetPos(unsigned char x, unsigned char y);
 extern void sendbyte(unsigned char c, unsigned char mode);
-extern char* LCD_StringOnOff(char st,char numb);
-extern void SPI_Write(long int address, char data);
-extern char SPI_Read(long int address);
+extern char* LCD_StringOnOff(const unsigned char st, const unsigned char numb);
+extern void SPI_Write(unsigned int address, unsigned char data);
+extern char SPI_Read(unsigned int address);
 
 # 66
 __bit flClearLCD;
@@ -1730,9 +1727,6 @@ __bit flSwitchButton;
 
 
 void fMenuStrip(void);
-void fShowStar(unsigned char position, unsigned char string);
-
-unsigned char _firstDigitMenu(short int _digit);
 
 # 13 "shift_registr.h"
 extern unsigned char _tempPinDO;
@@ -1749,8 +1743,8 @@ signed char temperatureAI1, temperatureAI2;
 void SPI_init();
 void SPI_WriteByte(char data);
 char SPI_ReadByte(char data);
-void SPI_Write(long int address, char data);
-char SPI_Read(long int address);
+void SPI_Write(unsigned int address, unsigned char data);
+char SPI_Read(unsigned int address);
 char SPI_ReadStatus();
 int SPI_ReadRDID();
 char SPI_notRDY();

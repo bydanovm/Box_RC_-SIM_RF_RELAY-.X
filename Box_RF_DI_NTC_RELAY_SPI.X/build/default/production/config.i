@@ -1543,8 +1543,8 @@ char cACP;
 unsigned char counter;
 extern char TMR0_Value;
 extern char cTMR0;
-extern void SPI_Write(long int address, char data);
-extern char SPI_Read(long int address);
+extern void SPI_Write(unsigned int address, unsigned char data);
+extern char SPI_Read(unsigned int address);
 char _countTMR2trigger;
 unsigned short int _countSecond;
 
@@ -1571,16 +1571,16 @@ struct AnalogInput Analog;
 unsigned char _settingsBit;
 
 # 78
-int _settingTimeImpDO1;
-int _settingTimerOnDO2;
-int _settingTimerOffDO2;
+unsigned int _settingTimeImpDO1;
+unsigned int _settingTimerOnDO2;
+unsigned int _settingTimerOffDO2;
 short int _timerDO1 = 0;
 short int _timerDO2 = 0;
 unsigned char _tempPinDO;
 
 # 95
 void init(void);
-short int strtoint(char *string);
+
 void fEraseString(char* string);
 
 # 5 "config.c"
@@ -1713,21 +1713,7 @@ cTMR0 = 0;
 _delay((unsigned long)((10)*(8000000/4000.0)));
 }
 
-short int strtoint(char *string){
-unsigned char lenghtString = strlen(string);
-unsigned char i = 0;
-unsigned char sign = 0;
-short int tempInt = 0;
-if(string[0] == '-') {i++;sign=1;}
-while(string[i] != '\0'){
-short int powInt = 1;
-for(char x = 1; x <= lenghtString - i - 1; x++){
-powInt *= 10;
-}
-tempInt += ((short int)(string[i++] - '0')) * powInt;
-}
-return sign ? tempInt * -1: tempInt;
-}
+# 149
 void fEraseString(char* string){
 string[0] = 0;
 }

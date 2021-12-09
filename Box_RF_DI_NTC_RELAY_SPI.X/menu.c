@@ -61,6 +61,7 @@ void fMenuStrip(void){
         flSwitchButton = TRUE;
         flClearLCD = FALSE;
     }
+    
     if(_MenuNav >= 100){
         _firstCell = (unsigned char)(_MenuNav / 100 - 2);
         _secondCell = (unsigned char)(_MenuNav / 10 % 10);
@@ -70,6 +71,7 @@ void fMenuStrip(void){
         _cellTwoDigit = (unsigned char)(_MenuNav / 10 - 1);
         _tempTwoDigit = (unsigned char)(_MenuNav / 10 * 10);
     }
+    
     if(flClearLCD == FALSE) LCD_clear();
     
     switch (_MenuNav){
@@ -97,7 +99,7 @@ void fMenuStrip(void){
         case 200:
             sprintf(str2, "%s", "Импульс");
             if(_settingsBit & (1 << 1))
-                strcat(str2, '*');
+                strcat(str2, (unsigned char*)'*');
             break;
         case 2000:
              _settingTimeImpDO1 = 0;
@@ -108,7 +110,7 @@ void fMenuStrip(void){
         case 201:
             sprintf(str2, "%s", "Постоянный");
             if(!(_settingsBit & (1 << 1)))  
-                strcat(str2, '*');
+                strcat(str2, (unsigned char*)'*');
             break;
         case 2010:
             bitclr(_settingsBit, 1);
@@ -130,7 +132,7 @@ void fMenuStrip(void){
         case 220:
             sprintf(str2, "%s", "Да");  
             if(_settingsBit & (1 << 3)) 
-                strcat(str2, '*');
+                strcat(str2, (unsigned char*)'*');
             break;
         case 2200:
             if(_settingTimerOnDO2 == 0 || _settingTimerOffDO2 == 0)
@@ -144,7 +146,7 @@ void fMenuStrip(void){
         case 221:
             sprintf(str2, "%s", "Нет"); 
             if(!(_settingsBit & (1 << 3)))  
-                strcat(str2, '*');
+                strcat(str2, (unsigned char*)'*');
             break;
         case 2210:
             bitclr(_settingsBit, 3);
@@ -176,7 +178,7 @@ void fMenuStrip(void){
         case 250:
             sprintf(str2, "%s", "Да");  
             if(_settingsBit & (1 << 4)) 
-                strcat(str2, '*');
+                strcat(str2, (unsigned char*)'*');
             break;
         case 2500:
             bitset(_settingsBit, 4);        //Set bit DO2 On at low temp
@@ -185,7 +187,7 @@ void fMenuStrip(void){
         case 251:
             sprintf(str2, "%s", "Нет");  
             if(!(_settingsBit & (1 << 4))) 
-                strcat(str2, '*');
+                strcat(str2, (unsigned char*)'*');
             break;
         case 2510:
             bitclr(_settingsBit, 4);        //Set bit IMP
@@ -234,7 +236,7 @@ void fMenuStrip(void){
         case 400:
                 sprintf(str2, "%s", "Да");
             if(flUpdate)
-                strcat(str2, '*');
+                strcat(str2, (unsigned char*)'*');
             break;
         case 4000:
             flUpdate = TRUE;
@@ -253,7 +255,7 @@ void fMenuStrip(void){
         case 410:
             sprintf(str, "%16s", "Да");
             if(flUpdate)
-                strcat(str2, '*');
+                strcat(str2, (unsigned char*)'*');
             break;
         case 4100:
             flUpdate = TRUE;
@@ -269,7 +271,7 @@ void fMenuStrip(void){
         case 420:
             sprintf(str, "%16s", "Да");
             if(flUpdate)
-                strcat(str2, '*');
+                strcat(str2, (unsigned char*)'*');
             break;
         case 4200:
             flUpdate = TRUE;
@@ -285,10 +287,10 @@ void fMenuStrip(void){
             _MenuNav = 420;
             break;
         default:
-            sprintf(str, "Твн:%3d Тнар:%3d", temperatureAI1, temperatureAI2);
+            sprintf(str, "%4s%3d %5s%3d", "Твн:", temperatureAI1, "Тнар:", temperatureAI2);
 //            LCD_SetPos(0,0);
 //            LCD_string((char*)str);
-            sprintf(str2, "%3s%4s%5s%4u", "ДУ:", LCD_StringOnOff(_tempPinDO,3),"НАГР:",LCD_StringOnOff(_tempPinDO,4));
+            sprintf(str2, "%3s%4s%5s%4s", "ДУ:", LCD_StringOnOff((const unsigned char)_tempPinDO,3u),"НАГР:",LCD_StringOnOff((const unsigned char)_tempPinDO,4u));
 //            LCD_SetPos(0,1);
 //            LCD_string((char*)str);
 //            LCD_SetPos(15,0);
@@ -310,13 +312,9 @@ void fMenuStrip(void){
             
 }
 
-unsigned char _firstDigitMenu(short int _digit){
+/*unsigned char _firstDigitMenu(short int _digit){
     unsigned char _tempDigit;
     for(short int i = _digit; i > 0; i/=10)
         _tempDigit = i % 10;
     return _tempDigit;
-}
-void fShowStar(unsigned char position, unsigned char string){
-        LCD_SetPos(position,string);
-        sendbyte('*', 1);
-}
+}*/

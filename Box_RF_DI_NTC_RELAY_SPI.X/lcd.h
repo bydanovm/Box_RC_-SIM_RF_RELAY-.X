@@ -16,8 +16,8 @@ void sendbyte(unsigned char c, unsigned char mode);
 void sendhalfbyte(unsigned char c);
 void LCD_string(char* st);
 void LCD_SetPos(unsigned char x, unsigned char y);
-char* LCD_StringOnOff(char st,char numb);
-const char SHRIFT[] = {
+char* LCD_StringOnOff(const unsigned char st, const unsigned char numb);
+const unsigned char SHRIFT[] = {
 		0x41,	// 0xC0	À 
 		0xA0,	// Á
 		0x42,	// Â
@@ -158,7 +158,7 @@ extern unsigned char _tempPinDO;
 //	0b11111
 //};
 
-void define_char(unsigned char pc[],unsigned char char_code);
+//void define_char(unsigned char pc[],unsigned char char_code);
 
 // TODO Insert declarations or function prototypes (right here) to leverage 
 // live documentation

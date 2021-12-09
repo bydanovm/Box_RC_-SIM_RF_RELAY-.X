@@ -36,9 +36,9 @@ extern short int _timerDO2;
 extern unsigned short int _countSecond;
 extern unsigned char _tempPinDO;    
 extern unsigned char _settingsBit;
-extern int _settingTimeImpDO1;
-extern int _settingTimerOnDO2;
-extern int _settingTimerOffDO2;
+extern unsigned int _settingTimeImpDO1;
+extern unsigned int _settingTimerOnDO2;
+extern unsigned int _settingTimerOffDO2;
 extern signed char temperatureAI1;
 extern signed char temperatureAI2;
 extern unsigned char str[16];
@@ -47,9 +47,9 @@ extern void LCD_clear();
 extern void LCD_string(char* st);
 extern void LCD_SetPos(unsigned char x, unsigned char y);
 extern void sendbyte(unsigned char c, unsigned char mode);
-extern char* LCD_StringOnOff(char st,char numb);
-extern void SPI_Write(long int address, char data);
-extern char SPI_Read(long int address);
+extern char* LCD_StringOnOff(const unsigned char st, const unsigned char numb);
+extern void SPI_Write(unsigned int address, unsigned char data);
+extern char SPI_Read(unsigned int address);
 //extern struct TimeOfDay ToD;
 //extern typedef struct {
 //    unsigned char AI0;
@@ -68,9 +68,8 @@ __bit flSwitchButton;
 
     
 void fMenuStrip(void);
-void fShowStar(unsigned char position, unsigned char string);
 
-unsigned char _firstDigitMenu(short int _digit);
+//unsigned char _firstDigitMenu(short int _digit);
 
 //struct menuItem{
 //    unsigned char          *Name;

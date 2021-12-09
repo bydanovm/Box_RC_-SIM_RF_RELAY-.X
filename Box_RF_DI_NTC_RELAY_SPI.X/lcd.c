@@ -98,7 +98,7 @@ void LCD_string(char* st){
 //            LCD_SetPos(0,0);
 //        }
         symbol = st[i++];
-        if(symbol > 0xBF) symbol = SHRIFT[(symbol-0xC0)];
+        if(symbol > 0xBFu) symbol = SHRIFT[(symbol-0xC0u)];
         sendbyte(symbol,1);
     }
 //    __delay_ms(2000);
@@ -120,14 +120,14 @@ void LCD_clear(){
     __delay_us(1600);
 }
 
-char* LCD_StringOnOff(char st, char numb){
-    if(st & (1 << numb)) return "Вкл";
+char* LCD_StringOnOff(const unsigned char st, const unsigned char numb){
+    if(st & (1u << numb)) return "Вкл";
     else return "Выкл";
 }
 
-void define_char(unsigned char pc[],unsigned char char_code){ 
+/*void define_char(unsigned char pc[],unsigned char char_code){ 
     unsigned char i,a; 
     a=(char_code<<3)|0x40; 
     sendbyte(a,0);
     for (i=0; i<8; i++) sendbyte(pc[i],1); 
- } 
+ } */

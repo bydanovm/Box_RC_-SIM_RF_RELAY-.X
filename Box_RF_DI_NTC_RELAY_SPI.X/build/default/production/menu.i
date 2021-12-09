@@ -1543,8 +1543,8 @@ char cACP;
 unsigned char counter;
 extern char TMR0_Value;
 extern char cTMR0;
-extern void SPI_Write(long int address, char data);
-extern char SPI_Read(long int address);
+extern void SPI_Write(unsigned int address, unsigned char data);
+extern char SPI_Read(unsigned int address);
 char _countTMR2trigger;
 unsigned short int _countSecond;
 
@@ -1571,16 +1571,16 @@ struct AnalogInput Analog;
 unsigned char _settingsBit;
 
 # 78
-int _settingTimeImpDO1;
-int _settingTimerOnDO2;
-int _settingTimerOffDO2;
+unsigned int _settingTimeImpDO1;
+unsigned int _settingTimerOnDO2;
+unsigned int _settingTimerOffDO2;
 short int _timerDO1 = 0;
 short int _timerDO2 = 0;
 unsigned char _tempPinDO;
 
 # 95
 void init(void);
-short int strtoint(char *string);
+
 void fEraseString(char* string);
 
 # 15 "menu.h"
@@ -1608,9 +1608,9 @@ extern short int _timerDO2;
 extern unsigned short int _countSecond;
 extern unsigned char _tempPinDO;
 extern unsigned char _settingsBit;
-extern int _settingTimeImpDO1;
-extern int _settingTimerOnDO2;
-extern int _settingTimerOffDO2;
+extern unsigned int _settingTimeImpDO1;
+extern unsigned int _settingTimerOnDO2;
+extern unsigned int _settingTimerOffDO2;
 extern signed char temperatureAI1;
 extern signed char temperatureAI2;
 extern unsigned char str[16];
@@ -1619,9 +1619,9 @@ extern void LCD_clear();
 extern void LCD_string(char* st);
 extern void LCD_SetPos(unsigned char x, unsigned char y);
 extern void sendbyte(unsigned char c, unsigned char mode);
-extern char* LCD_StringOnOff(char st,char numb);
-extern void SPI_Write(long int address, char data);
-extern char SPI_Read(long int address);
+extern char* LCD_StringOnOff(const unsigned char st, const unsigned char numb);
+extern void SPI_Write(unsigned int address, unsigned char data);
+extern char SPI_Read(unsigned int address);
 
 # 66
 __bit flClearLCD;
@@ -1629,9 +1629,6 @@ __bit flSwitchButton;
 
 
 void fMenuStrip(void);
-void fShowStar(unsigned char position, unsigned char string);
-
-unsigned char _firstDigitMenu(short int _digit);
 
 # 3 "menu.c"
 void fMenuStrip(void){
@@ -1695,6 +1692,7 @@ _MenuNav *= 10;
 flSwitchButton = 1;
 flClearLCD = 0;
 }
+
 if(_MenuNav >= 100){
 _firstCell = (unsigned char)(_MenuNav / 100 - 2);
 _secondCell = (unsigned char)(_MenuNav / 10 % 10);
@@ -1704,11 +1702,12 @@ else if(_MenuNav >= 10){
 _cellTwoDigit = (unsigned char)(_MenuNav / 10 - 1);
 _tempTwoDigit = (unsigned char)(_MenuNav / 10 * 10);
 }
+
 if(flClearLCD == 0) LCD_clear();
 
 switch (_MenuNav){
 
-# 88
+# 90
 case 2:
 sprintf(str, "%16s", "Настройки");
 
@@ -1721,7 +1720,7 @@ break;
 case 200:
 sprintf(str2, "%s", "Импульс");
 if(_settingsBit & (1 << 1))
-strcat(str2, '*');
+strcat(str2, (unsigned char*)'*');
 break;
 case 2000:
 _settingTimeImpDO1 = 0;
@@ -1732,7 +1731,7 @@ break;
 case 201:
 sprintf(str2, "%s", "Постоянный");
 if(!(_settingsBit & (1 << 1)))
-strcat(str2, '*');
+strcat(str2, (unsigned char*)'*');
 break;
 case 2010:
 ((_settingsBit) &= ~(1UL << (1)));
@@ -1754,7 +1753,7 @@ break;
 case 220:
 sprintf(str2, "%s", "Да");
 if(_settingsBit & (1 << 3))
-strcat(str2, '*');
+strcat(str2, (unsigned char*)'*');
 break;
 case 2200:
 if(_settingTimerOnDO2 == 0 || _settingTimerOffDO2 == 0)
@@ -1768,7 +1767,7 @@ break;
 case 221:
 sprintf(str2, "%s", "Нет");
 if(!(_settingsBit & (1 << 3)))
-strcat(str2, '*');
+strcat(str2, (unsigned char*)'*');
 break;
 case 2210:
 ((_settingsBit) &= ~(1UL << (3)));
@@ -1800,7 +1799,7 @@ break;
 case 250:
 sprintf(str2, "%s", "Да");
 if(_settingsBit & (1 << 4))
-strcat(str2, '*');
+strcat(str2, (unsigned char*)'*');
 break;
 case 2500:
 ((_settingsBit) |= 1UL << (4));
@@ -1809,7 +1808,7 @@ break;
 case 251:
 sprintf(str2, "%s", "Нет");
 if(!(_settingsBit & (1 << 4)))
-strcat(str2, '*');
+strcat(str2, (unsigned char*)'*');
 break;
 case 2510:
 ((_settingsBit) &= ~(1UL << (4)));
@@ -1858,7 +1857,7 @@ break;
 case 400:
 sprintf(str2, "%s", "Да");
 if(flUpdate)
-strcat(str2, '*');
+strcat(str2, (unsigned char*)'*');
 break;
 case 4000:
 flUpdate = 1;
@@ -1877,7 +1876,7 @@ break;
 case 410:
 sprintf(str, "%16s", "Да");
 if(flUpdate)
-strcat(str2, '*');
+strcat(str2, (unsigned char*)'*');
 break;
 case 4100:
 flUpdate = 1;
@@ -1893,7 +1892,7 @@ break;
 case 420:
 sprintf(str, "%16s", "Да");
 if(flUpdate)
-strcat(str2, '*');
+strcat(str2, (unsigned char*)'*');
 break;
 case 4200:
 flUpdate = 1;
@@ -1909,17 +1908,17 @@ SPI_Write(6,0);
 _MenuNav = 420;
 break;
 default:
-sprintf(str, "Твн:%3d Тнар:%3d", temperatureAI1, temperatureAI2);
+sprintf(str, "%4s%3d %5s%3d", "Твн:", temperatureAI1, "Тнар:", temperatureAI2);
 
 
-sprintf(str2, "%3s%4s%5s%4u", "ДУ:", LCD_StringOnOff(_tempPinDO,3),"НАГР:",LCD_StringOnOff(_tempPinDO,4));
+sprintf(str2, "%3s%4s%5s%4s", "ДУ:", LCD_StringOnOff((const unsigned char)_tempPinDO,3u),"НАГР:",LCD_StringOnOff((const unsigned char)_tempPinDO,4u));
 
 
 
 flClearLCD = 1;
 break;
 
-# 302
+# 304
 }
 LCD_SetPos(0,0);
 LCD_string((char*)str);
@@ -1931,13 +1930,3 @@ fEraseString(str2);
 
 }
 
-unsigned char _firstDigitMenu(short int _digit){
-unsigned char _tempDigit;
-for(short int i = _digit; i > 0; i/=10)
-_tempDigit = i % 10;
-return _tempDigit;
-}
-void fShowStar(unsigned char position, unsigned char string){
-LCD_SetPos(position,string);
-sendbyte('*', 1);
-}

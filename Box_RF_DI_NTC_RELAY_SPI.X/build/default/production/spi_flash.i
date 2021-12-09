@@ -1333,8 +1333,8 @@ extern __bank0 __bit __timeout;
 void SPI_init();
 void SPI_WriteByte(char data);
 char SPI_ReadByte(char data);
-void SPI_Write(long int address, char data);
-char SPI_Read(long int address);
+void SPI_Write(unsigned int address, unsigned char data);
+char SPI_Read(unsigned int address);
 char SPI_ReadStatus();
 int SPI_ReadRDID();
 char SPI_notRDY();
@@ -1369,7 +1369,7 @@ char SPI_ReadByte(char data){
 SPI_WriteByte(data);
 return SSPBUF;
 }
-void SPI_Write(long int address, char data){
+void SPI_Write(unsigned int address, unsigned char data){
 while(SPI_notRDY() == 1);
 PORTAbits.RA5 = 0;
 SPI_WriteByte(0x06);
@@ -1383,7 +1383,7 @@ SPI_WriteByte(address);
 SPI_WriteByte(data);
 PORTAbits.RA5 = 1;
 }
-char SPI_Read(long int address){
+char SPI_Read(unsigned int address){
 while(SPI_notRDY() == 1);
 PORTAbits.RA5 = 0;
 SPI_WriteByte(address > 255 ? 0x03|0x08 : 0x03);
